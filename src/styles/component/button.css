@@ -1,0 +1,18 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  border-radius: 12px;
+  background: var(--violet-950);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.45px;
+  gap: 8px;
+}
+
+.btn:disabled {
+  background: var(--gray-300);
+  color: var(--white);
+}
