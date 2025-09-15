@@ -9,7 +9,8 @@ import { CODE_MESSAGE_IDENTIFIER, MESSAGES } from "../../constants/messages";
 import { ERROR_MESSAGE } from "../../constants/errorCode";
 
 //assets
-import { ReactComponent as CloseIcon } from "../../assets/close.svg";
+import CloseIcon from "../../assets/close.svg?react";
+
 /*************************************************************************************************/
 
 //MessageModal
