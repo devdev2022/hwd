@@ -1,15 +1,12 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import type { FC, ReactElement } from "react";
-import cx from "classnames";
+import { CSSTransition } from "react-transition-group";
 
 import GlobalModalContext from "../../contexts/GlobalModalContext";
 
 //constants
 import { CODE_MESSAGE_IDENTIFIER, MESSAGES } from "../../constants/messages";
 import { ERROR_MESSAGE } from "../../constants/errorCode";
-
-//assets
-import CloseIcon from "../../assets/close.svg?react";
 
 /*************************************************************************************************/
 
@@ -54,10 +51,6 @@ interface GlobalModalWrapperProps {
   children: React.ReactNode;
 }
 
-export interface ErrorMessage {
-  message: string;
-}
-
 interface GlobalModalActions {
   openModal: (props: ModalDataOnOpen) => void;
   closeModal: () => void;
@@ -76,7 +69,7 @@ const MessageModal: FC<MessageModalProps> = ({
     message: "",
   });
 
-  const modalStateRef = useRef(modal);
+  const nodeRef = useRef<HTMLDivElement | null>(null);
 
   const openMessageModal = (messageCode: string) => {
     const messageContent = CODE_MESSAGE_IDENTIFIER[messageCode];
@@ -120,27 +113,28 @@ const MessageModal: FC<MessageModalProps> = ({
     closeMessageModal,
   };
 
-  if (modalActionRef && modalStateRef) {
+  if (modalActionRef && modal) {
     modalActionRef.current = modalActions;
   }
 
-  useEffect(() => {
-    modalStateRef.current = modal;
-  }, [modal]);
-
   return (
-    <div
-      className={cx("bottom_sheet_wrap", { is_open: modal.isOpen })}
-      onClick={closeMessageModal}
+    <CSSTransition
+      in={modal.isOpen}
+      timeout={200}
+      classNames="fade"
+      unmountOnExit
+      nodeRef={nodeRef}
     >
-      <div className="bottom_sheet_inner">
-        <strong className="title">알림</strong>
-        <div className="bottom_sheet_content">내용 테스트</div>
-        <button className={cx("btn")} onClick={closeMessageModal}>
-          확인
-        </button>
+      <div ref={nodeRef} className="global_modal_wrap">
+        <div className="global_modal">
+          <div className="global_modal_title">알림</div>
+          <div className="global_modal_content">내용 테스트</div>
+          <div className="global_modal_button" onClick={closeMessageModal}>
+            확인
+          </div>
+        </div>
       </div>
-    </div>
+    </CSSTransition>
   );
 };
 
@@ -152,6 +146,8 @@ const GlobalModal: FC<GlobalModalProps> = ({
     body: null,
     className: "",
   });
+
+  const nodeRef = useRef<HTMLDivElement | null>(null);
 
   const openModal = (props: ModalDataOnOpen) => {
     setModal((prevModal) => {
@@ -173,7 +169,7 @@ const GlobalModal: FC<GlobalModalProps> = ({
         return {
           isOpen: false,
           body: null,
-          dialogClassName: "",
+          className: "",
         };
       }
       return {
@@ -190,21 +186,25 @@ const GlobalModal: FC<GlobalModalProps> = ({
   if (modalActionRef && modalActions) {
     modalActionRef.current = modalActions;
   }
+
   return (
-    <>
-      <div className="modal-backdrop">
-        <div className={`modal-container ${modal.className}`}>
-          <button
-            className="modal-close"
-            onClick={closeModal}
-            aria-label="Close modal"
-          >
-            <CloseIcon />
-          </button>
-          <div className="modal-body">{modal.body}</div>
+    <CSSTransition
+      in={modal.isOpen}
+      timeout={200}
+      classNames="fade"
+      unmountOnExit
+      nodeRef={nodeRef}
+    >
+      <div ref={nodeRef} className="global_modal_wrap">
+        <div className="global_modal">
+          <strong className="global_modal_title">알림</strong>
+          <div className="global_modal_content">내용 테스트</div>
+          <div className="global_modal_button" onClick={closeModal}>
+            확인
+          </div>
         </div>
       </div>
-    </>
+    </CSSTransition>
   );
 };
 
@@ -215,30 +215,16 @@ const GlobalModalWrapper: FC<GlobalModalWrapperProps> = ({
   const messageModalActionRef = useRef<MessageModalActions | null>(null);
 
   const openMessage = (messageIdentifier: string) => {
-    if (messageModalActionRef?.current?.openMessageModal) {
-      messageModalActionRef.current.openMessageModal(messageIdentifier);
-    }
+    messageModalActionRef.current?.openMessageModal(messageIdentifier);
   };
 
   const closeMessage = () => {
-    if (messageModalActionRef?.current?.closeMessageModal) {
-      messageModalActionRef.current.closeMessageModal();
-    }
+    messageModalActionRef.current?.closeMessageModal();
   };
 
   const openModal = (props: ModalDataOnOpen) =>
     globalModalActionsRef.current?.openModal(props);
   const closeModal = () => globalModalActionsRef.current?.closeModal();
-
-  const showErrorMessage = (message: string, error: ErrorMessage) => {
-    console.log("showErrorMessage error = ", error);
-    if (error.message === ERROR_MESSAGE.ServerConnectionError) {
-      openMessage("serverConnectionFail");
-    }
-    if (messageModalActionRef?.current?.openMessageModal) {
-      messageModalActionRef.current.openMessageModal(message);
-    }
-  };
 
   return (
     <GlobalModalContext.Provider
@@ -247,7 +233,6 @@ const GlobalModalWrapper: FC<GlobalModalWrapperProps> = ({
         closeMessage,
         openModal,
         closeModal,
-        showErrorMessage,
       }}
     >
       {children}

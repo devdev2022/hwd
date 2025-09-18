@@ -1,26 +1,65 @@
-.global_modal {
+.global_modal_wrap {
   position: fixed;
   left: 0;
   top: 0;
   bottom: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(1px);
   z-index: 100;
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.2s ease-in;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.global_modal_inner {
-  transform: translateY(100%);
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  border-radius: 16px 16px 0 0;
+.global_modal {
+  display: flex;
+  flex-direction: column;
+  height: 20%;
+  width: 20%;
+  border-radius: 8px;
   background: var(--white, #fff);
-  padding: 40px 20px 20px;
   box-sizing: border-box;
-  transition: all 0.2s ease-in;
+}
+
+.global_modal_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 20px 20px 0px 20px;
+}
+
+.global_modal_content {
+  display: flex;
+  padding: 20px 20px 0px 20px;
+}
+
+.global_modal_button {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0px 0px 8px 8px;
+  padding: 8px 0px 8px 0px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  margin-top: auto;
+}
+
+/*애니메이션*/
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
 }
