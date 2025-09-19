@@ -1,0 +1,47 @@
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.overlay h2 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.overlay .btn {
+  display: inline-block;
+  padding: 10px 24px;
+  border: 1px solid white;
+  border-radius: 24px;
+  background: transparent;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: white;
+  color: black;
+}
+
+@media (min-width: 1024px) {
+  .landing_content_box .overlay h2 {
+    font-size: 3rem;
+    letter-spacing: 3px;
+    margin-bottom: 24px;
+  }
+
+  .landing_content_box .overlay .btn {
+    padding: 14px 32px;
+    font-size: 1.2rem;
+    border-radius: 28px;
+  }
+}

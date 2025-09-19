@@ -2,8 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
 //css
-import "./styles/global.css";
-import "./styles/component/component.css";
+import.meta.glob("./styles/**/*.css", { eager: true });
 
 import App from "./App";
 
