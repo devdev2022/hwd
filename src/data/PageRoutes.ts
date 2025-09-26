@@ -1,12 +1,19 @@
 import type { RouteMetaData } from "../types/Routes";
 
-import Main from "../pages/main";
+import LandingPage from "../pages/landing";
+import ForrestMain from "../pages/forrest/index";
 
 export const PageRouters: RouteMetaData[] = [
   {
     path: "/",
-    element: Main,
+    element: LandingPage,
     id: "00",
     linkName: "Main",
+  },
+  {
+    path: "/forrest",
+    element: ForrestMain,
+    id: "00",
+    linkName: "포레스트 메인",
   },
 ];

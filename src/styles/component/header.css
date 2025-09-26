@@ -1,0 +1,124 @@
+/*헤더*/
+.forrest-header {
+  color: white;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding-top: 40px;
+  z-index: 100;
+}
+
+.forrest-header > .forrest-flexbox {
+  position: relative;
+  display: block;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.forrest-header-logo {
+  text-align: center;
+  font-size: 55px;
+}
+
+.forrest-header-logo a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.forrest-header-logo,
+.forrest-header-logo a,
+.forrest-header-logo span {
+  font-family: "Italiana", serif !important;
+}
+
+.forrest-header-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/*네비게이션 바*/
+.forrest-header-gnb {
+  display: block;
+}
+
+.gnb {
+  margin-top: 6px;
+}
+
+.gnb-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 14.0625%;
+  padding-left: 14.0625%;
+  max-width: 1280px;
+}
+
+.gnb-item > .block {
+  position: relative;
+  color: #fff;
+  padding: 37px 0 34px;
+  width: 100%;
+}
+
+.gnb-item > .block .underline {
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: Montserrat-Light;
+  font-weight: 500;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 5px;
+  margin-bottom: -5px;
+  line-height: 1;
+  display: inline-block;
+}
+
+.gnb-item > .block .underline::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s linear;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: currentColor;
+  will-change: transform;
+}
+
+.gnb-item > .block .underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.gnb-item.is-current > .block .underline::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.gnb-item.is-active > .block .underline::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* 모바일 */
+@media (max-width: 1023px) {
+  .l-sidenav {
+    display: block;
+  }
+  .l-header__gnb {
+    display: none;
+  }
+}
+
+/* PC */
+@media (min-width: 1024px) {
+  .l-sidenav {
+    display: none;
+  }
+  .l-header__gnb {
+    display: block;
+  }
+}
