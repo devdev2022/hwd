@@ -145,6 +145,7 @@
   display: flex;
   height: 100%;
   font-family: Montserrat-Light;
+  font-size: 19px;
 }
 /*메인-포트폴리오*/
 .product-container {
