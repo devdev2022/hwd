@@ -1,3 +1,6 @@
+import { useEffect, useState, useRef } from "react";
+import cx from "classnames";
+
 //resource
 import Phone from "../../../assets/phone.svg?react";
 import Instagram from "../../../assets/instagram.svg?react";
@@ -10,9 +13,43 @@ import sns5 from "../../../assets/forrest/sns_5.png";
 import sns6 from "../../../assets/forrest/sns_6.png";
 
 const PcVersion = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const vh = window.innerHeight;
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY >= vh * 0.9) {
+        setIsScrolled(true);
+
+        if (currentScrollY > lastScrollY.current) {
+          setIsVisible(false);
+        } else {
+          setIsVisible(true);
+        }
+      } else {
+        setIsScrolled(false);
+        setIsVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
-      <header className="forrest-header">
+      <header
+        className={cx("forrest-header", {
+          scrolled: isScrolled,
+          visible: isVisible,
+          hidden: !isVisible,
+        })}
+      >
         <div className="forrest-flexbox">
           <div className="forrest-header-logo">
             <a href="/forrest">
@@ -20,22 +57,22 @@ const PcVersion = () => {
             </a>
           </div>
 
-          <div className="forrest-header-gnb">
+          <div className={cx("forrest-header-gnb", { scrolled: isScrolled })}>
             <div className="forrest-header-container">
-              <nav className="gnb">
+              <nav className={cx("gnb", { scrolled: isScrolled })}>
                 <ul className="gnb-list">
                   <li className="gnb-item">
-                    <div className="block">
+                    <div className={cx("block", { scrolled: isScrolled })}>
                       <span className="underline">ABOUT US</span>
                     </div>
                   </li>
                   <li className="gnb-item">
-                    <div className="block">
+                    <div className={cx("block", { scrolled: isScrolled })}>
                       <span className="underline">WORKS</span>
                     </div>
                   </li>
                   <li className="gnb-item">
-                    <div className="block">
+                    <div className={cx("block", { scrolled: isScrolled })}>
                       <span className="underline">CONTACT US</span>
                     </div>
                   </li>

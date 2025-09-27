@@ -9,6 +9,24 @@
   z-index: 100;
 }
 
+.forrest-header.scrolled {
+  color: black;
+  position: fixed;
+  padding-top: 0;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.forrest-header.scrolled.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.navigator.scrolled.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
 .forrest-header > .forrest-flexbox {
   position: relative;
   display: block;
@@ -46,6 +64,10 @@
   margin-top: 6px;
 }
 
+.gnb.scrolled {
+  margin-top: 0px;
+}
+
 .gnb-list {
   display: flex;
   align-items: center;
@@ -60,6 +82,11 @@
   color: #fff;
   padding: 37px 0 34px;
   width: 100%;
+}
+
+.gnb-item > .block.scrolled {
+  padding: 30px 0 27px;
+  color: black;
 }
 
 .gnb-item > .block .underline {
