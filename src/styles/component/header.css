@@ -19,11 +19,13 @@
 
 .forrest-header.scrolled.hidden {
   transform: translateY(-100%);
+  transition: all 0.3s ease;
   opacity: 0;
 }
 
-.navigator.scrolled.visible {
+.forrest-header.scrolled.visible {
   transform: translateY(0);
+  transition: all 0.3s ease;
   opacity: 1;
 }
 
