@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import PcVersion from "./pc/index";
+import PcVersion from "./pc/Main";
 
 const Forrest = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1023);
