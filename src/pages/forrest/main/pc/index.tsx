@@ -2,16 +2,16 @@ import { useEffect, useState, useRef } from "react";
 import cx from "classnames";
 
 //component
-import Footer from "../../../components/footer";
+import Footer from "@/components/footer";
 
 //resource
-import Banner from "../../../assets/forrest/forrestbanner.png";
-import sns1 from "../../../assets/forrest/sns_1.png";
-import sns2 from "../../../assets/forrest/sns_2.png";
-import sns3 from "../../../assets/forrest/sns_3.png";
-import sns4 from "../../../assets/forrest/sns_4.png";
-import sns5 from "../../../assets/forrest/sns_5.png";
-import sns6 from "../../../assets/forrest/sns_6.png";
+import Banner from "@/assets/forrest/forrestbanner.png";
+import sns1 from "@/assets/forrest/sns_1.png";
+import sns2 from "@/assets/forrest/sns_2.png";
+import sns3 from "@/assets/forrest/sns_3.png";
+import sns4 from "@/assets/forrest/sns_4.png";
+import sns5 from "@/assets/forrest/sns_5.png";
+import sns6 from "@/assets/forrest/sns_6.png";
 
 const PcVersion = () => {
   const [isScrolled, setIsScrolled] = useState(false);

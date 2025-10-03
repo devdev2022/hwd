@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import forrest from "../../assets/landing/forrest.png";
-import wedding from "../../assets/landing/wedding.png";
+import forrest from "@/assets/landing/forrest.png";
+import wedding from "@/assets/landing/wedding.png";
 
 const Main = () => {
   const navigate = useNavigate();

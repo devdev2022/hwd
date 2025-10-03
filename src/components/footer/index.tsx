@@ -1,6 +1,6 @@
 //resource
-import Phone from "../../assets/phone.svg?react";
-import Instagram from "../../assets/instagram.svg?react";
+import Phone from "@/assets/phone.svg?react";
+import Instagram from "@/assets/instagram.svg?react";
 
 const Footer = () => {
   return (

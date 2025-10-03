@@ -2,13 +2,13 @@ import { Routes } from "react-router";
 import { BrowserRouter, Route } from "react-router-dom";
 
 //components
-import GlobalModalWrapper from "./components/modals/GlobalModal";
+import GlobalModalWrapper from "@/components/modals/GlobalModal";
 
 //data
 
 import "./App.css";
-import { PageRouters } from "./data/PageRoutes";
-import createChildRoutes from "./utils/createRoutes";
+import { PageRouters } from "@/data/PageRoutes";
+import createChildRoutes from "@/utils/createRoutes";
 
 function App() {
   return (

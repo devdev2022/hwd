@@ -1,7 +1,7 @@
-import type { RouteMetaData } from "../types/Routes";
+import type { RouteMetaData } from "@/types/Routes";
 
-import LandingPage from "../pages/landing";
-import ForrestMain from "../pages/forrest/index";
+import LandingPage from "@/pages/landing";
+import ForrestMain from "@/pages/forrest/main/index";
 
 export const PageRouters: RouteMetaData[] = [
   {

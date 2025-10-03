@@ -2,11 +2,10 @@ import { useRef, useState } from "react";
 import type { FC, ReactElement } from "react";
 import { CSSTransition } from "react-transition-group";
 
-import GlobalModalContext from "../../contexts/GlobalModalContext";
+import GlobalModalContext from "@/contexts/GlobalModalContext";
 
 //constants
-import { CODE_MESSAGE_IDENTIFIER, MESSAGES } from "../../constants/messages";
-import { ERROR_MESSAGE } from "../../constants/errorCode";
+import { CODE_MESSAGE_IDENTIFIER, MESSAGES } from "@/constants/messages";
 
 /*************************************************************************************************/
 

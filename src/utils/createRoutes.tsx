@@ -1,5 +1,5 @@
 import { Route } from "react-router-dom";
-import type { RouteMetaData } from "../types/Routes";
+import type { RouteMetaData } from "@/types/Routes";
 
 const createChildRoutes = (paramObj: RouteMetaData) => {
   const { childElements } = paramObj;

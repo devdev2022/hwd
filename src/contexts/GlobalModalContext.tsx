@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import type { ModalDataOnOpen } from "../components/modals/GlobalModal";
+import type { ModalDataOnOpen } from "@/components/modals/GlobalModal";
 
 interface GlobalModalContextProps {
   openMessage: (messageIdentifier: string) => void;
