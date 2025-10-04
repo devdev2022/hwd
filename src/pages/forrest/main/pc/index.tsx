@@ -4,6 +4,9 @@ import cx from "classnames";
 //component
 import Footer from "@/components/footer";
 
+//utils
+import { useGoToPath } from "@/utils/function";
+
 //resource
 import Banner from "@/assets/forrest/forrestbanner.png";
 import sns1 from "@/assets/forrest/sns_1.png";
@@ -14,8 +17,11 @@ import sns5 from "@/assets/forrest/sns_5.png";
 import sns6 from "@/assets/forrest/sns_6.png";
 
 const PcVersion = () => {
+  const goToPath = useGoToPath();
+
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
+  const [hasScrolledUp, setHasScrolledUp] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const lastScrollY = useRef(0);
 
   useEffect(() => {
@@ -23,30 +29,35 @@ const PcVersion = () => {
       const vh = window.innerHeight;
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY >= vh * 0.9) {
+      if (currentScrollY >= vh * 0.3) {
         setIsScrolled(true);
 
         if (currentScrollY > lastScrollY.current) {
           setIsVisible(false);
-        } else {
-          setIsVisible(true);
+        }
+
+        if (currentScrollY < lastScrollY.current) {
+          setHasScrolledUp(true);
+          if (hasScrolledUp) {
+            setIsVisible(true);
+          }
         }
       } else {
         setIsScrolled(false);
-        setIsVisible(true);
+        setHasScrolledUp(false);
       }
 
       lastScrollY.current = currentScrollY;
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [hasScrolledUp]);
 
   return (
     <>
       <header
         className={cx("forrest-header", {
-          scrolled: isScrolled,
+          scrolled: isScrolled && hasScrolledUp,
           visible: isVisible,
           hidden: !isVisible,
         })}
@@ -68,7 +79,12 @@ const PcVersion = () => {
                   </li>
                   <li className="gnb-item">
                     <div className={cx("block", { scrolled: isScrolled })}>
-                      <span className="underline">WORKS</span>
+                      <span
+                        className="underline"
+                        onClick={() => goToPath("/forrest/works")}
+                      >
+                        WORKS
+                      </span>
                     </div>
                   </li>
                   <li className="gnb-item">
@@ -79,7 +95,6 @@ const PcVersion = () => {
                 </ul>
               </nav>
             </div>
-            <div className="gnb-bg" />
           </div>
         </div>
       </header>
