@@ -238,12 +238,28 @@ const PcVersion = () => {
           <div className="sb-instagram">
             <h2 className="main-header">Follow us</h2>
             <div className="sbi-images">
-              <img src={sns1} />
-              <img src={sns2} />
-              <img src={sns3} />
-              <img src={sns4} />
-              <img src={sns5} />
-              <img src={sns6} />
+              <a href="https://www.instagram.com/forrest_hwayeondang/">
+                <img src={sns1} />
+              </a>
+              <a href="https://www.instagram.com/forrest_hwayeondang/">
+                <img src={sns2} />
+              </a>
+
+              <a href="https://www.instagram.com/forrest_hwayeondang/">
+                <img src={sns3} />
+              </a>
+
+              <a href="https://www.instagram.com/forrest_hwayeondang/">
+                <img src={sns4} />
+              </a>
+
+              <a href="https://www.instagram.com/forrest_hwayeondang/">
+                <img src={sns5} />
+              </a>
+
+              <a href="https://www.instagram.com/forrest_hwayeondang/">
+                <img src={sns6} />
+              </a>
             </div>
           </div>
         </section>

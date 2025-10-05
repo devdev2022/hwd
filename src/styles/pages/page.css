@@ -215,6 +215,22 @@
   gap: 0;
 }
 
+.sbi-images a {
+  display: block;
+  overflow: hidden;
+}
+
+.sbi-images img {
+  transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1), filter 0.4s ease;
+  transform: scale(1);
+}
+
+.sbi-images img:hover {
+  transform: scale(1.15);
+  filter: brightness(0.85);
+  cursor: pointer;
+}
+
 /****************포트폴리오 페이지****************/
 .works-page-main {
   display: flex;
