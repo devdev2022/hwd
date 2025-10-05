@@ -9,7 +9,7 @@ const Header = () => {
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [hasScrolledUp, setHasScrolledUp] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const lastScrollY = useRef(0);
 
   useEffect(() => {

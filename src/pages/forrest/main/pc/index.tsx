@@ -29,7 +29,7 @@ const PcVersion = () => {
       const vh = window.innerHeight;
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY >= vh * 0.3) {
+      if (currentScrollY >= 0.9 * vh) {
         setIsScrolled(true);
 
         if (currentScrollY > lastScrollY.current) {

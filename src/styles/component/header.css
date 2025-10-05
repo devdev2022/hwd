@@ -59,13 +59,21 @@
 
 /*헤더 - 내부 페이지*/
 .detail-page-header {
+  background-color: white;
   color: black;
   width: 100%;
+  position: absolute;
   top: 0;
   left: 0;
   padding-top: 40px;
   border-bottom: 1px solid #ddd;
   z-index: 100;
+}
+
+.detail-page-header.hidden {
+  transform: translateY(-100%);
+  transition: all 0.3s ease;
+  opacity: 0;
 }
 
 .detail-page-header.scrolled {
