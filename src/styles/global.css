@@ -82,8 +82,15 @@ li {
 }
 
 @font-face {
-  font-family: "Montserrat-Light";
+  font-family: "Montserrat-ExtraLight";
   src: url("/src/assets/fonts/Montserrat-ExtraLight.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat-Light";
+  src: url("/src/assets/fonts/Montserrat-Light.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
@@ -96,8 +103,22 @@ li {
 }
 
 @font-face {
+  font-family: "Montserrat-Medium";
+  src: url("/src/assets/fonts/Montserrat-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "Italiana";
   src: url("/src/assets/fonts/Italiana-Regular.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans KR-ExtraLight";
+  src: url("/src/assets/fonts/NotoSansKR-ExtraLight.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }

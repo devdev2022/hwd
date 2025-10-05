@@ -135,7 +135,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-family: Montserrat-Light;
+  font-family: Montserrat-ExtraLight;
   width: 50%;
   height: 100%;
 }
@@ -144,7 +144,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-family: Montserrat-Light;
+  font-family: Montserrat-ExtraLight;
   width: 90%;
   padding: 20px;
   margin-top: 10px;
@@ -154,7 +154,7 @@
 .introduction-text-box {
   display: flex;
   height: 100%;
-  font-family: Montserrat-Light;
+  font-family: Montserrat-ExtraLight;
   font-size: 19px;
 }
 /*메인-포트폴리오*/
@@ -227,6 +227,16 @@
   margin-bottom: 150px;
 }
 
+.works-page-category {
+  display: flex;
+  justify-content: center;
+  width: 20vw;
+}
+
+.works-portfolio {
+  width: 80vw;
+}
+
 .works-page-container {
   width: 100%;
   display: flex;
@@ -254,6 +264,7 @@
 
 .works-product-introduction {
   display: flex;
+  justify-content: center;
   gap: 5px;
   width: 100%;
 }
