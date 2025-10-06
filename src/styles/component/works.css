@@ -41,7 +41,8 @@
   position: absolute;
   right: 16px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) rotateZ(0deg);
+  transform-origin: right center;
   transition: transform 0.4s ease;
   width: 10px;
   height: 10px;
@@ -50,7 +51,7 @@
 }
 
 .category-item.active .arrow {
-  transform: translateY(-50%) rotateX(180deg);
+  transform: translateY(-50%) rotateZ(180deg);
 }
 
 /*페이지 네이션*/
