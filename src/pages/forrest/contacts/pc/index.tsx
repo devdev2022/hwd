@@ -3,7 +3,7 @@ import Footer from "@/components/footer";
 import Header from "@components/header";
 
 //resource
-import location from "@/assets/forrest/location.png";
+import Instagram from "@/assets/instagram.svg?react";
 
 const Contacts = () => {
   return (
@@ -33,7 +33,18 @@ const Contacts = () => {
               </div>
               <div>
                 <div className="contact-content-header">social</div>
-                <div className="contact-page-content">인트로덕션</div>
+                <div className="contact-page-content">
+                  <div className="social-link-content-in-page">
+                    <a
+                      href="https://www.instagram.com/forrest_hwayeondang/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Instagram />
+                      instagram
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -17,12 +17,20 @@ const Footer = () => {
           </div>
           <div className="social-link">
             <div className="social-link-content">
-              <Instagram />
-              instagram
+              <a
+                href="https://www.instagram.com/forrest_hwayeondang/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Instagram />
+                instagram
+              </a>
             </div>
             <div className="social-link-content">
-              <Phone />
-              0507-1420-8110
+              <a href="tel:010-1234-5678">
+                <Phone />
+                0507-1420-8110
+              </a>
             </div>
           </div>
         </div>

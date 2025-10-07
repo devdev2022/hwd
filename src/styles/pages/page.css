@@ -422,13 +422,6 @@
   margin: 60px 140px;
 }
 
-.social-link-content {
-  display: flex;
-  justify-content: flex-start;
-  gap: 5px;
-  color: #5c3217;
-}
-
 .contact-content {
   display: flex;
   flex-direction: column;
