@@ -6,6 +6,7 @@ import LandingPage from "@/pages/landing";
 import ForrestContainer from "@/pages/forrest/ForrestContainer";
 import ForrestMain from "@/pages/forrest/main/index";
 import Works from "@/pages/forrest/works/index";
+import Contacts from "@/pages/forrest/contacts/index";
 
 export const PageRouters: RouteMetaData[] = [
   {
@@ -30,6 +31,12 @@ export const PageRouters: RouteMetaData[] = [
         path: "works",
         element: Works,
         id: "01_02",
+        linkName: "포트폴리오",
+      },
+      {
+        path: "contacts",
+        element: Contacts,
+        id: "01_03",
         linkName: "포트폴리오",
       },
     ],

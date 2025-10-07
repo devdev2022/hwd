@@ -29,13 +29,13 @@ function reducer(state: State, action: Action): State {
   }
 }
 
-const PcVersion = () => {
+const Works = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <>
       <Header />
-      <main className="works-page-main">
+      <main className="works-page">
         <section className="works-page-category">
           <div className="works-page-category-container">
             <h2 style={{ fontSize: "50px", fontFamily: "Italiana" }}>
@@ -210,4 +210,4 @@ const PcVersion = () => {
   );
 };
 
-export default PcVersion;
+export default Works;

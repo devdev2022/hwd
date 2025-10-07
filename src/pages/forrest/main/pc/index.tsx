@@ -16,7 +16,7 @@ import sns4 from "@/assets/forrest/sns_4.png";
 import sns5 from "@/assets/forrest/sns_5.png";
 import sns6 from "@/assets/forrest/sns_6.png";
 
-const PcVersion = () => {
+const Main = () => {
   const goToPath = useGoToPath();
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -269,4 +269,4 @@ const PcVersion = () => {
   );
 };
 
-export default PcVersion;
+export default Main;
