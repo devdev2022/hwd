@@ -89,7 +89,12 @@ const Main = () => {
                   </li>
                   <li className="gnb-item">
                     <div className={cx("block", { scrolled: isScrolled })}>
-                      <span className="underline">CONTACT US</span>
+                      <span
+                        className="underline"
+                        onClick={() => goToPath("/forrest/contacts")}
+                      >
+                        CONTACT US
+                      </span>
                     </div>
                   </li>
                 </ul>

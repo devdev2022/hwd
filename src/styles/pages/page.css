@@ -293,7 +293,7 @@
   color: black;
 }
 
-/****************소개 페이지****************/
+/****************연락 페이지****************/
 .contact-page {
   display: flex;
   flex-direction: column;
@@ -398,6 +398,36 @@
 
 .location-map-image {
   padding: 50px 20px;
+}
+
+@media (min-width: 1440px) and (max-width: 1920px) {
+  .contact-page-container {
+    background-size: 110% auto;
+    background-position: 100% 70%;
+  }
+
+  .contact-page-content-container {
+    top: 42%;
+    left: 45%;
+  }
+  .contact-page-header {
+    top: 9%;
+    left: 45%;
+    font-size: 54px;
+  }
+  .contact-page-introduction {
+    top: 22%;
+    left: 45%;
+    font-size: 23px;
+  }
+
+  .contact-content-header {
+    font-size: 24px;
+  }
+
+  .contact-page-content {
+    font-size: 19px;
+  }
 }
 
 /****************footer****************/
