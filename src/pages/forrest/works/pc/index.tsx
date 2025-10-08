@@ -51,13 +51,11 @@ const Works = () => {
                   <Arrow />
                 </span>
               </div>
-              {state.open1 && (
-                <ul>
-                  <li className="category-item-en">All</li>
-                  <li className="category-item-kr">나무1</li>
-                  <li className="category-item-kr">나무2</li>
-                </ul>
-              )}
+              <ul className={`category-list ${state.open1 ? "active" : ""}`}>
+                <li className="category-item-en">All</li>
+                <li className="category-item-kr">나무1</li>
+                <li className="category-item-kr">나무2</li>
+              </ul>
             </div>
             <div>
               <div
@@ -69,13 +67,11 @@ const Works = () => {
                   <Arrow />
                 </span>
               </div>
-              {state.open2 && (
-                <ul>
-                  <li className="category-item-en">All</li>
-                  <li className="category-item-kr">나무1</li>
-                  <li className="category-item-kr">나무2</li>
-                </ul>
-              )}
+              <ul className={`category-list ${state.open2 ? "active" : ""}`}>
+                <li className="category-item-en">All</li>
+                <li className="category-item-kr">나무1</li>
+                <li className="category-item-kr">나무2</li>
+              </ul>
             </div>
             <div>
               <div
@@ -87,13 +83,11 @@ const Works = () => {
                   <Arrow />
                 </span>
               </div>
-              {state.open3 && (
-                <ul>
-                  <li className="category-item-en">All</li>
-                  <li className="category-item-kr">나무1</li>
-                  <li className="category-item-kr">나무2</li>
-                </ul>
-              )}
+              <ul className={`category-list ${state.open3 ? "active" : ""}`}>
+                <li className="category-item-en">All</li>
+                <li className="category-item-kr">나무1</li>
+                <li className="category-item-kr">나무2</li>
+              </ul>
             </div>
           </div>
         </section>

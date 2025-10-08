@@ -15,6 +15,18 @@
   font-family: "Montserrat-Regular";
 }
 
+.category-list {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.category-list.active {
+  max-height: 200px;
+  opacity: 1;
+}
+
 .category-item-en {
   margin: 8px;
   font-family: "Montserrat-Light";
