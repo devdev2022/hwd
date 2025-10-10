@@ -61,7 +61,12 @@ const Header = () => {
               <ul className="detail-page-gnb-list">
                 <li className="detail-page-gnb-item">
                   <div className="block">
-                    <span className="underline">ABOUT US</span>
+                    <span
+                      className="underline"
+                      onClick={() => goToPath("/forrest/aboutus")}
+                    >
+                      ABOUT US
+                    </span>
                   </div>
                 </li>
                 <li className="detail-page-gnb-item">

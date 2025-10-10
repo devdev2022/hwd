@@ -80,6 +80,7 @@
 
 /*메인 페이지*/
 .introduction_button {
+  cursor: pointer;
   display: flex;
   width: fit-content;
   align-items: center;
@@ -90,4 +91,9 @@
   border: 1px solid black;
   border-radius: 100px;
   margin-bottom: 10%;
+}
+
+.introduction_button:hover {
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
 }

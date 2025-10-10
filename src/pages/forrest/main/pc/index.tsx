@@ -8,7 +8,7 @@ import Footer from "@/components/footer";
 import { useGoToPath } from "@/utils/function";
 
 //resource
-import Banner from "@/assets/forrest/forrestbanner.png";
+import Banner from "@/assets/forrest/main/forrestbanner.png";
 import sns1 from "@/assets/forrest/sns_1.png";
 import sns2 from "@/assets/forrest/sns_2.png";
 import sns3 from "@/assets/forrest/sns_3.png";
@@ -74,7 +74,12 @@ const Main = () => {
                 <ul className="gnb-list">
                   <li className="gnb-item">
                     <div className={cx("block", { scrolled: isScrolled })}>
-                      <span className="underline">ABOUT US</span>
+                      <span
+                        className="underline"
+                        onClick={() => goToPath("/forrest/aboutus")}
+                      >
+                        ABOUT US
+                      </span>
                     </div>
                   </li>
                   <li className="gnb-item">
@@ -104,8 +109,8 @@ const Main = () => {
         </div>
       </header>
       <main className="forrest-main">
-        <section className="billboard">
-          <div className="billboard-container">
+        <section className="main-page-billboard">
+          <div className="main-page-billboard-container">
             <div className="dim-cover" />
             <img src={Banner} />
           </div>
@@ -131,7 +136,12 @@ const Main = () => {
                       테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
                       입니다. 테스트 입니다. 테스트 입니다.
                     </div>
-                    <div className="introduction_button">LEARN MORE</div>
+                    <div
+                      className="introduction_button"
+                      onClick={() => goToPath("/forrest/aboutus")}
+                    >
+                      LEARN MORE
+                    </div>
                   </div>
                 </div>
                 <img src={sns6} style={{ width: "35%", height: "35%" }} />

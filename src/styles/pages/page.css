@@ -50,13 +50,8 @@
 
 /****************메인 페이지****************/
 .main-page-container {
-  max-width: 90vw;
-  padding: 0 min(75px, 3.90625%);
-}
-
-.main-page-full-container {
-  display: flex;
-  flex-wrap: wrap;
+  max-width: 100%;
+  padding: 0 90px;
 }
 
 .forrest-main {
@@ -78,19 +73,19 @@
 }
 
 /*메인-빌보드*/
-.billboard-container {
+.main-page-billboard-container {
   position: relative;
   width: 100vw;
   height: 100vh;
 }
 
-.billboard-container img {
+.main-page-billboard-container img {
   width: 100%;
   height: 100%;
   display: block;
 }
 
-.billboard-container .dim-cover {
+.main-page-billboard-container .dim-cover {
   position: absolute;
   display: block;
   width: 100%;
@@ -182,6 +177,11 @@
   color: #815d46;
 }
 
+.product-image {
+  width: 320px;
+  height: 320px;
+}
+
 .product-name {
   display: flex;
   flex-direction: column;
@@ -229,6 +229,85 @@
   transform: scale(1.15);
   filter: brightness(0.85);
   cursor: pointer;
+}
+
+/****************소개 페이지****************/
+.introduction-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  margin-top: 210px;
+}
+
+.introduction-page-billboard {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  overflow: hidden;
+}
+
+.introduction-page-billboard img {
+  width: 110%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.introduction-billboard-header {
+  position: absolute;
+}
+
+.introduction-billboard-header h2 {
+  font-family: "Italiana";
+  font-size: 100px;
+}
+
+.introduction-page-presentation {
+  display: flex;
+  width: 100%;
+  height: 90vh;
+  padding-top: 140px;
+}
+
+.introduction-presentation-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0 12%;
+  gap: 5%;
+}
+
+.introduction-presentation-container img {
+  width: 50%;
+  height: 80%;
+}
+
+.introduction-page-history {
+  display: flex;
+  width: 100%;
+  height: 80vh;
+}
+
+.introduction-page-task {
+  display: flex;
+  flex-direction: column;
+  width: 76%;
+  height: 80vh;
+  margin-top: 100px;
+  padding: 7% 12%;
+  background-color: #fbfbfb;
+}
+
+.introduction-page-staff {
+  display: flex;
+  flex-direction: column;
+  width: 76%;
+  height: 100vh;
+  margin-top: 70px;
+  padding: 10% 12%;
 }
 
 /****************포트폴리오 페이지****************/
@@ -286,7 +365,7 @@
 .works-product-header {
   display: flex;
   font-family: "Italiana";
-  font-size: 46px;
+  font-size: 55px;
   margin-bottom: 50px;
   align-items: center;
   justify-content: center;
@@ -297,9 +376,8 @@
 .contact-page {
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
   height: auto;
-  min-height: 100vh;
   margin-top: 210px;
 }
 
@@ -307,7 +385,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: auto;
   min-height: 90vh;
   background-image: url("/src/assets/forrest/contact_us2.png");
@@ -430,6 +508,66 @@
   }
 }
 
+@media (min-width: 1280px) and (max-width: 1440px) {
+  .contact-page-container {
+    background-size: 110% auto;
+    background-position: 100% 70%;
+  }
+
+  .contact-page-content-container {
+    top: 42%;
+    left: 44%;
+  }
+  .contact-page-header {
+    top: 9%;
+    left: 44%;
+    font-size: 52px;
+  }
+  .contact-page-introduction {
+    top: 22%;
+    left: 44%;
+    font-size: 23px;
+  }
+
+  .contact-content-header {
+    font-size: 21\3px;
+  }
+
+  .contact-page-content {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .contact-page-container {
+    background-size: 110% auto;
+    background-position: 100% 70%;
+  }
+
+  .contact-page-content-container {
+    top: 42%;
+    left: 44%;
+  }
+  .contact-page-header {
+    top: 9%;
+    left: 44%;
+    font-size: 50px;
+  }
+  .contact-page-introduction {
+    top: 22%;
+    left: 44%;
+    font-size: 21px;
+  }
+
+  .contact-content-header {
+    font-size: 21px;
+  }
+
+  .contact-page-content {
+    font-size: 15px;
+  }
+}
+
 /****************footer****************/
 .contacts {
   box-sizing: border-box;
@@ -475,20 +613,6 @@
 .forrest-footer {
   transition: transform 0.5s;
   transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
-}
-
-@media (max-width: 767px) {
-  .main-page-full-container {
-    margin-top: 20px;
-    margin-bottom: 0px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .main-page-full-container {
-    margin-top: 30px;
-    margin-bottom: 0px;
-  }
 }
 
 /*SNS 링크 이미지*/

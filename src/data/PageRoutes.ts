@@ -5,6 +5,7 @@ import LandingPage from "@/pages/landing";
 //메인 페이지
 import ForrestContainer from "@/pages/forrest/ForrestContainer";
 import ForrestMain from "@/pages/forrest/main/index";
+import AboutUs from "@/pages/forrest/aboutus/index";
 import Works from "@/pages/forrest/works/index";
 import Contacts from "@/pages/forrest/contacts/index";
 
@@ -26,6 +27,12 @@ export const PageRouters: RouteMetaData[] = [
         element: ForrestMain,
         id: "01_00",
         linkName: "메인",
+      },
+      {
+        path: "aboutus",
+        element: AboutUs,
+        id: "01_01",
+        linkName: "소개",
       },
       {
         path: "works",

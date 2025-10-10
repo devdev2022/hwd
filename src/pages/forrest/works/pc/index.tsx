@@ -38,9 +38,7 @@ const Works = () => {
       <main className="works-page">
         <section className="works-page-category">
           <div className="works-page-category-container">
-            <h2 style={{ fontSize: "50px", fontFamily: "Italiana" }}>
-              Category
-            </h2>
+            <h2 className="category-header">Category</h2>
             <div>
               <div
                 className={`category-item ${state.open1 ? "active" : ""}`}
@@ -99,28 +97,19 @@ const Works = () => {
                 <ul className="works-product-introduction">
                   <li>
                     <a>
-                      <img
-                        src={sns1}
-                        style={{ width: "320px", height: "320px" }}
-                      />
+                      <img src={sns1} className="product-image" />
                     </a>
                     <div className="product-name">꽃1</div>
                   </li>
                   <li>
                     <a>
-                      <img
-                        src={sns2}
-                        style={{ width: "320px", height: "320px" }}
-                      />
+                      <img src={sns2} className="product-image" />
                     </a>
                     <div className="product-name">꽃2</div>
                   </li>
                   <li>
                     <a>
-                      <img
-                        src={sns3}
-                        style={{ width: "320px", height: "320px" }}
-                      />
+                      <img src={sns3} className="product-image" />
                     </a>
                     <div className="product-name">꽃3</div>
                   </li>
@@ -130,28 +119,19 @@ const Works = () => {
                 <ul className="works-product-introduction">
                   <li>
                     <a>
-                      <img
-                        src={sns1}
-                        style={{ width: "320px", height: "320px" }}
-                      />
+                      <img src={sns1} className="product-image" />
                     </a>
                     <div className="product-name">꽃1</div>
                   </li>
                   <li>
                     <a>
-                      <img
-                        src={sns2}
-                        style={{ width: "320px", height: "320px" }}
-                      />
+                      <img src={sns2} className="product-image" />
                     </a>
                     <div className="product-name">꽃2</div>
                   </li>
                   <li>
                     <a>
-                      <img
-                        src={sns3}
-                        style={{ width: "320px", height: "320px" }}
-                      />
+                      <img src={sns3} className="product-image" />
                     </a>
                     <div className="product-name">꽃3</div>
                   </li>
@@ -161,28 +141,19 @@ const Works = () => {
                 <ul className="works-product-introduction">
                   <li>
                     <a>
-                      <img
-                        src={sns1}
-                        style={{ width: "320px", height: "320px" }}
-                      />
+                      <img src={sns1} className="product-image" />
                     </a>
                     <div className="product-name">꽃1</div>
                   </li>
                   <li>
                     <a>
-                      <img
-                        src={sns2}
-                        style={{ width: "320px", height: "320px" }}
-                      />
+                      <img src={sns2} className="product-image" />
                     </a>
                     <div className="product-name">꽃2</div>
                   </li>
                   <li>
                     <a>
-                      <img
-                        src={sns3}
-                        style={{ width: "320px", height: "320px" }}
-                      />
+                      <img src={sns3} className="product-image" />
                     </a>
                     <div className="product-name">꽃3</div>
                   </li>
