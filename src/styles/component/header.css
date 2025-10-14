@@ -181,8 +181,18 @@
 }
 
 .forrest-mobile-header-menu.open {
-  left: 22%;
+  left: 30%;
   transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .forrest-mobile-header-menu.open {
+    left: 50%;
+  }
+
+  .forrest-mobile-header.open {
+    left: 36%;
+  }
 }
 
 .forrest-mobile-header-menu::before {

@@ -77,13 +77,19 @@
   display: flex;
   justify-content: center;
   position: fixed;
-  width: 22%;
+  width: 30%;
   height: 100%;
   background-color: white;
   z-index: 7;
   opacity: 0;
   transform: translateX(-100%);
   transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .mobile-sidebar-category {
+    width: 50%;
+  }
 }
 
 .mobile-sidebar-category.open {
