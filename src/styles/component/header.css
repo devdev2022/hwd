@@ -172,7 +172,6 @@
 .forrest-mobile-header-menu.scrolled::after,
 .forrest-mobile-header-menu.scrolled span {
   content: "";
-  position: absolute;
   left: 20px;
   width: 29px;
   height: 1px;
@@ -191,6 +190,10 @@
   }
 
   .forrest-mobile-header.open {
+    left: 36%;
+  }
+
+  .forrest-mobile-header.scrolled.open {
     left: 36%;
   }
 }
