@@ -124,27 +124,29 @@ const Main = () => {
                     <h2 className="introduction-header">Introduction</h2>
                   </div>
                   <div className="introduction-content-box">
-                    <div className="introduction-text-box">
-                      테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
-                      입니다. 테스트 입니다. 테스트 입니다. 테스트 입니다.
-                      테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
-                      입니다. 테스트 입니다. 테스트 입니다. 테스트 입니다.
-                      테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
-                      입니다. 테스트 입니다. 테스트 입니다. 테스트 입니다.
-                      테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
-                      입니다. 테스트 입니다. 테스트 입니다. 테스트 입니다.
-                      테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
-                      입니다. 테스트 입니다. 테스트 입니다.
-                    </div>
-                    <div
-                      className="introduction_button"
-                      onClick={() => goToPath("/forrest/aboutus")}
-                    >
-                      LEARN MORE
+                    <img src={sns6} />
+                    <div className="introduction-content-text-box">
+                      <div className="introduction-content-text">
+                        테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
+                        입니다. 테스트 입니다. 테스트 입니다. 테스트 입니다.
+                        테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
+                        입니다. 테스트 입니다. 테스트 입니다. 테스트 입니다.
+                        테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
+                        입니다. 테스트 입니다. 테스트 입니다. 테스트 입니다.
+                        테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
+                        입니다. 테스트 입니다. 테스트 입니다. 테스트 입니다.
+                        테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
+                        입니다. 테스트 입니다. 테스트 입니다.
+                      </div>
+                      <div
+                        className="introduction-button"
+                        onClick={() => goToPath("/forrest/aboutus")}
+                      >
+                        LEARN MORE
+                      </div>
                     </div>
                   </div>
                 </div>
-                <img src={sns6} style={{ width: "35%", height: "35%" }} />
               </div>
             </div>
           </div>
@@ -156,28 +158,19 @@ const Main = () => {
               <ul className="product_introduction">
                 <li>
                   <a>
-                    <img
-                      src={sns1}
-                      style={{ width: "390px", height: "390px" }}
-                    />
+                    <img src={sns1} />
                   </a>
                   <div className="product-name">꽃1</div>
                 </li>
                 <li>
                   <a>
-                    <img
-                      src={sns2}
-                      style={{ width: "390px", height: "390px" }}
-                    />
+                    <img src={sns2} />
                   </a>
                   <div className="product-name">꽃2</div>
                 </li>
                 <li>
                   <a>
-                    <img
-                      src={sns3}
-                      style={{ width: "390px", height: "390px" }}
-                    />
+                    <img src={sns3} />
                   </a>
                   <div className="product-name">꽃3</div>
                 </li>
@@ -188,28 +181,19 @@ const Main = () => {
               <ul className="product_introduction">
                 <li>
                   <a>
-                    <img
-                      src={sns1}
-                      style={{ width: "390px", height: "390px" }}
-                    />
+                    <img src={sns1} />
                   </a>
                   <div className="product-name">꽃1</div>
                 </li>
                 <li>
                   <a>
-                    <img
-                      src={sns2}
-                      style={{ width: "390px", height: "390px" }}
-                    />
+                    <img src={sns2} />
                   </a>
                   <div className="product-name">꽃2</div>
                 </li>
                 <li>
                   <a>
-                    <img
-                      src={sns3}
-                      style={{ width: "390px", height: "390px" }}
-                    />
+                    <img src={sns3} />
                   </a>
                   <div className="product-name">꽃3</div>
                 </li>
@@ -220,28 +204,19 @@ const Main = () => {
               <ul className="product_introduction">
                 <li>
                   <a>
-                    <img
-                      src={sns1}
-                      style={{ width: "390px", height: "390px" }}
-                    />
+                    <img src={sns1} />
                   </a>
                   <div className="product-name">꽃1</div>
                 </li>
                 <li>
                   <a>
-                    <img
-                      src={sns2}
-                      style={{ width: "390px", height: "390px" }}
-                    />
+                    <img src={sns2} />
                   </a>
                   <div className="product-name">꽃2</div>
                 </li>
                 <li>
                   <a>
-                    <img
-                      src={sns3}
-                      style={{ width: "390px", height: "390px" }}
-                    />
+                    <img src={sns3} />
                   </a>
                   <div className="product-name">꽃3</div>
                 </li>

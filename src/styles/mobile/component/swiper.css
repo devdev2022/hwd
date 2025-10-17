@@ -1,0 +1,14 @@
+.mySwiper {
+  width: 100%;
+  height: auto;
+}
+.mySwiper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: white !important;
+}

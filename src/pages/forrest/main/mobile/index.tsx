@@ -1,3 +1,9 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 //component
 import Footer from "@/components/footer";
 import SideBar from "@/components/sidebar";
@@ -28,136 +34,111 @@ const Main = () => {
           </div>
         </section>
         <section className="introduction">
-          <div className="main-page-container">
-            <div className="introduction-container">
-              <div className="introduction-box">
-                <div className="introduction-content">
-                  <div className="introduction-header-container">
-                    <h2 className="introduction-header">Introduction</h2>
+          <div className="mobile-main-page-container">
+            <div className="mobile-introduction-container">
+              <div className="mobile-introduction-box">
+                <div className="mobile-introduction-content">
+                  <div className="mobile-introduction-header-container">
+                    <h2 className="mobile-introduction-header">Introduction</h2>
                   </div>
-                  <div className="introduction-content-box">
-                    <div className="introduction-text-box">
-                      테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
-                      입니다. 테스트 입니다. 테스트 입니다. 테스트 입니다.
-                      테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
-                      입니다. 테스트 입니다. 테스트 입니다. 테스트 입니다.
-                      테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
-                      입니다. 테스트 입니다. 테스트 입니다. 테스트 입니다.
-                      테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
-                      입니다. 테스트 입니다. 테스트 입니다. 테스트 입니다.
-                      테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
-                      입니다. 테스트 입니다. 테스트 입니다.
-                    </div>
-                    <div
-                      className="introduction_button"
-                      onClick={() => goToPath("/forrest/aboutus")}
-                    >
-                      LEARN MORE
+                  <div className="mobile-introduction-content-box">
+                    <img src={sns6} />
+                    <div className="mobile-introduction-content-text-box">
+                      <div>
+                        테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
+                        입니다. 테스트 입니다. 테스트 입니다. 테스트 입니다.
+                        테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
+                        입니다. 테스트 입니다. 테스트 입니다. 테스트 입니다.
+                        테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
+                        입니다. 테스트 입니다. 테스트 입니다. 테스트 입니다.
+                        테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
+                        입니다. 테스트 입니다. 테스트 입니다. 테스트 입니다.
+                        테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
+                        입니다. 테스트 입니다. 테스트 입니다.
+                      </div>
+                      <div
+                        className="mobile-introduction-button"
+                        onClick={() => goToPath("/forrest/aboutus")}
+                      >
+                        LEARN MORE
+                      </div>
                     </div>
                   </div>
                 </div>
-                <img src={sns6} style={{ width: "35%", height: "35%" }} />
               </div>
             </div>
           </div>
         </section>
         <section className="portfolio">
-          <div className="main-page-container">
-            <div className="product-container">
-              <h2 className="product-header">planterior</h2>
-              <ul className="product_introduction">
-                <li>
-                  <a>
-                    <img
-                      src={sns1}
-                      style={{ width: "390px", height: "390px" }}
-                    />
-                  </a>
-                  <div className="product-name">꽃1</div>
-                </li>
-                <li>
-                  <a>
-                    <img
-                      src={sns2}
-                      style={{ width: "390px", height: "390px" }}
-                    />
-                  </a>
-                  <div className="product-name">꽃2</div>
-                </li>
-                <li>
-                  <a>
-                    <img
-                      src={sns3}
-                      style={{ width: "390px", height: "390px" }}
-                    />
-                  </a>
-                  <div className="product-name">꽃3</div>
-                </li>
-              </ul>
+          <div className="mobile-main-page-container">
+            <div className="mobile-product-container">
+              <h2 className="mobile-product-header">planterior</h2>
+              <div className="mobile-product-introduction">
+                <Swiper
+                  pagination={{
+                    dynamicBullets: true,
+                  }}
+                  loop={true}
+                  modules={[Pagination]}
+                  className="mySwiper"
+                >
+                  <SwiperSlide>
+                    <img src={sns1} />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img src={sns2} />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img src={sns3} />
+                  </SwiperSlide>
+                </Swiper>
+              </div>
             </div>
             <div className="product-container">
-              <h2 className="product-header">gardening</h2>
-              <ul className="product_introduction">
-                <li>
-                  <a>
-                    <img
-                      src={sns1}
-                      style={{ width: "390px", height: "390px" }}
-                    />
-                  </a>
-                  <div className="product-name">꽃1</div>
-                </li>
-                <li>
-                  <a>
-                    <img
-                      src={sns2}
-                      style={{ width: "390px", height: "390px" }}
-                    />
-                  </a>
-                  <div className="product-name">꽃2</div>
-                </li>
-                <li>
-                  <a>
-                    <img
-                      src={sns3}
-                      style={{ width: "390px", height: "390px" }}
-                    />
-                  </a>
-                  <div className="product-name">꽃3</div>
-                </li>
-              </ul>
+              <h2 className="mobile-product-header">gardening</h2>
+              <div className="mobile-product-introduction">
+                <Swiper
+                  pagination={{
+                    dynamicBullets: true,
+                  }}
+                  loop={true}
+                  modules={[Pagination]}
+                  className="mySwiper"
+                >
+                  <SwiperSlide>
+                    <img src={sns1} />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img src={sns2} />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img src={sns3} />
+                  </SwiperSlide>
+                </Swiper>
+              </div>
             </div>
             <div className="product-container">
-              <h2 className="product-header">artificial plants</h2>
-              <ul className="product_introduction">
-                <li>
-                  <a>
-                    <img
-                      src={sns1}
-                      style={{ width: "390px", height: "390px" }}
-                    />
-                  </a>
-                  <div className="product-name">꽃1</div>
-                </li>
-                <li>
-                  <a>
-                    <img
-                      src={sns2}
-                      style={{ width: "390px", height: "390px" }}
-                    />
-                  </a>
-                  <div className="product-name">꽃2</div>
-                </li>
-                <li>
-                  <a>
-                    <img
-                      src={sns3}
-                      style={{ width: "390px", height: "390px" }}
-                    />
-                  </a>
-                  <div className="product-name">꽃3</div>
-                </li>
-              </ul>
+              <h2 className="mobile-product-header">artificial plants</h2>
+              <div className="mobile-product-introduction">
+                <Swiper
+                  pagination={{
+                    dynamicBullets: true,
+                  }}
+                  loop={true}
+                  modules={[Pagination]}
+                  className="mySwiper"
+                >
+                  <SwiperSlide>
+                    <img src={sns1} />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img src={sns2} />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img src={sns3} />
+                  </SwiperSlide>
+                </Swiper>
+              </div>
             </div>
           </div>
         </section>
@@ -178,14 +159,6 @@ const Main = () => {
 
               <a href="https://www.instagram.com/forrest_hwayeondang/">
                 <img src={sns4} />
-              </a>
-
-              <a href="https://www.instagram.com/forrest_hwayeondang/">
-                <img src={sns5} />
-              </a>
-
-              <a href="https://www.instagram.com/forrest_hwayeondang/">
-                <img src={sns6} />
               </a>
             </div>
           </div>

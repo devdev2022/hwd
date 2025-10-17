@@ -1,0 +1,98 @@
+/*랜딩 페이지*/
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.overlay h2 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.overlay .btn {
+  display: inline-block;
+  padding: 10px 24px;
+  border: 1px solid white;
+  border-radius: 24px;
+  background: transparent;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: white;
+  color: black;
+}
+
+/*소셜*/
+.social-link-content {
+  display: flex;
+  gap: 5px;
+  color: #5c3217;
+}
+
+.social-link-content a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  gap: 5px;
+}
+
+.social-link-content-in-page {
+  display: flex;
+  color: black;
+  gap: 5px;
+}
+
+.social-link-content-in-page a {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  gap: 5px;
+}
+
+@media (min-width: 1024px) {
+  .landing_content_box .overlay h2 {
+    font-size: 3rem;
+    letter-spacing: 3px;
+    margin-bottom: 24px;
+  }
+
+  .landing_content_box .overlay .btn {
+    padding: 14px 32px;
+    font-size: 1.2rem;
+    border-radius: 28px;
+  }
+}
+
+/*메인 페이지*/
+.mobile-introduction-button {
+  cursor: pointer;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  font-family: Montserrat-Regular;
+  font-size: 16px;
+  padding: 0.94em 1.94em;
+  border: 1px solid black;
+  border-radius: 100px;
+}
+
+.mobile-introduction-button:hover {
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
