@@ -270,6 +270,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   height: 50vh;
   overflow: hidden;
 }
@@ -292,7 +293,7 @@
 .introduction-page-presentation {
   display: flex;
   width: 100%;
-  height: 90vh;
+  height: 85vh;
   padding-top: 140px;
 }
 
@@ -319,7 +320,7 @@
   display: flex;
   flex-direction: column;
   width: 76%;
-  height: 80vh;
+  height: 60vh;
   margin-top: 100px;
   padding: 7% 12%;
   background-color: #fbfbfb;
@@ -329,9 +330,35 @@
   display: flex;
   flex-direction: column;
   width: 76%;
-  height: 100vh;
+  height: 70vh;
   margin-top: 70px;
   padding: 10% 12%;
+}
+
+.introduction-page-staff-container {
+  width: 100%;
+  text-align: center;
+}
+
+.introduction-page-staff-imgbox {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+  margin-top: 50px;
+}
+
+.staff-information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.staff-information img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
 }
 
 /****************포트폴리오 페이지****************/

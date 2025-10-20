@@ -115,65 +115,21 @@ const AboutUs = () => {
           </div>
         </section>
         <section className="introduction-page-staff">
-          <div
-            style={{
-              width: "100%",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              textAlign: "center",
-            }}
-          >
+          <div className="introduction-page-staff-container">
             <h2 style={{ fontSize: "56px", fontFamily: "Italiana" }}>Staff</h2>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-around",
-                marginTop: "50px",
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  gap: "15px",
-                }}
-              >
-                <img
-                  src={person1}
-                  style={{ width: "320px", height: "350px" }}
-                />
+            <div className="introduction-page-staff-imgbox">
+              <div className="staff-information">
+                <img src={person1} />
                 <div style={{ fontWeight: "600" }}>대표</div>
                 <div>홍길동</div>
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  gap: "15px",
-                }}
-              >
-                <img
-                  src={person2}
-                  style={{ width: "320px", height: "350px" }}
-                />
+              <div className="staff-information">
+                <img src={person2} />
                 <div style={{ fontWeight: "600" }}>대표</div>
                 <div>홍길동</div>
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  gap: "15px",
-                }}
-              >
-                <img
-                  src={person3}
-                  style={{ width: "320px", height: "350px" }}
-                />
+              <div className="staff-information">
+                <img src={person3} />
                 <div style={{ fontWeight: "600" }}>대표</div>
                 <div>홍길동</div>
               </div>
