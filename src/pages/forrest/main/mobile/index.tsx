@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 
 //component
 import Footer from "@/components/footer";
-import SideBar from "@/components/sidebar";
+import Header from "@/components/sidebar";
 
 //utils
 import { useGoToPath } from "@/utils/function";
@@ -25,7 +25,7 @@ const Main = () => {
 
   return (
     <>
-      <SideBar />
+      <Header />
       <main className="forrest-main">
         <section className="main-page-billboard">
           <div className="main-page-billboard-container">
