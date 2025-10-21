@@ -326,6 +326,19 @@
   background-color: #fbfbfb;
 }
 
+.introduction-page-task-box {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.introduction-page-task-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+
 .introduction-page-staff {
   display: flex;
   flex-direction: column;

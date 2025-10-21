@@ -62,49 +62,22 @@ const AboutUs = () => {
             }}
           >
             <h2 style={{ fontSize: "56px", fontFamily: "Italiana" }}>Task</h2>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-around",
-                marginTop: "50px",
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  gap: "15px",
-                }}
-              >
+            <div className="introduction-page-task-box">
+              <div className="introduction-page-task-content">
                 <Gardening />
                 <div style={{ fontWeight: "600" }}>Gardening</div>
                 <div style={{ fontFamily: "Noto Sans KR-Light" }}>
                   테스트 입니다.
                 </div>
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  gap: "15px",
-                }}
-              >
+              <div className="introduction-page-task-content">
                 <Planterior />
                 <div style={{ fontWeight: "600" }}>Planterior</div>
                 <div style={{ fontFamily: "Noto Sans KR-Light" }}>
                   테스트 입니다.
                 </div>
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  gap: "15px",
-                }}
-              >
+              <div className="introduction-page-task-content">
                 <Tree />
                 <div style={{ fontWeight: "600" }}>Tree</div>
                 <div style={{ fontFamily: "Noto Sans KR-Light" }}>

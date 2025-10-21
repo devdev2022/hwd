@@ -1,9 +1,10 @@
 .mobile-sidebar-category {
   display: flex;
   justify-content: center;
-  position: fixed;
-  width: 30%;
+  width: 230px;
   height: 100%;
+  position: fixed;
+  top: 0;
   background-color: white;
   z-index: 7;
   opacity: 0;
@@ -11,8 +12,8 @@
   transition: all 0.3s ease;
 }
 
-@media screen and (max-width: 768px) {
-  .mobile-sidebar-category {
+@media screen and (max-width: 600px) {
+  .mobile-sidebar-category.open {
     width: 50%;
   }
 }
