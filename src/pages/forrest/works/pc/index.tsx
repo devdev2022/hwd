@@ -36,7 +36,7 @@ const Works = () => {
     <>
       <Header />
       <main className="works-page">
-        <section className="works-page-category">
+        <section className="works-category">
           <div className="works-page-category-container">
             <h2 className="category-header">Category</h2>
             <div>
@@ -90,82 +90,70 @@ const Works = () => {
           </div>
         </section>
         <section className="works-portfolio">
-          <div className="works-page-container">
-            <div className="works-product-container">
-              <div className="works-product-box">
-                <h2 className="works-product-header">gardening</h2>
-                <ul className="works-product-introduction">
-                  <li>
-                    <a>
-                      <img src={sns1} className="product-image" />
-                    </a>
-                    <div className="product-name">꽃1</div>
-                  </li>
-                  <li>
-                    <a>
-                      <img src={sns2} className="product-image" />
-                    </a>
-                    <div className="product-name">꽃2</div>
-                  </li>
-                  <li>
-                    <a>
-                      <img src={sns3} className="product-image" />
-                    </a>
-                    <div className="product-name">꽃3</div>
-                  </li>
-                </ul>
-              </div>
-              <div className="works-product-box">
-                <ul className="works-product-introduction">
-                  <li>
-                    <a>
-                      <img src={sns1} className="product-image" />
-                    </a>
-                    <div className="product-name">꽃1</div>
-                  </li>
-                  <li>
-                    <a>
-                      <img src={sns2} className="product-image" />
-                    </a>
-                    <div className="product-name">꽃2</div>
-                  </li>
-                  <li>
-                    <a>
-                      <img src={sns3} className="product-image" />
-                    </a>
-                    <div className="product-name">꽃3</div>
-                  </li>
-                </ul>
-              </div>
-              <div className="works-product-box">
-                <ul className="works-product-introduction">
-                  <li>
-                    <a>
-                      <img src={sns1} className="product-image" />
-                    </a>
-                    <div className="product-name">꽃1</div>
-                  </li>
-                  <li>
-                    <a>
-                      <img src={sns2} className="product-image" />
-                    </a>
-                    <div className="product-name">꽃2</div>
-                  </li>
-                  <li>
-                    <a>
-                      <img src={sns3} className="product-image" />
-                    </a>
-                    <div className="product-name">꽃3</div>
-                  </li>
-                </ul>
-              </div>
-              <div className="works-pagination">
-                <ol className="pagination-list">
-                  <li className="page-number-clicked">1</li>
-                  <li className="page-number">2</li>
-                  <li className="page-number">3</li>
-                </ol>
-              </div>
+          <h2 className="works-product-header">gardening</h2>
+          <div className="works-product-container">
+            <ul className="works-container">
+              <li className="work-item">
+                <a>
+                  <img src={sns1} className="product-image" />
+                </a>
+                <p>꽃 1</p>
+              </li>
+              <li className="work-item">
+                <a>
+                  <img src={sns2} className="product-image" />
+                </a>
+                <p>꽃 1</p>
+              </li>
+              <li className="work-item">
+                <a>
+                  <img src={sns3} className="product-image" />
+                </a>
+                <p>꽃 1</p>
+              </li>
+              <li className="work-item">
+                <a>
+                  <img src={sns1} className="product-image" />
+                </a>
+                <p>꽃 1</p>
+              </li>
+              <li className="work-item">
+                <a>
+                  <img src={sns2} className="product-image" />
+                </a>
+                <p>꽃 1</p>
+              </li>
+              <li className="work-item">
+                <a>
+                  <img src={sns3} className="product-image" />
+                </a>
+                <p>꽃 1</p>
+              </li>
+              <li className="work-item">
+                <a>
+                  <img src={sns1} className="product-image" />
+                </a>
+                <p>꽃 1</p>
+              </li>
+              <li className="work-item">
+                <a>
+                  <img src={sns2} className="product-image" />
+                </a>
+                <p>꽃 1</p>
+              </li>
+              <li className="work-item">
+                <a>
+                  <img src={sns3} className="product-image" />
+                </a>
+                <p>꽃 1</p>
+              </li>
+            </ul>
+            <div className="works-pagination">
+              <ol className="pagination-list">
+                <li className="page-number-clicked">1</li>
+                <li className="page-number">2</li>
+                <li className="page-number">3</li>
+              </ol>
             </div>
           </div>
         </section>
