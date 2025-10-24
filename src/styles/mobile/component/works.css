@@ -1,0 +1,38 @@
+/*페이지 네이션*/
+.mobile-works-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.mobile-pagination-list {
+  display: flex;
+  gap: 10px;
+}
+
+.mobile-page-number {
+  font-family: Montserrat-Regular;
+  cursor: pointer;
+}
+
+.mobile-page-number:hover {
+  opacity: 0.5;
+  transition: opacity 0.1s ease;
+}
+
+.mobile-page-number-clicked {
+  font-weight: 500;
+  font-family: Montserrat-Regular;
+  color: #bec7aa;
+  cursor: pointer;
+}
+
+.mobile-category-item-kr:hover {
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-work-item {
+  width: 100%;
+  text-align: center;
+}

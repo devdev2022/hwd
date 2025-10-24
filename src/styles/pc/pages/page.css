@@ -594,7 +594,7 @@
   }
 
   .contact-content-header {
-    font-size: 21\3px;
+    font-size: 21px;
   }
 
   .contact-page-content {
@@ -610,16 +610,16 @@
 
   .contact-page-content-container {
     top: 42%;
-    left: 44%;
+    left: 40%;
   }
   .contact-page-header {
     top: 9%;
-    left: 44%;
+    left: 40%;
     font-size: 50px;
   }
   .contact-page-introduction {
     top: 22%;
-    left: 44%;
+    left: 40%;
     font-size: 21px;
   }
 
@@ -628,7 +628,7 @@
   }
 
   .contact-page-content {
-    font-size: 15px;
+    font-size: 17px;
   }
 }
 

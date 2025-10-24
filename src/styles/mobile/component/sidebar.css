@@ -1,0 +1,87 @@
+.mobile-sidebar-category {
+  display: flex;
+  justify-content: center;
+  width: 230px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  background-color: white;
+  z-index: 7;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 600px) {
+  .mobile-sidebar-category.open {
+    width: 50%;
+  }
+}
+
+.mobile-sidebar-category.open {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.3s ease;
+}
+
+.mobile-sidebar-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mobile-sidebar-category-container {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.mobile-category-item {
+  position: relative;
+  display: flex;
+  margin-top: 40px;
+  cursor: pointer;
+}
+.mobile-category-item:hover {
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-category-title {
+  font-size: 20px;
+  font-family: "Montserrat-Regular";
+}
+
+.mobile-category-list {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.mobile-category-list.active {
+  max-height: 200px;
+  opacity: 1;
+}
+
+.mobile-category-item-en {
+  margin: 8px;
+  font-family: "Montserrat-Light";
+  cursor: pointer;
+}
+
+.mobile-category-item-en:hover {
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-category-item-kr {
+  margin: 8px;
+  font-family: "Noto Sans KR-Light";
+  cursor: pointer;
+}
+
+.mobile-category-item-kr:hover {
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
