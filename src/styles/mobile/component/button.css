@@ -49,13 +49,13 @@
   gap: 5px;
 }
 
-.social-link-content-in-page {
+.mobile-social-link-content {
   display: flex;
   color: black;
   gap: 5px;
 }
 
-.social-link-content-in-page a {
+.mobile-social-link-content a {
   display: flex;
   align-items: center;
   text-align: center;
