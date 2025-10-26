@@ -1,6 +1,7 @@
 //resource
 import Phone from "@/assets/phone.svg?react";
 import Instagram from "@/assets/instagram.svg?react";
+import Blog from "@/assets/blog.svg?react";
 
 const Footer = () => {
   return (
@@ -27,7 +28,17 @@ const Footer = () => {
               </a>
             </div>
             <div className="social-link-content">
-              <a href="tel:010-1234-5678">
+              <a
+                href="https://blog.naver.com/forrestbyhyd"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Blog />
+                네이버 블로그
+              </a>
+            </div>
+            <div className="social-link-content">
+              <a href="tel:0507-1420-8110">
                 <Phone />
                 0507-1420-8110
               </a>
