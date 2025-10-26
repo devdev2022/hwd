@@ -9,10 +9,12 @@ import GlobalModalWrapper from "@/components/modals/GlobalModal";
 import "./App.css";
 import { PageRouters } from "@/data/PageRoutes";
 import createChildRoutes from "@/utils/createRoutes";
+import ScrollToTop from "./components/scrollTop";
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <GlobalModalWrapper>
         <Routes>
           <Route>
