@@ -15,7 +15,7 @@
 
 .mobile-category-item .arrow {
   position: absolute;
-  right: 16px;
+  right: -15px;
   top: 50%;
   transform: translateY(-50%) rotateZ(0deg);
   transform-origin: right center;

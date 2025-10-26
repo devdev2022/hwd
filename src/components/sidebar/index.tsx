@@ -68,7 +68,7 @@ const SideBar = () => {
           <div className="mobile-sidebar-category-container">
             <div>
               <div
-                className="mobile-category-item"
+                className="mobile-sidebar-item"
                 onClick={() => goToPath("/forrest/aboutus")}
               >
                 <h2 className="mobile-category-title">ABOUT US</h2>
@@ -76,7 +76,7 @@ const SideBar = () => {
             </div>
             <div>
               <div
-                className="mobile-category-item"
+                className="mobile-sidebar-item"
                 onClick={() => goToPath("/forrest/works")}
               >
                 <h2 className="category-title">WORKS</h2>
@@ -84,7 +84,7 @@ const SideBar = () => {
             </div>
             <div>
               <div
-                className="mobile-category-item"
+                className="mobile-sidebar-item"
                 onClick={() => goToPath("/forrest/contacts")}
               >
                 <h2 className="mobile-category-title">CONTACT US</h2>
