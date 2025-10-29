@@ -117,16 +117,16 @@ const Main = () => {
         </section>
         <section className="introduction">
           <div className="main-page-container">
-            <div className="introduction-container">
-              <div className="introduction-box">
-                <div className="introduction-content">
-                  <div className="introduction-header-container">
-                    <h2 className="introduction-header">Introduction</h2>
+            <div className="main-introduction-container">
+              <div className="main-introduction-box">
+                <div className="main-introduction-content">
+                  <div className="main-introduction-header-container">
+                    <h2 className="main-introduction-header">Introduction</h2>
                   </div>
-                  <div className="introduction-content-box">
+                  <div className="main-introduction-content-box">
                     <img src={sns6} />
-                    <div className="introduction-content-text-box">
-                      <div className="introduction-content-text">
+                    <div className="main-introduction-content-text-box">
+                      <div className="main-introduction-content-text">
                         테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
                         입니다. 테스트 입니다. 테스트 입니다. 테스트 입니다.
                         테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트

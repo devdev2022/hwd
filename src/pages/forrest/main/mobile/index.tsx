@@ -94,7 +94,7 @@ const Main = () => {
                 </Swiper>
               </div>
             </div>
-            <div className="product-container">
+            <div className="mobile-product-container">
               <h2 className="mobile-product-header">gardening</h2>
               <div className="mobile-product-introduction">
                 <Swiper
@@ -117,7 +117,7 @@ const Main = () => {
                 </Swiper>
               </div>
             </div>
-            <div className="product-container">
+            <div className="mobile-product-container">
               <h2 className="mobile-product-header">artificial plants</h2>
               <div className="mobile-product-introduction">
                 <Swiper
