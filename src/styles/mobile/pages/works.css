@@ -1,0 +1,119 @@
+.mobile-product-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 160px;
+  margin-bottom: 50px;
+}
+
+.mobile-product-header {
+  display: flex;
+  font-family: "Italiana";
+  font-size: 46px;
+  margin-bottom: 40px;
+  align-items: center;
+  justify-content: center;
+  color: #815d46;
+}
+
+.mobile-product-image {
+  width: 100%;
+  height: 100%;
+}
+
+.mobile-product-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Noto Sans KR-Light";
+  padding: 10px;
+  font-size: 20px;
+}
+
+.mobile-works {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  margin-top: 75px;
+  margin-bottom: 50px;
+}
+
+.mobile-works-header {
+  font-size: 40px;
+  font-family: Italiana;
+}
+
+.mobile-works-category {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.mobile-works-portfolio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.mobile-works-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  padding: 20px 0;
+  column-gap: 1px;
+  row-gap: 50px;
+}
+
+.mobile-works-product-container {
+  width: 100%;
+}
+
+.mobile-works-product-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.mobile-works-category-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 30px;
+}
+
+.mobile-works-product-introduction {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.mobile-works-product-header {
+  display: flex;
+  font-family: "Italiana";
+  font-size: 45px;
+  color: black;
+}
+
+.mobile-category-item {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  margin-top: 40px;
+  cursor: pointer;
+}
+.mobile-category-item:hover {
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}

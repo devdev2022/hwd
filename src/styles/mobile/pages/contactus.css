@@ -1,0 +1,150 @@
+.mobile-contact {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  margin-top: 75px;
+}
+
+.mobile-contact-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 90vh;
+  background-image: url("/src/assets/forrest/contact/contact_us2.png");
+  background-repeat: no-repeat;
+  background-size: 100% 120%;
+  background-position: center 70%;
+}
+
+.mobile-contact-header {
+  display: block;
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  font-size: 45px;
+  font-family: "Italiana";
+}
+
+.mobile-contact-introduction {
+  display: block;
+  position: absolute;
+  top: 16%;
+  left: 11%;
+  font-size: 25px;
+  font-family: "Noto Sans KR-Light";
+}
+
+.mobile-contact-content-container {
+  display: flex;
+  position: absolute;
+  gap: 4vw;
+  top: 40%;
+  left: 55%;
+}
+
+.mobile-contact-content-header {
+  display: block;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  font-size: 20px;
+  font-family: "Noto Sans KR-Light";
+  margin-top: 10px;
+}
+
+.mobile-contact-content-box {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.mobile-email-content-box {
+  display: flex;
+  position: relative;
+}
+
+.mobile-social-content-box {
+  display: flex;
+}
+
+.mobile-contact-content-header {
+  display: block;
+  font-size: 25px;
+  font-family: "Montserrat-Light";
+  margin-top: 10px;
+}
+
+.mobile-address-content {
+  display: block;
+  font-size: 20px;
+  font-family: "Noto Sans KR-Light";
+  margin-top: 10px;
+}
+
+.mobile-contact-content {
+  display: block;
+  font-size: 17px;
+  font-family: "Noto Sans KR-Light";
+  margin-top: 10px;
+}
+
+.mobile-contact-social-box {
+  display: block;
+  font-size: 20px;
+  font-family: "Noto Sans KR-Light";
+  margin-top: 10px;
+}
+
+@media (min-width: 680px) {
+  .mobile-contact-content-container {
+    flex-direction: column;
+  }
+
+  .mobile-contact-container {
+    background-size: 100% 100%;
+  }
+  .mobile-email-content-box {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 679px) {
+  .mobile-contact-container {
+    background-size: 100% 100%;
+    background-position: center 10%;
+  }
+
+  .mobile-contact-content-container {
+    flex-direction: column;
+  }
+
+  .mobile-email-content-box {
+    flex-direction: column;
+  }
+  .mobile-contact-content-box {
+    flex-direction: column;
+  }
+
+  .mobile-contact-header {
+    font-size: 38px;
+  }
+
+  .mobile-contact-introduction {
+    font-size: 22px;
+  }
+
+  .mobile-contact-content {
+    font-size: 15px;
+  }
+
+  .mobile-address-content {
+    font-size: 15px;
+  }
+
+  .mobile-contact-content-header {
+    font-size: 18px;
+  }
+}
