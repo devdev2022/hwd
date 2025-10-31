@@ -9,6 +9,7 @@ import Arrow from "@/assets/arrow_select.svg?react";
 import sns1 from "@/assets/forrest/sns_1.png";
 import sns2 from "@/assets/forrest/sns_2.png";
 import sns3 from "@/assets/forrest/sns_3.png";
+import { useWorks } from "@/api/pages/works";
 
 const initialState = {
   open1: false,
@@ -31,6 +32,12 @@ function reducer(state: State, action: Action): State {
 
 const Works = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  const { data, isLoading } = useWorks({
+    page: 1,
+    category: "planterior",
+    limit: 9,
+  });
 
   return (
     <>
