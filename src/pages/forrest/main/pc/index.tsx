@@ -1,6 +1,9 @@
 import { useEffect, useState, useRef } from "react";
 import cx from "classnames";
 
+//query
+import { useIntroduction } from "@/api/pages/main";
+
 //component
 import Footer from "@/components/footer";
 
@@ -23,6 +26,8 @@ const Main = () => {
   const [hasScrolledUp, setHasScrolledUp] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const lastScrollY = useRef(0);
+
+  const { data, isLoading } = useIntroduction();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -126,18 +131,17 @@ const Main = () => {
                   <div className="main-introduction-content-box">
                     <img src={sns6} />
                     <div className="main-introduction-content-text-box">
-                      <div className="main-introduction-content-text">
-                        테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
-                        입니다. 테스트 입니다. 테스트 입니다. 테스트 입니다.
-                        테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
-                        입니다. 테스트 입니다. 테스트 입니다. 테스트 입니다.
-                        테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
-                        입니다. 테스트 입니다. 테스트 입니다. 테스트 입니다.
-                        테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
-                        입니다. 테스트 입니다. 테스트 입니다. 테스트 입니다.
-                        테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
-                        입니다. 테스트 입니다. 테스트 입니다.
-                      </div>
+                      {data && data.length > 0 ? (
+                        data[0].content ? (
+                          <div className="main-introduction-content-text">
+                            {data[0].content}
+                          </div>
+                        ) : (
+                          <div>데이터가 없습니다.</div>
+                        )
+                      ) : (
+                        <div>데이터가 없습니다.</div>
+                      )}
                       <div
                         className="introduction-button"
                         onClick={() => goToPath("/forrest/aboutus")}
