@@ -27,8 +27,9 @@ export class QueryAPI {
       const queryKey = Array.isArray(key) ? key : [key];
 
       return useQuery({
-        queryKey: [...queryKey, { ...params }],
-        queryFn: () => this.get<T>(url, { ...params }),
+        queryKey: [...queryKey, params],
+        queryFn: () => this.get<T>(url, params),
+        retry: 2,
         staleTime,
         refetchOnWindowFocus: false,
       });

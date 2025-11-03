@@ -1,18 +1,18 @@
-import { useReducer } from "react";
+import { useReducer, useState, useMemo, useEffect } from "react";
+import { FadeLoader } from "react-spinners";
 
 //component
 import Footer from "@/components/footer";
 import Header from "@components/header";
 
 //resource
+import NoImg from "@/assets/no-image.svg?react";
 import Arrow from "@/assets/arrow_select.svg?react";
-import sns1 from "@/assets/forrest/sns_1.png";
-import sns2 from "@/assets/forrest/sns_2.png";
-import sns3 from "@/assets/forrest/sns_3.png";
 import { useWorks } from "@/api/pages/works";
+import Pagination from "@/components/pagination";
 
 const initialState = {
-  open1: false,
+  open1: true,
   open2: false,
   open3: false,
 };
@@ -32,12 +32,53 @@ function reducer(state: State, action: Action): State {
 
 const Works = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-
-  const { data, isLoading } = useWorks({
+  const [menu, setMenu] = useState({
     page: 1,
     category: "planterior",
-    limit: 9,
+    subMenu: 1,
   });
+
+  //pagination
+  const [active, setActive] = useState(1);
+  const [blck, setBlck] = useState(0);
+  const [totalCnt, setTotalCnt] = useState(0);
+
+  const handlePageChange = (data: number) => {
+    setMenu((prev) => ({ ...prev, page: Number(data) }));
+    setActive(Number(data));
+  };
+
+  const { data, isLoading } = useWorks(
+    useMemo(
+      () => ({
+        page: menu.page,
+        category: menu.category,
+        subMenu: menu.subMenu,
+        limit: 9,
+      }),
+      [menu.page, menu.category, menu.subMenu]
+    )
+  );
+
+  useEffect(() => {
+    if (data && data.totalCount !== 0) {
+      setTotalCnt(data.totalCount);
+    } else {
+      setTotalCnt(0);
+    }
+  }, [data]);
+
+  useEffect(() => {
+    if (totalCnt > 0) {
+      setBlck(Math.ceil(totalCnt / 9));
+    } else {
+      setBlck(1);
+    }
+  }, [totalCnt, active]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [menu.category, menu.subMenu, menu.page]);
 
   return (
     <>
@@ -57,9 +98,42 @@ const Works = () => {
                 </span>
               </div>
               <ul className={`category-list ${state.open1 ? "active" : ""}`}>
-                <li className="category-item-en">All</li>
-                <li className="category-item-kr">나무1</li>
-                <li className="category-item-kr">나무2</li>
+                <li
+                  className={`works-category-item-en ${
+                    menu.category === "planterior" && menu.subMenu === 1
+                      ? "selected"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    setMenu({ page: 1, category: "planterior", subMenu: 1 })
+                  }
+                >
+                  All
+                </li>
+                <li
+                  className={`works-category-item-kr ${
+                    menu.category === "planterior" && menu.subMenu === 2
+                      ? "selected"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    setMenu({ page: 1, category: "planterior", subMenu: 2 })
+                  }
+                >
+                  나무1
+                </li>
+                <li
+                  className={`works-category-item-kr ${
+                    menu.category === "planterior" && menu.subMenu === 3
+                      ? "selected"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    setMenu({ page: 1, category: "planterior", subMenu: 3 })
+                  }
+                >
+                  나무2
+                </li>
               </ul>
             </div>
             <div>
@@ -73,9 +147,42 @@ const Works = () => {
                 </span>
               </div>
               <ul className={`category-list ${state.open2 ? "active" : ""}`}>
-                <li className="category-item-en">All</li>
-                <li className="category-item-kr">나무1</li>
-                <li className="category-item-kr">나무2</li>
+                <li
+                  className={`works-category-item-en ${
+                    menu.category === "gardening" && menu.subMenu === 1
+                      ? "selected"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    setMenu({ page: 1, category: "gardening", subMenu: 1 })
+                  }
+                >
+                  All
+                </li>
+                <li
+                  className={`works-category-item-kr ${
+                    menu.category === "gardening" && menu.subMenu === 4
+                      ? "selected"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    setMenu({ page: 1, category: "gardening", subMenu: 4 })
+                  }
+                >
+                  나무1
+                </li>
+                <li
+                  className={`works-category-item-kr ${
+                    menu.category === "gardening" && menu.subMenu === 5
+                      ? "selected"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    setMenu({ page: 1, category: "gardening", subMenu: 5 })
+                  }
+                >
+                  나무2
+                </li>
               </ul>
             </div>
             <div>
@@ -89,79 +196,91 @@ const Works = () => {
                 </span>
               </div>
               <ul className={`category-list ${state.open3 ? "active" : ""}`}>
-                <li className="category-item-en">All</li>
-                <li className="category-item-kr">나무1</li>
-                <li className="category-item-kr">나무2</li>
+                <li
+                  className={`works-category-item-en ${
+                    menu.category === "artificial_plants" && menu.subMenu === 1
+                      ? "selected"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    setMenu({
+                      page: 1,
+                      category: "artificial_plants",
+                      subMenu: 1,
+                    })
+                  }
+                >
+                  All
+                </li>
+                <li
+                  className={`works-category-item-kr ${
+                    menu.category === "artificial_plants" && menu.subMenu === 6
+                      ? "selected"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    setMenu({
+                      page: 1,
+                      category: "artificial_plants",
+                      subMenu: 6,
+                    })
+                  }
+                >
+                  나무1
+                </li>
+                <li
+                  className={`works-category-item-kr ${
+                    menu.category === "artificial_plants" && menu.subMenu === 3
+                      ? "selected"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    setMenu({
+                      page: 1,
+                      category: "artificial_plants",
+                      subMenu: 7,
+                    })
+                  }
+                >
+                  나무2
+                </li>
               </ul>
             </div>
           </div>
         </section>
         <section className="works-portfolio">
-          <h2 className="works-product-header">gardening</h2>
+          <h2 className="works-product-header">{menu.category}</h2>
           <div className="works-product-container">
             <ul className="works-container">
-              <li className="work-item">
-                <a>
-                  <img src={sns1} className="product-image" />
-                </a>
-                <p>꽃 1</p>
-              </li>
-              <li className="work-item">
-                <a>
-                  <img src={sns2} className="product-image" />
-                </a>
-                <p>꽃 1</p>
-              </li>
-              <li className="work-item">
-                <a>
-                  <img src={sns3} className="product-image" />
-                </a>
-                <p>꽃 1</p>
-              </li>
-              <li className="work-item">
-                <a>
-                  <img src={sns1} className="product-image" />
-                </a>
-                <p>꽃 1</p>
-              </li>
-              <li className="work-item">
-                <a>
-                  <img src={sns2} className="product-image" />
-                </a>
-                <p>꽃 1</p>
-              </li>
-              <li className="work-item">
-                <a>
-                  <img src={sns3} className="product-image" />
-                </a>
-                <p>꽃 1</p>
-              </li>
-              <li className="work-item">
-                <a>
-                  <img src={sns1} className="product-image" />
-                </a>
-                <p>꽃 1</p>
-              </li>
-              <li className="work-item">
-                <a>
-                  <img src={sns2} className="product-image" />
-                </a>
-                <p>꽃 1</p>
-              </li>
-              <li className="work-item">
-                <a>
-                  <img src={sns3} className="product-image" />
-                </a>
-                <p>꽃 1</p>
-              </li>
+              {isLoading ? (
+                <li className="work-item">
+                  <div className="spinner_container">
+                    <FadeLoader />
+                  </div>
+                </li>
+              ) : data && data.data ? (
+                data.data.map((item) => (
+                  <li key={item.id} className="work-item">
+                    {item.link ? (
+                      <img src={item.link} className="product-image" />
+                    ) : (
+                      <NoImg />
+                    )}
+                    {item.name ? <p>{item.name}</p> : <p>null</p>}
+                  </li>
+                ))
+              ) : (
+                <div className="work-no-item">
+                  <NoImg />
+                  <p>데이터가 없습니다</p>
+                </div>
+              )}
             </ul>
-            <div className="works-pagination">
-              <ol className="pagination-list">
-                <li className="page-number-clicked">1</li>
-                <li className="page-number">2</li>
-                <li className="page-number">3</li>
-              </ol>
-            </div>
+            <Pagination
+              totalPage={blck}
+              currentPage={active}
+              handlePageChange={(p) => handlePageChange(p)}
+            />
           </div>
         </section>
       </main>

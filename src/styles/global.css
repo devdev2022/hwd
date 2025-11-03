@@ -137,6 +137,14 @@ li {
   font-style: normal;
 }
 
+/*load Spinner*/
+.spinner_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
 /*포레스트 메인페이지 애니메이션*/
 .forrest-main,
 .forrest-header,
