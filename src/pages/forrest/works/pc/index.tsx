@@ -1,15 +1,17 @@
 import { useReducer, useState, useMemo, useEffect } from "react";
 import { FadeLoader } from "react-spinners";
 
+//query
+import { useWorks } from "@/api/pages/works";
+
 //component
 import Footer from "@/components/footer";
 import Header from "@components/header";
+import Pagination from "@/components/pagination";
 
 //resource
 import NoImg from "@/assets/no-image.svg?react";
 import Arrow from "@/assets/arrow_select.svg?react";
-import { useWorks } from "@/api/pages/works";
-import Pagination from "@/components/pagination";
 
 const initialState = {
   open1: true,
@@ -230,7 +232,7 @@ const Works = () => {
                 </li>
                 <li
                   className={`works-category-item-kr ${
-                    menu.category === "artificial_plants" && menu.subMenu === 3
+                    menu.category === "artificial_plants" && menu.subMenu === 7
                       ? "selected"
                       : ""
                   }`}

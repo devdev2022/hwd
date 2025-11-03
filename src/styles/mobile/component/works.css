@@ -20,7 +20,7 @@
   transition: opacity 0.1s ease;
 }
 
-.mobile-page-number-clicked {
+.mobile-page-number.clicked {
   font-weight: 500;
   font-family: Montserrat-Regular;
   color: #bec7aa;
