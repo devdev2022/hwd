@@ -12,7 +12,6 @@ const Contacts = () => {
       <main className="contact-page">
         <section className="contact-page-container">
           <h2 className="contact-page-header">Contact Us</h2>
-          <div className="contact-page-introduction">테스트</div>
           <div className="contact-page-content-container">
             <div className="contact-content-box">
               <div>

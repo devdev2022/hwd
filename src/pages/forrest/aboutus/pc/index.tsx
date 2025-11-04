@@ -32,10 +32,10 @@ const AboutUs = () => {
                 style={{
                   fontSize: "40px",
                   fontFamily: "Noto Sans KR-Regular",
-                  marginTop: "10%",
+                  marginTop: "8%",
                 }}
               >
-                테스트
+                We Build to Order With Only the Freshest Flowers
               </h3>
               <div
                 style={{

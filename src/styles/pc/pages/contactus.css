@@ -41,7 +41,7 @@
   position: absolute;
   display: flex;
   gap: 4vw;
-  top: 40%;
+  top: 25%;
   left: 55%;
 }
 
@@ -91,7 +91,7 @@
   }
 
   .contact-page-content-container {
-    top: 42%;
+    top: 27%;
     left: 45%;
   }
   .contact-page-header {
@@ -121,7 +121,7 @@
   }
 
   .contact-page-content-container {
-    top: 42%;
+    top: 27%;
     left: 44%;
   }
   .contact-page-header {
@@ -151,7 +151,7 @@
   }
 
   .contact-page-content-container {
-    top: 42%;
+    top: 27%;
     left: 40%;
   }
   .contact-page-header {
