@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { FadeLoader } from "react-spinners";
 import cx from "classnames";
 
 //query
@@ -12,12 +13,15 @@ import { useGoToPath } from "@/utils/function";
 
 //resource
 import Banner from "@/assets/forrest/main/forrestbanner.png";
+import NoImg from "@/assets/no-image.svg?react";
+
 import sns1 from "@/assets/forrest/sns_1.png";
 import sns2 from "@/assets/forrest/sns_2.png";
 import sns3 from "@/assets/forrest/sns_3.png";
 import sns4 from "@/assets/forrest/sns_4.png";
 import sns5 from "@/assets/forrest/sns_5.png";
 import sns6 from "@/assets/forrest/sns_6.png";
+import { useWorksQueries } from "@/api/pages/works";
 
 const Main = () => {
   const goToPath = useGoToPath();
@@ -27,7 +31,14 @@ const Main = () => {
   const [isVisible, setIsVisible] = useState(false);
   const lastScrollY = useRef(0);
 
-  const { data, isLoading } = useIntroduction();
+  const { data: introductionData, isLoading: introductionLoading } =
+    useIntroduction();
+
+  const [planterior, gardening, artificial_plants] = useWorksQueries([
+    { page: 1, category: "planterior", subMenu: 1, limit: 3 },
+    { page: 1, category: "gardening", subMenu: 1, limit: 3 },
+    { page: 1, category: "artificial_plants", subMenu: 1, limit: 3 },
+  ]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -131,10 +142,14 @@ const Main = () => {
                   <div className="main-introduction-content-box">
                     <img src={sns6} />
                     <div className="main-introduction-content-text-box">
-                      {data && data.length > 0 ? (
-                        data[0].content ? (
+                      {introductionLoading ? (
+                        <div className="spinner_container">
+                          <FadeLoader />
+                        </div>
+                      ) : introductionData && introductionData.length > 0 ? (
+                        introductionData[0].content ? (
                           <div className="main-introduction-content-text">
-                            {data[0].content}
+                            {introductionData[0].content}
                           </div>
                         ) : (
                           <div>데이터가 없습니다.</div>
@@ -159,71 +174,87 @@ const Main = () => {
           <div className="main-page-container">
             <div className="product-container">
               <h2 className="product-header">planterior</h2>
-              <ul className="product_introduction">
-                <li>
-                  <a>
-                    <img src={sns1} />
-                  </a>
-                  <div className="product-name">꽃1</div>
-                </li>
-                <li>
-                  <a>
-                    <img src={sns2} />
-                  </a>
-                  <div className="product-name">꽃2</div>
-                </li>
-                <li>
-                  <a>
-                    <img src={sns3} />
-                  </a>
-                  <div className="product-name">꽃3</div>
-                </li>
+              <ul
+                className={`product_introduction ${
+                  planterior.data && planterior.data.data?.length < 3
+                    ? "less"
+                    : ""
+                }`}
+              >
+                {planterior.isLoading ? (
+                  <div className="spinner_container">
+                    <FadeLoader />
+                  </div>
+                ) : planterior.data && planterior.data.data ? (
+                  planterior.data.data.map((item) => (
+                    <li>
+                      <img src={item.link} />
+                      <div className="product-name">{item.name}</div>
+                    </li>
+                  ))
+                ) : (
+                  <li>
+                    <NoImg />
+                    <p>데이터가 없습니다</p>
+                  </li>
+                )}
               </ul>
             </div>
             <div className="product-container">
               <h2 className="product-header">gardening</h2>
-              <ul className="product_introduction">
-                <li>
-                  <a>
-                    <img src={sns1} />
-                  </a>
-                  <div className="product-name">꽃1</div>
-                </li>
-                <li>
-                  <a>
-                    <img src={sns2} />
-                  </a>
-                  <div className="product-name">꽃2</div>
-                </li>
-                <li>
-                  <a>
-                    <img src={sns3} />
-                  </a>
-                  <div className="product-name">꽃3</div>
-                </li>
+              <ul
+                className={`product_introduction ${
+                  gardening.data && gardening.data.data?.length < 3
+                    ? "less"
+                    : ""
+                }`}
+              >
+                {gardening.isLoading ? (
+                  <div className="spinner_container">
+                    <FadeLoader />
+                  </div>
+                ) : gardening.data && gardening.data.data ? (
+                  gardening.data.data.map((item) => (
+                    <li>
+                      <img src={item.link} />
+                      <div className="product-name">{item.name}</div>
+                    </li>
+                  ))
+                ) : (
+                  <li>
+                    <NoImg />
+                    <p>데이터가 없습니다</p>
+                  </li>
+                )}
               </ul>
             </div>
             <div className="product-container">
               <h2 className="product-header">artificial plants</h2>
-              <ul className="product_introduction">
-                <li>
-                  <a>
-                    <img src={sns1} />
-                  </a>
-                  <div className="product-name">꽃1</div>
-                </li>
-                <li>
-                  <a>
-                    <img src={sns2} />
-                  </a>
-                  <div className="product-name">꽃2</div>
-                </li>
-                <li>
-                  <a>
-                    <img src={sns3} />
-                  </a>
-                  <div className="product-name">꽃3</div>
-                </li>
+              <ul
+                className={`product_introduction ${
+                  artificial_plants.data &&
+                  artificial_plants.data.data?.length < 3
+                    ? "less"
+                    : ""
+                }`}
+              >
+                {artificial_plants.isLoading ? (
+                  <div className="spinner_container">
+                    <FadeLoader />
+                  </div>
+                ) : artificial_plants.data && artificial_plants.data.data ? (
+                  artificial_plants.data.data.map((item) => (
+                    <li>
+                      <img src={item.link} />
+                      <div className="product-name">{item.name}</div>
+                    </li>
+                  ))
+                ) : (
+                  <li>
+                    <NoImg />
+                    <p>데이터가 없습니다</p>
+                  </li>
+                )}
               </ul>
             </div>
           </div>

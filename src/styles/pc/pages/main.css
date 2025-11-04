@@ -123,11 +123,28 @@
 }
 
 .product_introduction {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  justify-content: center;
   gap: 10px;
   width: 100%;
 }
+
+.product_introduction {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+
+.product_introduction.less {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 400px);
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
 .product_introduction img {
   width: 100%;
   height: auto;
