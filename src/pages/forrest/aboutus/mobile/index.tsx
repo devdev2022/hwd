@@ -84,9 +84,9 @@ const AboutUs = () => {
             <div className="mobile-introduction-page-staff-imgbox">
               {getPictures && getPictures.length > 0 ? (
                 getPictures.map((item) => (
-                  <div className="staff-information">
+                  <div className="staff-information" key={`staff_${item.id}`}>
                     <img src={item.link} />
-                    <div style={{ fontWeight: "600" }}>대표</div>
+                    <div style={{ fontWeight: "600" }}>{item.status}</div>
                     <div>{item.name}</div>
                   </div>
                 ))
