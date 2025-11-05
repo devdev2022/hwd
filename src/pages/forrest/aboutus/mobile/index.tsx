@@ -5,15 +5,16 @@ import Header from "@/components/detailheader";
 //resource
 import aboutus from "@/assets/forrest/introduction/aboutus_cover.png";
 import plantImg from "@/assets/forrest/sns_3.png";
-import person1 from "@/assets/forrest/introduction/sample_person1.png";
-import person2 from "@/assets/forrest/introduction/sample_person2.png";
-import person3 from "@/assets/forrest/introduction/sample_person3.png";
 
 import Planterior from "@/assets/forrest/introduction/planterior.svg?react";
 import Gardening from "@/assets/forrest/introduction/gardening.svg?react";
 import Tree from "@/assets/forrest/introduction/tree.svg?react";
+import { useGetStaffPictures } from "@/api/pages/aboutUs";
 
 const AboutUs = () => {
+  const { data: getPictures, isLoading: getPicturesLoading } =
+    useGetStaffPictures();
+
   return (
     <>
       <Header />
@@ -81,21 +82,17 @@ const AboutUs = () => {
           <div className="introduction-page-staff-container">
             <h2 style={{ fontSize: "56px", fontFamily: "Italiana" }}>Staff</h2>
             <div className="mobile-introduction-page-staff-imgbox">
-              <div className="staff-information">
-                <img src={person1} />
-                <div style={{ fontWeight: "600" }}>대표</div>
-                <div>홍길동</div>
-              </div>
-              <div className="staff-information">
-                <img src={person2} />
-                <div style={{ fontWeight: "600" }}>대표</div>
-                <div>홍길동</div>
-              </div>
-              <div className="staff-information">
-                <img src={person3} />
-                <div style={{ fontWeight: "600" }}>대표</div>
-                <div>홍길동</div>
-              </div>
+              {getPictures && getPictures.length > 0 ? (
+                getPictures.map((item) => (
+                  <div className="staff-information">
+                    <img src={item.link} />
+                    <div style={{ fontWeight: "600" }}>대표</div>
+                    <div>{item.name}</div>
+                  </div>
+                ))
+              ) : (
+                <div className="staff-information">데이터가 없습니다</div>
+              )}
             </div>
           </div>
         </section>
