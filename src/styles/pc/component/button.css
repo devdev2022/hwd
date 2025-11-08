@@ -92,7 +92,7 @@
   border-radius: 100px;
 }
 
-.introduction_button:hover {
+.introduction-button:hover {
   opacity: 0.4;
   transition: opacity 0.3s ease;
 }
