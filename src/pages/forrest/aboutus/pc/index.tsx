@@ -30,7 +30,7 @@ const AboutUs = () => {
         <section className="introduction-page-presentation">
           <div className="introduction-presentation-container">
             <img src={plantImg} />
-            <div>
+            <div style={{ width: "50%" }}>
               <h3
                 style={{
                   fontSize: "40px",
@@ -103,7 +103,7 @@ const AboutUs = () => {
                   </div>
                 ))
               ) : (
-                <div className="staff-information">데이터가 없습니다</div>
+                <div className="staff-information">데이터가 없습니다 !</div>
               )}
             </div>
           </div>

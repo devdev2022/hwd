@@ -253,15 +253,13 @@ const Works = () => {
         <section className="works-portfolio">
           <h2 className="works-product-header">{menu.category}</h2>
           <div className="works-product-container">
-            <ul className="works-container">
-              {isLoading ? (
-                <li className="work-item">
-                  <div className="spinner_container">
-                    <FadeLoader />
-                  </div>
-                </li>
-              ) : data && data.data ? (
-                data.data.map((item) => (
+            {isLoading ? (
+              <div className="spinner_container">
+                <FadeLoader />
+              </div>
+            ) : data && data.data.length > 0 ? (
+              <ul className="works-container">
+                {data.data.map((item) => (
                   <li key={item.id} className="work-item">
                     {item.link ? (
                       <img src={item.link} className="product-image" />
@@ -270,14 +268,16 @@ const Works = () => {
                     )}
                     {item.name ? <p>{item.name}</p> : <p>null</p>}
                   </li>
-                ))
-              ) : (
+                ))}
+              </ul>
+            ) : (
+              <ul>
                 <div className="work-no-item">
                   <NoImg />
                   <p>데이터가 없습니다</p>
                 </div>
-              )}
-            </ul>
+              </ul>
+            )}
             <Pagination
               totalPage={blck}
               currentPage={active}
