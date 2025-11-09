@@ -4,6 +4,7 @@ import cx from "classnames";
 
 //query
 import { useIntroduction } from "@/api/pages/main";
+import { useWorksQueries } from "@/api/pages/works";
 
 //component
 import Footer from "@/components/footer";
@@ -21,7 +22,6 @@ import sns3 from "@/assets/forrest/sns_3.png";
 import sns4 from "@/assets/forrest/sns_4.png";
 import sns5 from "@/assets/forrest/sns_5.png";
 import sns6 from "@/assets/forrest/sns_6.png";
-import { useWorksQueries } from "@/api/pages/works";
 
 const Main = () => {
   const goToPath = useGoToPath();
