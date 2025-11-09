@@ -1,3 +1,6 @@
+//query
+import { useGetBusinessInfo } from "@/api/pages/common";
+
 //component
 import Footer from "@/components/footer";
 import Header from "@components/header";
@@ -6,6 +9,8 @@ import Header from "@components/header";
 import Instagram from "@/assets/instagram.svg?react";
 
 const Contacts = () => {
+  const { data: getBusinessInfo } = useGetBusinessInfo();
+
   return (
     <>
       <Header />
@@ -16,32 +21,59 @@ const Contacts = () => {
             <div className="contact-content-box">
               <div>
                 <div className="contact-content-header">address</div>
-                <div className="contact-page-content">
-                  서울특별시 강남구 논현로 155길 6 신사프라자 라동 104호, 화연당
-                </div>
+
+                {getBusinessInfo && getBusinessInfo.length > 0 ? (
+                  <div className="contact-page-content">
+                    {getBusinessInfo[0].business_address}
+                  </div>
+                ) : (
+                  <div className="contact-page-content">
+                    서울특별시 강남구 논현로 155길 6 신사프라자 라동 104호,
+                    화연당
+                  </div>
+                )}
               </div>
               <div>
                 <div className="contact-content-header">Email</div>
-                <div className="contact-page-content">hwd@hwd.com</div>
+                <div className="contact-page-content">
+                  {getBusinessInfo && getBusinessInfo.length > 0
+                    ? `${getBusinessInfo[0].email_address}`
+                    : "hwd@hwd.com"}
+                </div>
               </div>
             </div>
             <div className="contact-content-box">
               <div>
                 <div className="contact-content-header">Phone</div>
-                <div className="contact-page-content">010-0000-0000</div>
+                <div className="contact-page-content">
+                  {getBusinessInfo && getBusinessInfo.length > 0
+                    ? `${getBusinessInfo[0].phone_number}`
+                    : "010-4458-5821"}
+                </div>
               </div>
               <div>
                 <div className="contact-content-header">social</div>
                 <div className="contact-page-content">
                   <div className="social-link-content-in-page">
-                    <a
-                      href="https://www.instagram.com/forrest_hwayeondang/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Instagram />
-                      instagram
-                    </a>
+                    {getBusinessInfo && getBusinessInfo.length > 0 ? (
+                      <a
+                        href={getBusinessInfo[0].instagram_link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Instagram />
+                        instagram
+                      </a>
+                    ) : (
+                      <a
+                        href="https://www.instagram.com/forrest_hwayeondang/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Instagram />
+                        instagram
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

@@ -1,8 +1,10 @@
+//query
+import { useGetBusinessInfo } from "@/api/pages/common";
+
 //resource
 import Phone from "@/assets/phone.svg?react";
 import Instagram from "@/assets/instagram.svg?react";
 import Blog from "@/assets/blog.svg?react";
-import { useGetBusinessInfo } from "@/api/pages/common";
 
 const Footer = () => {
   const { data: getBusinessInfo } = useGetBusinessInfo();

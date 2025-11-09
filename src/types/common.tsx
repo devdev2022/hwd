@@ -9,5 +9,6 @@ export type getBuinsessInfoResponse = {
   instagram_link: string;
   blog_link: string;
   contact_number: string;
+  phone_number: string;
   register_date: Date;
 }[];
