@@ -140,7 +140,11 @@ const Main = () => {
                     <h2 className="main-introduction-header">Introduction</h2>
                   </div>
                   <div className="main-introduction-content-box">
-                    <img src={sns6} />
+                    {introductionData && introductionData.length > 0 ? (
+                      <img src={introductionData[0].thumbnail} />
+                    ) : (
+                      <NoImg />
+                    )}
                     <div className="main-introduction-content-text-box">
                       {introductionLoading ? (
                         <div className="spinner_container">
