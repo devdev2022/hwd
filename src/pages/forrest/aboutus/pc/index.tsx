@@ -13,6 +13,7 @@ import coverImg from "@/assets/forrest/introduction/aboutus_cover.png";
 import Planterior from "@/assets/forrest/introduction/planterior.svg?react";
 import Gardening from "@/assets/forrest/introduction/gardening.svg?react";
 import Tree from "@/assets/forrest/introduction/tree.svg?react";
+import { FadeLoader } from "react-spinners";
 
 const AboutUs = () => {
   const { data: introductionData, isLoading: introductionLoading } =
@@ -29,7 +30,11 @@ const AboutUs = () => {
           <div className="introduction-billboard-header">
             <h2 style={{ color: "#243E29" }}>About us</h2>
           </div>
-          {introductionData && introductionData.length > 0 ? (
+          {introductionLoading ? (
+            <div className="spinner_container">
+              <FadeLoader />
+            </div>
+          ) : introductionData && introductionData.length > 0 ? (
             <img src={introductionData[0].cover_img} />
           ) : (
             <img src={coverImg} />
@@ -37,7 +42,11 @@ const AboutUs = () => {
         </section>
         <section className="introduction-page-presentation">
           <div className="introduction-presentation-container">
-            {introductionData && introductionData.length > 0 ? (
+            {introductionLoading ? (
+              <div className="spinner_container">
+                <FadeLoader />
+              </div>
+            ) : introductionData && introductionData.length > 0 ? (
               <img src={introductionData[0].thumbnail} />
             ) : (
               <img src={plantImg} />
@@ -59,11 +68,19 @@ const AboutUs = () => {
                   fontFamily: "Noto Sans KR-Light",
                 }}
               >
-                {introductionData && introductionData.length > 0
-                  ? introductionData[0].content.length > 0
-                    ? introductionData[0].content
-                    : "데이터가 없습니다."
-                  : "데이터가 없습니다."}
+                {introductionLoading ? (
+                  <div className="spinner_container">
+                    <FadeLoader />
+                  </div>
+                ) : introductionData && introductionData.length > 0 ? (
+                  introductionData[0].content.length > 0 ? (
+                    introductionData[0].content
+                  ) : (
+                    "데이터가 없습니다."
+                  )
+                ) : (
+                  "데이터가 없습니다."
+                )}
               </div>
             </div>
           </div>
@@ -108,7 +125,11 @@ const AboutUs = () => {
           <div className="introduction-page-staff-container">
             <h2 style={{ fontSize: "56px", fontFamily: "Italiana" }}>Staff</h2>
             <div className="introduction-page-staff-imgbox">
-              {getStaffPictures && getStaffPictures.length > 0 ? (
+              {staffPicLoading ? (
+                <div className="spinner_container">
+                  <FadeLoader />
+                </div>
+              ) : getStaffPictures && getStaffPictures.length > 0 ? (
                 getStaffPictures.map((item) => (
                   <div className="staff-information" key={`staff_${item.id}`}>
                     <img src={item.link} />

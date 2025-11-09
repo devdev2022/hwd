@@ -3,7 +3,7 @@ import { FadeLoader } from "react-spinners";
 import cx from "classnames";
 
 //query
-import { useIntroduction } from "@/api/pages/main";
+import { useIntroduction, useGetSnsImg } from "@/api/pages/main";
 import { useWorksQueries } from "@/api/pages/works";
 
 //component
@@ -16,13 +16,6 @@ import { useGoToPath } from "@/utils/function";
 import Banner from "@/assets/forrest/main/forrestbanner.png";
 import NoImg from "@/assets/no-image.svg?react";
 
-import sns1 from "@/assets/forrest/sns_1.png";
-import sns2 from "@/assets/forrest/sns_2.png";
-import sns3 from "@/assets/forrest/sns_3.png";
-import sns4 from "@/assets/forrest/sns_4.png";
-import sns5 from "@/assets/forrest/sns_5.png";
-import sns6 from "@/assets/forrest/sns_6.png";
-
 const Main = () => {
   const goToPath = useGoToPath();
 
@@ -33,6 +26,8 @@ const Main = () => {
 
   const { data: introductionData, isLoading: introductionLoading } =
     useIntroduction();
+
+  const { data: snsImgData, isLoading: snsImgLoading } = useGetSnsImg();
 
   const [planterior, gardening, artificial_plants] = useWorksQueries([
     { page: 1, category: "planterior", subMenu: 1, limit: 3 },
@@ -267,28 +262,21 @@ const Main = () => {
           <div className="sb-instagram">
             <h2 className="main-header">Follow us</h2>
             <div className="sbi-images">
-              <a href="https://www.instagram.com/forrest_hwayeondang/">
-                <img src={sns1} />
-              </a>
-              <a href="https://www.instagram.com/forrest_hwayeondang/">
-                <img src={sns2} />
-              </a>
-
-              <a href="https://www.instagram.com/forrest_hwayeondang/">
-                <img src={sns3} />
-              </a>
-
-              <a href="https://www.instagram.com/forrest_hwayeondang/">
-                <img src={sns4} />
-              </a>
-
-              <a href="https://www.instagram.com/forrest_hwayeondang/">
-                <img src={sns5} />
-              </a>
-
-              <a href="https://www.instagram.com/forrest_hwayeondang/">
-                <img src={sns6} />
-              </a>
+              {snsImgLoading ? (
+                <div className="spinner_container">
+                  <FadeLoader />
+                </div>
+              ) : snsImgData && snsImgData.length > 0 ? (
+                snsImgData.map((item) => (
+                  <a href="https://www.instagram.com/forrest_hwayeondang/">
+                    <img src={item.link} />
+                  </a>
+                ))
+              ) : (
+                <li>
+                  <NoImg />
+                </li>
+              )}
             </div>
           </div>
         </section>

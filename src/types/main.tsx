@@ -3,5 +3,11 @@ export type MainResponse = {
   content: string;
   thumbnail: string;
   cover_img: string;
-  created_at: string;
+  created_at: Date;
+}[];
+
+export type SnsImgResponse = {
+  id: number;
+  link: string;
+  created_at: Date;
 }[];
