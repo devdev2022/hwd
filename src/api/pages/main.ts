@@ -8,7 +8,7 @@ export const useIntroduction = () =>
   api.createUseQuery<MainResponse>(
     ["introduction"],
     "/forrest/main/introduction"
-  )();
+  );
 
 export const useGetSnsImg = () =>
-  api.createUseQuery<SnsImgResponse>(["snsimg"], "/forrest/main/snsimg")();
+  api.createUseQuery<SnsImgResponse>(["snsimg"], "/forrest/main/snsimg");

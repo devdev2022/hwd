@@ -8,4 +8,4 @@ export const useGetStaffPictures = () =>
   api.createUseQuery<getPicturesResponse>(
     ["staff"],
     "/forrest/aboutus/pictures"
-  )();
+  );

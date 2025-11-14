@@ -8,4 +8,4 @@ export const useGetBusinessInfo = () =>
   api.createUseQuery<getBuinsessInfoResponse>(
     ["businessInfo"],
     "/forrest/common/businessInfo"
-  )();
+  );
