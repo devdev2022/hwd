@@ -17,7 +17,7 @@ const Footer = () => {
             <div className="contact-content">
               {getBusinessInfo[0].business_address}
               <br />
-              사업자 번호 :{getBusinessInfo[0].business_number}(등록 xxxx년)
+              사업자 번호 :{getBusinessInfo[0].business_number}(등록 20xx년)
               <br />
               상호 : {getBusinessInfo[0].business_name} <br />
               대표 : {getBusinessInfo[0].ceo_name} <br />
