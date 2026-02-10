@@ -1,7 +1,7 @@
 import { useReducer, useState, useMemo, useEffect } from "react";
 
 //query
-import { useWorks } from "@/api/pages/works";
+import { useWorks } from "@/query/works";
 
 //component
 import Footer from "@/components/footer";
@@ -60,8 +60,8 @@ const Works = () => {
         subMenu: menu.subMenu,
         limit: 9,
       }),
-      [menu.page, menu.category, menu.subMenu]
-    )
+      [menu.page, menu.category, menu.subMenu],
+    ),
   );
 
   useEffect(() => {

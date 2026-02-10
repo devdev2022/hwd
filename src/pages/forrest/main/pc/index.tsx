@@ -4,13 +4,14 @@ import cx from "classnames";
 
 //query
 import { useIntroduction, useGetSnsImg } from "@/api/pages/main";
-import { useWorksQueries } from "@/api/pages/works";
+import { useMultipleWorks } from "@/query/works";
 
 //component
 import Footer from "@/components/footer";
 
 //utils
 import { useGoToPath } from "@/utils/function";
+import { HOME_WORKS_PARAMS } from "@/types/works";
 
 //resource
 import Banner from "@/assets/forrest/main/forrestbanner.png";
@@ -29,11 +30,8 @@ const Main = () => {
 
   const { data: snsImgData, isLoading: snsImgLoading } = useGetSnsImg();
 
-  const [planterior, gardening, artificial_plants] = useWorksQueries([
-    { page: 1, category: "planterior", subMenu: 1, limit: 3 },
-    { page: 1, category: "gardening", subMenu: 1, limit: 3 },
-    { page: 1, category: "artificial_plants", subMenu: 1, limit: 3 },
-  ]);
+  const [planterior, gardening, artificial_plants] =
+    useMultipleWorks(HOME_WORKS_PARAMS);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -188,7 +186,9 @@ const Main = () => {
                   planterior.data.data.map((item) => (
                     <li>
                       <img src={item.link} />
-                      <div className="product-name">{item.name}</div>
+                      <div className="product-name" key={item.id}>
+                        {item.name}
+                      </div>
                     </li>
                   ))
                 ) : (
@@ -216,7 +216,9 @@ const Main = () => {
                   gardening.data.data.map((item) => (
                     <li>
                       <img src={item.link} />
-                      <div className="product-name">{item.name}</div>
+                      <div className="product-name" key={item.id}>
+                        {item.name}
+                      </div>
                     </li>
                   ))
                 ) : (
@@ -245,7 +247,9 @@ const Main = () => {
                   artificial_plants.data.data.map((item) => (
                     <li>
                       <img src={item.link} />
-                      <div className="product-name">{item.name}</div>
+                      <div className="product-name" key={item.id}>
+                        {item.name}
+                      </div>
                     </li>
                   ))
                 ) : (
