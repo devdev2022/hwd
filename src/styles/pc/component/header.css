@@ -141,7 +141,7 @@
 .detail-page-header > .detail-page-flexbox {
   position: relative;
   display: block;
-  width: 100%;
+  max-width: 1920px;
   margin: 0 auto;
 }
 
@@ -175,7 +175,8 @@
   justify-content: space-between;
   padding-right: 14.0625%;
   padding-left: 14.0625%;
-  max-width: 1280px;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 .gnb-item > .block {
@@ -238,7 +239,8 @@
   justify-content: space-between;
   padding-right: 14.0625%;
   padding-left: 14.0625%;
-  max-width: 1280px;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 .detail-page-gnb-item > .block {
