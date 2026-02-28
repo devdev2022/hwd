@@ -5,7 +5,7 @@ import { useWorks } from "@/query/works";
 
 //component
 import Footer from "@/components/footer";
-import Header from "@/components/mobileheader";
+import Header from "@/components/mobileHeader";
 import Pagination from "@/components/pagination";
 
 //resource
