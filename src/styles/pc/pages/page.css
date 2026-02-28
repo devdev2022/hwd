@@ -75,14 +75,19 @@
   flex-direction: column;
   justify-content: center;
   font-family: "Noto Sans KR-Regular";
+  font-size: clamp(11px, 2.3vw, 15px);
   color: #5c3217;
+}
+
+.social-link-content a {
+  font-size: clamp(11px, 2.3vw, 15px);
 }
 
 .copyright {
   display: flex;
   justify-content: center;
   font-family: Hina Mincho;
-  font-size: 20px;
+  font-size: clamp(13px, 1.7vw, 20px);
   color: #5c3217;
   padding: 20px 0;
 }
