@@ -7,28 +7,34 @@ import { useGoToPath } from "@/utils/function";
 const SideBar = () => {
   const goToPath = useGoToPath();
   const lastScrollY = useRef(0);
+  const ticking = useRef(false);
 
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [hasScrolledUp, setHasScrolledUp] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const vh = window.innerHeight;
-      const currentScrollY = window.scrollY;
+      if (!ticking.current) {
+        requestAnimationFrame(() => {
+          const vh = window.innerHeight;
+          const currentScrollY = window.scrollY;
 
-      if (currentScrollY >= 0.9 * vh) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-        setHasScrolledUp(false);
+          if (currentScrollY >= 0.9 * vh) {
+            setIsScrolled(true);
+          } else {
+            setIsScrolled(false);
+          }
+
+          lastScrollY.current = currentScrollY;
+          ticking.current = false;
+        });
+        ticking.current = true;
       }
-
-      lastScrollY.current = currentScrollY;
     };
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [hasScrolledUp]);
+  }, []);
 
   const onClickSideBar = () => {
     setIsOpen((prev) => !prev);
