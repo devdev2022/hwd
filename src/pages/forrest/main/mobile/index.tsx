@@ -12,7 +12,7 @@ import { useMultipleWorks } from "@/query/works";
 
 //component
 import Footer from "@/components/footer";
-import Header from "@/components/sidebar";
+import Header from "@/components/mobileHeader";
 
 //utils
 import { useGoToPath } from "@/utils/function";

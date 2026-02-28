@@ -9,21 +9,19 @@ const Header = () => {
   const goToPath = useGoToPath();
   const location = useLocation();
 
-  const [isScrolled, setIsScrolled] = useState(false);
   const [hasScrolledUp, setHasScrolledUp] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const lastScrollY = useRef(0);
+  const ticking = useRef(false);
 
   useEffect(() => {
     const vh = window.innerHeight;
     const currentScrollY = window.scrollY;
 
     if (currentScrollY >= vh * 0.13) {
-      setIsScrolled(true);
       setHasScrolledUp(true);
       setIsVisible(true);
     } else {
-      setIsScrolled(false);
       setHasScrolledUp(false);
       setIsVisible(true);
     }
@@ -32,26 +30,30 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const vh = window.innerHeight;
-      const currentScrollY = window.scrollY;
+      if (!ticking.current) {
+        requestAnimationFrame(() => {
+          const vh = window.innerHeight;
+          const currentScrollY = window.scrollY;
 
-      if (currentScrollY >= vh * 0.13) {
-        setIsScrolled(true);
+          if (currentScrollY >= vh * 0.13) {
+            if (currentScrollY > lastScrollY.current) {
+              setIsVisible(false);
+            }
 
-        if (currentScrollY > lastScrollY.current) {
-          setIsVisible(false);
-        }
+            if (currentScrollY < lastScrollY.current) {
+              setHasScrolledUp(true);
+              setIsVisible(true);
+            }
+          } else {
+            setHasScrolledUp(false);
+            setIsVisible(true);
+          }
 
-        if (currentScrollY < lastScrollY.current) {
-          setHasScrolledUp(true);
-          setIsVisible(true);
-        }
-      } else {
-        setIsScrolled(false);
-        setHasScrolledUp(false);
+          lastScrollY.current = currentScrollY;
+          ticking.current = false;
+        });
+        ticking.current = true;
       }
-
-      lastScrollY.current = currentScrollY;
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -60,7 +62,7 @@ const Header = () => {
   return (
     <header
       className={cx("detail-page-header", {
-        scrolled: isScrolled && hasScrolledUp,
+        scrolled: hasScrolledUp,
         visible: isVisible,
         hidden: !isVisible,
       })}
