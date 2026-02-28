@@ -1,16 +1,34 @@
 import cx from "classnames";
 import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 //utils
 import { useGoToPath } from "@/utils/function";
 
 const Header = () => {
   const goToPath = useGoToPath();
+  const location = useLocation();
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [hasScrolledUp, setHasScrolledUp] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const vh = window.innerHeight;
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY >= vh * 0.13) {
+      setIsScrolled(true);
+      setHasScrolledUp(true);
+      setIsVisible(true);
+    } else {
+      setIsScrolled(false);
+      setHasScrolledUp(false);
+      setIsVisible(true);
+    }
+    lastScrollY.current = currentScrollY;
+  }, [location.pathname]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,9 +44,7 @@ const Header = () => {
 
         if (currentScrollY < lastScrollY.current) {
           setHasScrolledUp(true);
-          if (hasScrolledUp) {
-            setIsVisible(true);
-          }
+          setIsVisible(true);
         }
       } else {
         setIsScrolled(false);
@@ -39,7 +55,7 @@ const Header = () => {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [hasScrolledUp]);
+  }, []);
 
   return (
     <header
