@@ -146,18 +146,34 @@ const Main = () => {
           <div className="sb-instagram">
             <h2 className="main-header">Follow us</h2>
             <div className="sbi-images">
-              <a href="https://www.instagram.com/forrest_hwayeondang/">
+              <a
+                href="https://www.instagram.com/forrest_hwayeondang/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img src={sns1} />
               </a>
-              <a href="https://www.instagram.com/forrest_hwayeondang/">
+              <a
+                href="https://www.instagram.com/forrest_hwayeondang/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img src={sns2} />
               </a>
 
-              <a href="https://www.instagram.com/forrest_hwayeondang/">
+              <a
+                href="https://www.instagram.com/forrest_hwayeondang/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img src={sns3} />
               </a>
 
-              <a href="https://www.instagram.com/forrest_hwayeondang/">
+              <a
+                href="https://www.instagram.com/forrest_hwayeondang/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img src={sns4} />
               </a>
             </div>
