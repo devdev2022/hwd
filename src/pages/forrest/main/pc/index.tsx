@@ -130,7 +130,7 @@ const Main = () => {
               <div className="main-introduction-box">
                 <div className="main-introduction-content">
                   <div className="main-introduction-header-container">
-                    <h2 className="main-introduction-header">Introduction</h2>
+                    <h2 className="main-introduction-header">About us</h2>
                   </div>
                   <div className="main-introduction-content-box">
                     {introductionData && introductionData.length > 0 ? (
@@ -244,7 +244,7 @@ const Main = () => {
                     <FadeLoader />
                   </div>
                 ) : artificial_plants.data && artificial_plants.data.data ? (
-                  artificial_plants.data.data.map((item) => (
+                  artificial_plants.data.data.slice(0, 3).map((item) => (
                     <li>
                       <img src={item.link} />
                       <div className="product-name" key={item.id}>
@@ -272,7 +272,11 @@ const Main = () => {
                 </div>
               ) : snsImgData && snsImgData.length > 0 ? (
                 snsImgData.map((item) => (
-                  <a href="https://www.instagram.com/forrest_hwayeondang/">
+                  <a
+                    href="https://www.instagram.com/forrest_hwayeondang/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <img src={item.link} />
                   </a>
                 ))
