@@ -3,7 +3,7 @@ import { useGetBusinessInfo } from "@/api/pages/common";
 
 //component
 import Footer from "@/components/footer";
-import Header from "@components/detailheader";
+import Header from "@/components/mobileheader";
 
 //resource
 import Instagram from "@/assets/instagram.svg?react";

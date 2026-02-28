@@ -1,6 +1,6 @@
 //component
 import Footer from "@/components/footer";
-import Header from "@/components/detailheader";
+import Header from "@/components/mobileheader";
 
 //resource
 import aboutus from "@/assets/forrest/introduction/aboutus_cover.png";
