@@ -18,7 +18,6 @@
   font-family: "Italiana";
   font-size: 46px;
   margin-bottom: 50px;
-  color: #815d46;
 }
 
 /*메인-빌보드*/
@@ -154,10 +153,9 @@
   display: flex;
   font-family: "Italiana";
   font-size: 46px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   align-items: center;
   justify-content: center;
-  color: #815d46;
 }
 
 .product-image {
@@ -204,7 +202,9 @@
 }
 
 .sbi-images img {
-  transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1), filter 0.4s ease;
+  transition:
+    transform 0.8s cubic-bezier(0.19, 1, 0.22, 1),
+    filter 0.4s ease;
   transform: scale(1);
 }
 

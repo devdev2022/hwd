@@ -58,10 +58,10 @@ const Footer = () => {
             <div className="contact-content">
               서울특별시 강남구 논현로 155길 6 신사프라자 라동 104호, 화연당
               <br />
-              사업자 번호 : 000-00-00000(등록 xxxx년) <br />
+              사업자 번호 : 134-53-00842 <br />
               상호 : 화연당 <br />
               대표 : 배혜민 <br />
-              팩스: 0000-000-0000 이메일: hwd@hwd.com
+              이메일: hwd@hwayeondang.com
             </div>
 
             <div className="social-link">
