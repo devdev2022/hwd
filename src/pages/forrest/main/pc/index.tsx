@@ -170,7 +170,7 @@ const Main = () => {
         <section className="portfolio">
           <div className="main-page-container">
             <div className="product-container">
-              <h2 className="product-header">planterior</h2>
+              <h2 className="product-header">Planterior</h2>
               <ul
                 className={`product_introduction ${
                   planterior.data && planterior.data.data?.length < 3
@@ -200,7 +200,7 @@ const Main = () => {
               </ul>
             </div>
             <div className="product-container">
-              <h2 className="product-header">gardening</h2>
+              <h2 className="product-header">Gardening</h2>
               <ul
                 className={`product_introduction ${
                   gardening.data && gardening.data.data?.length < 3
@@ -230,7 +230,7 @@ const Main = () => {
               </ul>
             </div>
             <div className="product-container">
-              <h2 className="product-header">artificial plants</h2>
+              <h2 className="product-header">Artificial plants</h2>
               <ul
                 className={`product_introduction ${
                   artificial_plants.data &&

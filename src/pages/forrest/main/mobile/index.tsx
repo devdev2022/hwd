@@ -80,7 +80,7 @@ const Main = () => {
         <section className="portfolio">
           <div className="mobile-main-page-container">
             <div className="mobile-product-container">
-              <h2 className="mobile-product-header">planterior</h2>
+              <h2 className="mobile-product-header">Planterior</h2>
               <div className="mobile-product-introduction">
                 {planterior.isLoading ? (
                   <div className="spinner_container">
@@ -112,7 +112,7 @@ const Main = () => {
               </div>
             </div>
             <div className="mobile-product-container">
-              <h2 className="mobile-product-header">gardening</h2>
+              <h2 className="mobile-product-header">Gardening</h2>
 
               <div className="mobile-product-introduction">
                 {gardening.isLoading ? (
@@ -141,7 +141,7 @@ const Main = () => {
               </div>
             </div>
             <div className="mobile-product-container">
-              <h2 className="mobile-product-header">artificial plants</h2>
+              <h2 className="mobile-product-header">Artificial plants</h2>
 
               <div className="mobile-product-introduction">
                 {artificial_plants.isLoading ? (
