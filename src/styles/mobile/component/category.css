@@ -3,6 +3,26 @@
   font-family: Italiana;
 }
 
+.mobile-category-title {
+  font-size: 20px;
+  font-family: "Montserrat-Regular";
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.mobile-category-list {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height 0.4s ease,
+    opacity 0.3s ease;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .mobile-category-list.active {
   max-height: 200px;
   opacity: 1;
@@ -14,18 +34,14 @@
 }
 
 .mobile-category-item .arrow {
-  position: absolute;
-  right: -15px;
-  top: 50%;
-  transform: translateY(-50%) rotateZ(0deg);
-  transform-origin: right center;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
   transition: transform 0.4s ease;
-  width: 10px;
-  height: 10px;
-  background-size: contain;
-  background-repeat: no-repeat;
+  width: 18px;
+  height: 18px;
 }
 
 .mobile-category-item.active .arrow {
-  transform: translateY(-50%) rotateZ(180deg);
+  transform: rotateZ(180deg);
 }

@@ -5,7 +5,7 @@ import { useWorks } from "@/query/works";
 
 //component
 import Footer from "@/components/footer";
-import Header from "@components/detailheader";
+import Header from "@/components/mobileHeader";
 import Pagination from "@/components/pagination";
 
 //resource
@@ -94,7 +94,7 @@ const Works = () => {
                 }`}
                 onClick={() => dispatch({ type: "TOGGLE", key: "open1" })}
               >
-                <h2 className="mobile-category-title">Planterior</h2>
+                <h2 className="mobile-works-category-title">Planterior</h2>
                 <span className="arrow">
                   <Arrow />
                 </span>
@@ -149,7 +149,7 @@ const Works = () => {
                 }`}
                 onClick={() => dispatch({ type: "TOGGLE", key: "open2" })}
               >
-                <h2 className="mobile-category-title">gardening</h2>
+                <h2 className="mobile-works-category-title">gardening</h2>
                 <span className="arrow">
                   <Arrow />
                 </span>
@@ -204,7 +204,9 @@ const Works = () => {
                 }`}
                 onClick={() => dispatch({ type: "TOGGLE", key: "open3" })}
               >
-                <h2 className="mobile-category-title">artificial plants</h2>
+                <h2 className="mobile-works-category-title">
+                  artificial plants
+                </h2>
                 <span className="arrow">
                   <Arrow />
                 </span>
