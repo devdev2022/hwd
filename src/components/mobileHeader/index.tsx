@@ -3,9 +3,12 @@ import { useEffect, useState, useRef } from "react";
 
 //utils
 import { useGoToPath } from "@/utils/function";
+import { useLocation } from "react-router";
 
 const SideBar = () => {
   const goToPath = useGoToPath();
+  const location = useLocation();
+
   const lastScrollY = useRef(0);
   const ticking = useRef(false);
 
@@ -34,7 +37,7 @@ const SideBar = () => {
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   const onClickSideBar = () => {
     setIsOpen((prev) => !prev);
