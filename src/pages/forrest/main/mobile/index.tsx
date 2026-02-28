@@ -1,8 +1,14 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
+import { FadeLoader } from "react-spinners";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+
+//api
+import { useGetSnsImg } from "@/api/pages/main";
+import { useMultipleWorks } from "@/query/works";
 
 //component
 import Footer from "@/components/footer";
@@ -10,18 +16,20 @@ import Header from "@/components/sidebar";
 
 //utils
 import { useGoToPath } from "@/utils/function";
+import { HOME_WORKS_PARAMS } from "@/types/works";
 
 //resource
 import Banner from "@/assets/forrest/main/forrestbanner.png";
-import sns1 from "@/assets/forrest/sns_1.png";
-import sns2 from "@/assets/forrest/sns_2.png";
-import sns3 from "@/assets/forrest/sns_3.png";
-import sns4 from "@/assets/forrest/sns_4.png";
-import sns5 from "@/assets/forrest/sns_5.png";
+import NoImg from "@/assets/no-image.svg?react";
+
 import sns6 from "@/assets/forrest/sns_6.png";
 
 const Main = () => {
   const goToPath = useGoToPath();
+
+  const { data: snsImgData, isLoading: snsImgLoading } = useGetSnsImg();
+  const [planterior, gardening, artificial_plants] =
+    useMultipleWorks(HOME_WORKS_PARAMS);
 
   return (
     <>
@@ -39,7 +47,7 @@ const Main = () => {
               <div className="mobile-introduction-box">
                 <div className="mobile-introduction-content">
                   <div className="mobile-introduction-header-container">
-                    <h2 className="mobile-introduction-header">Introduction</h2>
+                    <h2 className="mobile-introduction-header">About us</h2>
                   </div>
                   <div className="mobile-introduction-content-box">
                     <img src={sns6} />
@@ -74,70 +82,91 @@ const Main = () => {
             <div className="mobile-product-container">
               <h2 className="mobile-product-header">planterior</h2>
               <div className="mobile-product-introduction">
-                <Swiper
-                  pagination={{
-                    dynamicBullets: true,
-                  }}
-                  loop={true}
-                  modules={[Pagination]}
-                  className="mySwiper"
-                >
-                  <SwiperSlide>
-                    <img src={sns1} />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src={sns2} />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src={sns3} />
-                  </SwiperSlide>
-                </Swiper>
+                {planterior.isLoading ? (
+                  <div className="spinner_container">
+                    <FadeLoader />
+                  </div>
+                ) : planterior.data?.data?.length ? (
+                  <Swiper
+                    pagination={
+                      planterior.data.data.length > 0
+                        ? { dynamicBullets: true }
+                        : false
+                    }
+                    loop={planterior.data.data.length > 1}
+                    modules={[Pagination]}
+                    className="mySwiper"
+                  >
+                    {planterior.data.data.slice(0, 3).map((item) => (
+                      <SwiperSlide key={item.id}>
+                        <img src={item.link} alt={item.name ?? ""} />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                ) : (
+                  <div className="empty">
+                    <NoImg />
+                    <p>데이터가 없습니다</p>
+                  </div>
+                )}
               </div>
             </div>
             <div className="mobile-product-container">
               <h2 className="mobile-product-header">gardening</h2>
+
               <div className="mobile-product-introduction">
-                <Swiper
-                  pagination={{
-                    dynamicBullets: true,
-                  }}
-                  loop={true}
-                  modules={[Pagination]}
-                  className="mySwiper"
-                >
-                  <SwiperSlide>
-                    <img src={sns1} />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src={sns2} />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src={sns3} />
-                  </SwiperSlide>
-                </Swiper>
+                {gardening.isLoading ? (
+                  <div className="spinner_container">
+                    <FadeLoader />
+                  </div>
+                ) : gardening.data?.data?.length ? (
+                  <Swiper
+                    pagination={{ dynamicBullets: true }}
+                    loop
+                    modules={[Pagination]}
+                    className="mySwiper"
+                  >
+                    {gardening.data.data.slice(0, 3).map((item) => (
+                      <SwiperSlide key={item.id}>
+                        <img src={item.link} alt={item.name ?? ""} />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                ) : (
+                  <div className="empty">
+                    <NoImg />
+                    <p>데이터가 없습니다</p>
+                  </div>
+                )}
               </div>
             </div>
             <div className="mobile-product-container">
               <h2 className="mobile-product-header">artificial plants</h2>
+
               <div className="mobile-product-introduction">
-                <Swiper
-                  pagination={{
-                    dynamicBullets: true,
-                  }}
-                  loop={true}
-                  modules={[Pagination]}
-                  className="mySwiper"
-                >
-                  <SwiperSlide>
-                    <img src={sns1} />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src={sns2} />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src={sns3} />
-                  </SwiperSlide>
-                </Swiper>
+                {artificial_plants.isLoading ? (
+                  <div className="spinner_container">
+                    <FadeLoader />
+                  </div>
+                ) : artificial_plants.data?.data?.length ? (
+                  <Swiper
+                    pagination={{ dynamicBullets: true }}
+                    loop
+                    modules={[Pagination]}
+                    className="mySwiper"
+                  >
+                    {artificial_plants.data.data.slice(0, 3).map((item) => (
+                      <SwiperSlide key={item.id}>
+                        <img src={item.link} alt={item.name ?? ""} />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                ) : (
+                  <div className="empty">
+                    <NoImg />
+                    <p>데이터가 없습니다</p>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -146,36 +175,25 @@ const Main = () => {
           <div className="sb-instagram">
             <h2 className="main-header">Follow us</h2>
             <div className="sbi-images">
-              <a
-                href="https://www.instagram.com/forrest_hwayeondang/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src={sns1} />
-              </a>
-              <a
-                href="https://www.instagram.com/forrest_hwayeondang/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src={sns2} />
-              </a>
-
-              <a
-                href="https://www.instagram.com/forrest_hwayeondang/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src={sns3} />
-              </a>
-
-              <a
-                href="https://www.instagram.com/forrest_hwayeondang/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src={sns4} />
-              </a>
+              {snsImgLoading ? (
+                <div className="spinner_container">
+                  <FadeLoader />
+                </div>
+              ) : snsImgData && snsImgData.length > 0 ? (
+                snsImgData.map((item) => (
+                  <a
+                    href="https://www.instagram.com/forrest_hwayeondang/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src={item.link} />
+                  </a>
+                ))
+              ) : (
+                <li>
+                  <NoImg />
+                </li>
+              )}
             </div>
           </div>
         </section>
