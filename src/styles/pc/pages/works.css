@@ -61,12 +61,16 @@
 
 .works-category-item-en {
   margin: 8px;
+  font-size: 14px;
   font-family: "Montserrat-Light";
   cursor: pointer;
+  color: #999;
 }
 
 .works-category-item-en.selected {
-  opacity: 0.5;
+  color: #000;
+  font-weight: 600;
+  opacity: 1;
 }
 
 .works-category-item-en:hover {
@@ -76,12 +80,16 @@
 
 .works-category-item-kr {
   margin: 8px;
+  font-size: 14px;
   font-family: "Noto Sans KR-Light";
   cursor: pointer;
+  color: #999;
 }
 
 .works-category-item-kr.selected {
-  opacity: 0.5;
+  color: #000;
+  font-weight: 600;
+  opacity: 1;
 }
 
 .works-category-item-kr:hover {
