@@ -269,7 +269,9 @@ const Works = () => {
           </div>
         </section>
         <section className="mobile-works-portfolio">
-          <h2 className="mobile-works-product-header">{menu.category}</h2>
+          <h2 className="mobile-works-product-header">
+            {menu.category.replaceAll("_", " ")}
+          </h2>
           <div className="mobile-works-product-container">
             {isLoading ? (
               <div className="spinner_container">
@@ -284,7 +286,11 @@ const Works = () => {
                     ) : (
                       <NoImg />
                     )}
-                    {item.name ? <p>{item.name}</p> : <p>null</p>}
+                    {item.name ? (
+                      <p>{item.name.replaceAll("_", " ")}</p>
+                    ) : (
+                      <p>null</p>
+                    )}
                   </li>
                 ))}
               </ul>
