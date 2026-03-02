@@ -211,15 +211,21 @@ const Works = () => {
                 </li>
               </ul>
             </div>
-            <div>
-              <div className="category-item">
-                <h2 className="category-title">POP-UP STORE</h2>
-              </div>
+            <div
+              className="category-item"
+              onClick={() =>
+                setMenu({ page: 1, category: "pop-up_store", subMenu: 1 })
+              }
+            >
+              <h2 className="category-title">POP-UP STORE</h2>
             </div>
-            <div>
-              <div className="category-item">
-                <h2 className="category-title">WINTER DECORATION</h2>
-              </div>
+            <div
+              className="category-item"
+              onClick={() =>
+                setMenu({ page: 1, category: "winter_decoration", subMenu: 1 })
+              }
+            >
+              <h2 className="category-title">WINTER DECORATION</h2>
             </div>
           </div>
         </section>
