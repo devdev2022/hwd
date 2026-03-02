@@ -41,6 +41,7 @@
 
 .mobile-introduction-content {
   display: flex;
+  white-space: pre-line;
   flex-direction: column;
   justify-content: space-between;
   font-family: Montserrat-ExtraLight;
