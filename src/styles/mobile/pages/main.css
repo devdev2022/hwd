@@ -41,7 +41,6 @@
 
 .mobile-introduction-content {
   display: flex;
-  white-space: pre-line;
   flex-direction: column;
   justify-content: space-between;
   font-family: Montserrat-ExtraLight;
@@ -61,6 +60,10 @@
   height: auto;
   flex-shrink: 0;
   object-fit: contain;
+}
+
+.mobile-introduction-content-text {
+  white-space: pre-line;
 }
 
 .mobile-introduction-content-text-box {
@@ -101,9 +104,6 @@
   .mobile-introduction-content-box img {
     width: 100%;
     height: 100%;
-  }
-  .mobile-introduction-content-text-box {
-    width: 100%;
   }
 
   .mobile-introduction-page-task-box {
