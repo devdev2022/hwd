@@ -214,7 +214,7 @@ const Works = () => {
             <div
               className="category-item"
               onClick={() =>
-                setMenu({ page: 1, category: "pop-up_store", subMenu: 1 })
+                setMenu({ page: 1, category: "pop-up store", subMenu: 1 })
               }
             >
               <h2 className="category-title">POP-UP STORE</h2>
