@@ -222,7 +222,7 @@ const Works = () => {
             <div
               className="category-item"
               onClick={() =>
-                setMenu({ page: 1, category: "winter_decoration", subMenu: 1 })
+                setMenu({ page: 1, category: "winter decoration", subMenu: 1 })
               }
             >
               <h2 className="category-title">WINTER DECORATION</h2>
