@@ -77,6 +77,7 @@
 .main-introduction-content {
   display: flex;
   flex-direction: column;
+  white-space: pre-line;
   justify-content: space-between;
   font-family: Montserrat-ExtraLight;
   width: 100%;
