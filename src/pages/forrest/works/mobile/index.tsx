@@ -270,7 +270,7 @@ const Works = () => {
         </section>
         <section className="mobile-works-portfolio">
           <h2 className="mobile-works-product-header">
-            {menu.category.replaceAll("_", " ")}
+            {menu.category.replaceAll("_", " ").replaceAll(".png", "")}
           </h2>
           <div className="mobile-works-product-container">
             {isLoading ? (
