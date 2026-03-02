@@ -231,7 +231,7 @@ const Works = () => {
         </section>
         <section className="works-portfolio">
           <h2 className="works-product-header">
-            {menu.category.replaceAll("_", " ")}
+            {menu.category.replaceAll("_", " ").replaceAll(".png", "")}
           </h2>
           <div className="works-product-container">
             {isLoading ? (
