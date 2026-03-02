@@ -102,6 +102,13 @@
   margin-top: 50px;
 }
 
+.introduction-text {
+  width: 100%;
+  margin-top: 25px;
+  font-family: "Noto Sans KR-Light";
+  white-space: pre-line;
+}
+
 .staff-information {
   display: flex;
   flex-direction: column;

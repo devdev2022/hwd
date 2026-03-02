@@ -61,13 +61,7 @@ const AboutUs = () => {
               >
                 We Build to Order With Only the Freshest Flowers
               </h3>
-              <div
-                style={{
-                  width: "100%",
-                  marginTop: "25px",
-                  fontFamily: "Noto Sans KR-Light",
-                }}
-              >
+              <div className="introduction-text">
                 {introductionLoading ? (
                   <div className="spinner_container">
                     <FadeLoader />
