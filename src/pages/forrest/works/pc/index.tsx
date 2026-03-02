@@ -214,7 +214,7 @@ const Works = () => {
             <div
               className="category-item"
               onClick={() =>
-                setMenu({ page: 1, category: "pop-up store", subMenu: 1 })
+                setMenu({ page: 1, category: "pop-up_store", subMenu: 1 })
               }
             >
               <h2 className="category-title">POP-UP STORE</h2>
@@ -222,7 +222,7 @@ const Works = () => {
             <div
               className="category-item"
               onClick={() =>
-                setMenu({ page: 1, category: "winter decoration", subMenu: 1 })
+                setMenu({ page: 1, category: "winter_decoration", subMenu: 1 })
               }
             >
               <h2 className="category-title">WINTER DECORATION</h2>
@@ -230,7 +230,9 @@ const Works = () => {
           </div>
         </section>
         <section className="works-portfolio">
-          <h2 className="works-product-header">{menu.category}</h2>
+          <h2 className="works-product-header">
+            {menu.category.replace("_", " ")}
+          </h2>
           <div className="works-product-container">
             {isLoading ? (
               <div className="spinner_container">
