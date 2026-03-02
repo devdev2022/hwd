@@ -77,7 +77,6 @@
 .main-introduction-content {
   display: flex;
   flex-direction: column;
-  white-space: pre-line;
   justify-content: space-between;
   font-family: Montserrat-ExtraLight;
   width: 100%;
@@ -111,6 +110,7 @@
 
 .main-introduction-content-text {
   font-size: 18px;
+  white-space: pre-line;
 }
 
 /*메인-포트폴리오*/

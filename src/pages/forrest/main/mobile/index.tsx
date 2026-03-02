@@ -52,7 +52,7 @@ const Main = () => {
                   <div className="mobile-introduction-content-box">
                     <img src={sns6} />
                     <div className="mobile-introduction-content-text-box">
-                      <div>
+                      <div className="mobile-introduction-content-text">
                         테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
                         입니다. 테스트 입니다. 테스트 입니다. 테스트 입니다.
                         테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
