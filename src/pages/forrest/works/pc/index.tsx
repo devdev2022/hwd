@@ -247,7 +247,11 @@ const Works = () => {
                     ) : (
                       <NoImg />
                     )}
-                    {item.name ? <p>{item.name}</p> : <p>null</p>}
+                    {item.name ? (
+                      <p>{item.name.replaceAll("_", " ")}</p>
+                    ) : (
+                      <p>null</p>
+                    )}
                   </li>
                 ))}
               </ul>
