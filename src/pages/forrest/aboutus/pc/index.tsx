@@ -56,7 +56,7 @@ const AboutUs = () => {
                 style={{
                   fontSize: "40px",
                   fontFamily: "Noto Sans KR-Regular",
-                  marginTop: "8%",
+                  marginTop: "6%",
                 }}
               >
                 We Build to Order With Only the Freshest Flowers
