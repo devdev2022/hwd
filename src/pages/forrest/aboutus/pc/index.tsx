@@ -28,7 +28,7 @@ const AboutUs = () => {
       <main className="introduction-page">
         <section className="introduction-page-billboard">
           <div className="introduction-billboard-header">
-            <h2 style={{ color: "#243E29" }}>About us</h2>
+            <h2 style={{ color: "F5F3EA" }}>About us</h2>
           </div>
           {introductionLoading ? (
             <div className="spinner_container">
