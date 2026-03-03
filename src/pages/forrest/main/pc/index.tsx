@@ -20,6 +20,7 @@ import NoImg from "@/assets/no-image.svg?react";
 const Main = () => {
   const goToPath = useGoToPath();
 
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [hasScrolledUp, setHasScrolledUp] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -185,7 +186,7 @@ const Main = () => {
                 ) : planterior.data && planterior.data.data ? (
                   planterior.data.data.map((item) => (
                     <li>
-                      <img src={item.link} />
+                      <img src={item.link} style={{ cursor: "pointer" }} onClick={() => setSelectedImage(item.link)} />
                       <div className="product-name" key={item.id}>
                         {item.name.replaceAll("_", " ")}
                       </div>
@@ -215,7 +216,7 @@ const Main = () => {
                 ) : landscaping.data && landscaping.data.data ? (
                   landscaping.data.data.map((item) => (
                     <li>
-                      <img src={item.link} />
+                      <img src={item.link} style={{ cursor: "pointer" }} onClick={() => setSelectedImage(item.link)} />
                       <div className="product-name" key={item.id}>
                         {item.name.replaceAll("_", " ")}
                       </div>
@@ -245,7 +246,7 @@ const Main = () => {
                 ) : popupStore.data && popupStore.data.data ? (
                   popupStore.data.data.slice(0, 3).map((item) => (
                     <li>
-                      <img src={item.link} />
+                      <img src={item.link} style={{ cursor: "pointer" }} onClick={() => setSelectedImage(item.link)} />
                       <div className="product-name" key={item.id}>
                         {item.name.replaceAll("_", " ")}
                       </div>
@@ -275,7 +276,7 @@ const Main = () => {
                 ) : winterdec.data && winterdec.data.data ? (
                   winterdec.data.data.slice(0, 3).map((item) => (
                     <li>
-                      <img src={item.link} />
+                      <img src={item.link} style={{ cursor: "pointer" }} onClick={() => setSelectedImage(item.link)} />
                       <div className="product-name" key={item.id}>
                         {item.name.replaceAll("_", " ")}
                       </div>
@@ -319,6 +320,18 @@ const Main = () => {
         </section>
       </main>
       <Footer />
+      {selectedImage && (
+        <div className="lightbox-overlay" onClick={() => setSelectedImage(null)}>
+          <img
+            src={selectedImage}
+            className="lightbox-image"
+            onClick={(e) => e.stopPropagation()}
+          />
+          <button className="lightbox-close" onClick={() => setSelectedImage(null)}>
+            ✕
+          </button>
+        </div>
+      )}
     </>
   );
 };

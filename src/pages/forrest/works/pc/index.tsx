@@ -248,7 +248,7 @@ const Works = () => {
                         src={item.link}
                         className="product-image"
                         onClick={() => setSelectedImage(item.link)}
-                        style={{ cursor: "zoom-in" }}
+                        style={{ cursor: "pointer" }}
                       />
                     ) : (
                       <NoImg />
