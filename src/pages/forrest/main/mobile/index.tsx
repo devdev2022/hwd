@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import { FadeLoader } from "react-spinners";
@@ -24,6 +25,7 @@ import NoImg from "@/assets/no-image.svg?react";
 
 const Main = () => {
   const goToPath = useGoToPath();
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const { data: introductionData, isLoading: introductionLoading } =
     useIntroduction();
@@ -107,7 +109,7 @@ const Main = () => {
                     {planterior.data.data.slice(0, 3).map((item) => (
                       <SwiperSlide key={item.id}>
                         <div className="product-slide">
-                          <img src={item.link} alt={item.name ?? ""} />
+                          <img src={item.link} alt={item.name ?? ""} style={{ cursor: "pointer" }} onClick={() => setSelectedImage(item.link)} />
                           <div className="product-name">
                             {item.name?.replaceAll("_", " ")}
                           </div>
@@ -140,7 +142,7 @@ const Main = () => {
                     {gardening.data.data.slice(0, 3).map((item) => (
                       <SwiperSlide key={item.id}>
                         <div className="product-slide">
-                          <img src={item.link} alt={item.name ?? ""} />
+                          <img src={item.link} alt={item.name ?? ""} style={{ cursor: "pointer" }} onClick={() => setSelectedImage(item.link)} />
                           <div className="product-name">
                             {item.name?.replaceAll("_", " ")}
                           </div>
@@ -173,7 +175,7 @@ const Main = () => {
                     {popupStore.data.data.slice(0, 3).map((item) => (
                       <SwiperSlide key={item.id}>
                         <div className="product-slide">
-                          <img src={item.link} alt={item.name ?? ""} />
+                          <img src={item.link} alt={item.name ?? ""} style={{ cursor: "pointer" }} onClick={() => setSelectedImage(item.link)} />
                           <div className="product-name">
                             {item.name?.replaceAll("_", " ")}
                           </div>
@@ -206,7 +208,7 @@ const Main = () => {
                     {winterdec.data.data.slice(0, 3).map((item) => (
                       <SwiperSlide key={item.id}>
                         <div className="product-slide">
-                          <img src={item.link} alt={item.name ?? ""} />
+                          <img src={item.link} alt={item.name ?? ""} style={{ cursor: "pointer" }} onClick={() => setSelectedImage(item.link)} />
                           <div className="product-name">
                             {item.name?.replaceAll("_", " ")}
                           </div>
@@ -252,6 +254,18 @@ const Main = () => {
         </section>
       </main>
       <Footer />
+      {selectedImage && (
+        <div className="lightbox-overlay" onClick={() => setSelectedImage(null)}>
+          <img
+            src={selectedImage}
+            className="lightbox-image"
+            onClick={(e) => e.stopPropagation()}
+          />
+          <button className="lightbox-close" onClick={() => setSelectedImage(null)}>
+            ✕
+          </button>
+        </div>
+      )}
     </>
   );
 };

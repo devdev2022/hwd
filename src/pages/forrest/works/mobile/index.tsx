@@ -262,7 +262,7 @@ const Works = () => {
                         src={item.link}
                         className="mobile-product-image"
                         onClick={() => setSelectedImage(item.link)}
-                        style={{ cursor: "zoom-in" }}
+                        style={{ cursor: "pointer" }}
                       />
                     ) : (
                       <NoImg />
