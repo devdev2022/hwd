@@ -12,13 +12,17 @@
 
 .mySwiper img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 4;
   display: block;
   object-fit: cover;
 }
 
+.swiper-pagination-bullet {
+  background-color: black !important;
+}
+
 .swiper-pagination-bullet-active {
-  background-color: white !important;
+  background-color: black !important;
 }
 
 .product-slide {
