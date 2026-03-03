@@ -78,7 +78,7 @@ const Contacts = () => {
                         </a>
                       )}
                     </div>
-                    <div className="social-link-content-in-page">
+                    <div className="social-link-content-in-page blog-link">
                       {getBusinessInfo && getBusinessInfo.length > 0 ? (
                         <a
                           href={getBusinessInfo[0].blog_link}
