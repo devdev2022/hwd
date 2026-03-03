@@ -2,6 +2,10 @@
   width: 100%;
   height: 100%;
 }
+.mySwiper .swiper-slide {
+  height: auto;
+}
+
 .mySwiper .swiper-wrapper {
   height: 100%;
 }
