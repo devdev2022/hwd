@@ -95,7 +95,7 @@
 }
 .main-introduction-content-box img {
   width: 50%;
-  height: 100%;
+  height: 80%;
 }
 
 .main-introduction-content-text-box {
@@ -111,7 +111,7 @@
 .main-introduction-content-text {
   display: -webkit-box;
   font-family: "Noto Sans KR-Light";
-  -webkit-line-clamp: 7;
+  -webkit-line-clamp: 10;
   -webkit-box-orient: vertical;
   overflow: hidden;
   font-size: 18px;
