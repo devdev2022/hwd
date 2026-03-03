@@ -21,6 +21,7 @@ export interface multipleParams {
 
 export const HOME_WORKS_PARAMS = [
   { page: 1, category: "planterior", subMenu: 1, limit: 3 },
-  { page: 1, category: "gardening", subMenu: 1, limit: 3 },
-  { page: 1, category: "artificial_plants", subMenu: 1, limit: 3 },
+  { page: 1, category: "landscaping", subMenu: 1, limit: 3 },
+  { page: 1, category: "pop-up_store", subMenu: 1, limit: 3 },
+  { page: 1, category: "winter_decoration", subMenu: 1, limit: 3 },
 ];

@@ -110,6 +110,7 @@
 
 .main-introduction-content-text {
   display: -webkit-box;
+  font-family: "Noto Sans KR-Light";
   -webkit-line-clamp: 7;
   -webkit-box-orient: vertical;
   overflow: hidden;
