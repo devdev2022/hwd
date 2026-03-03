@@ -12,7 +12,7 @@
 
 .mySwiper img {
   width: 100%;
-  aspect-ratio: 3 / 3;
+  aspect-ratio: 3 / 4;
   display: block;
   object-fit: cover;
 }

@@ -109,7 +109,12 @@ const Main = () => {
                     {planterior.data.data.slice(0, 3).map((item) => (
                       <SwiperSlide key={item.id}>
                         <div className="product-slide">
-                          <img src={item.link} alt={item.name ?? ""} style={{ cursor: "pointer" }} onClick={() => setSelectedImage(item.link)} />
+                          <img
+                            src={item.link}
+                            alt={item.name ?? ""}
+                            style={{ cursor: "pointer" }}
+                            onClick={() => setSelectedImage(item.link)}
+                          />
                           <div className="product-name">
                             {item.name?.replaceAll("_", " ")}
                           </div>
@@ -142,7 +147,12 @@ const Main = () => {
                     {gardening.data.data.slice(0, 3).map((item) => (
                       <SwiperSlide key={item.id}>
                         <div className="product-slide">
-                          <img src={item.link} alt={item.name ?? ""} style={{ cursor: "pointer" }} onClick={() => setSelectedImage(item.link)} />
+                          <img
+                            src={item.link}
+                            alt={item.name ?? ""}
+                            style={{ cursor: "pointer" }}
+                            onClick={() => setSelectedImage(item.link)}
+                          />
                           <div className="product-name">
                             {item.name?.replaceAll("_", " ")}
                           </div>
@@ -175,7 +185,12 @@ const Main = () => {
                     {popupStore.data.data.slice(0, 3).map((item) => (
                       <SwiperSlide key={item.id}>
                         <div className="product-slide">
-                          <img src={item.link} alt={item.name ?? ""} style={{ cursor: "pointer" }} onClick={() => setSelectedImage(item.link)} />
+                          <img
+                            src={item.link}
+                            alt={item.name ?? ""}
+                            style={{ cursor: "pointer" }}
+                            onClick={() => setSelectedImage(item.link)}
+                          />
                           <div className="product-name">
                             {item.name?.replaceAll("_", " ")}
                           </div>
@@ -192,7 +207,12 @@ const Main = () => {
               </div>
             </div>
             <div className="mobile-product-container">
-              <h2 className="mobile-product-header">Winter decoration</h2>
+              <h2
+                className="mobile-product-header"
+                style={{ fontSize: "40px" }}
+              >
+                Winter decoration
+              </h2>
               <div className="mobile-product-introduction">
                 {winterdec.isLoading ? (
                   <div className="spinner_container">
@@ -208,7 +228,12 @@ const Main = () => {
                     {winterdec.data.data.slice(0, 3).map((item) => (
                       <SwiperSlide key={item.id}>
                         <div className="product-slide">
-                          <img src={item.link} alt={item.name ?? ""} style={{ cursor: "pointer" }} onClick={() => setSelectedImage(item.link)} />
+                          <img
+                            src={item.link}
+                            alt={item.name ?? ""}
+                            style={{ cursor: "pointer" }}
+                            onClick={() => setSelectedImage(item.link)}
+                          />
                           <div className="product-name">
                             {item.name?.replaceAll("_", " ")}
                           </div>
@@ -255,13 +280,19 @@ const Main = () => {
       </main>
       <Footer />
       {selectedImage && (
-        <div className="lightbox-overlay" onClick={() => setSelectedImage(null)}>
+        <div
+          className="lightbox-overlay"
+          onClick={() => setSelectedImage(null)}
+        >
           <img
             src={selectedImage}
             className="lightbox-image"
             onClick={(e) => e.stopPropagation()}
           />
-          <button className="lightbox-close" onClick={() => setSelectedImage(null)}>
+          <button
+            className="lightbox-close"
+            onClick={() => setSelectedImage(null)}
+          >
             ✕
           </button>
         </div>
