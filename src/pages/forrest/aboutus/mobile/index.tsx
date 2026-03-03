@@ -1,3 +1,7 @@
+//query
+import { useGetStaffPictures } from "@/api/pages/aboutUs";
+import { useIntroduction } from "@/api/pages/main";
+
 //component
 import Footer from "@/components/footer";
 import Header from "@/components/mobileHeader";
@@ -9,9 +13,12 @@ import plantImg from "@/assets/forrest/sns_3.png";
 import Planterior from "@/assets/forrest/introduction/planterior.svg?react";
 import Gardening from "@/assets/forrest/introduction/gardening.svg?react";
 import Tree from "@/assets/forrest/introduction/tree.svg?react";
-import { useGetStaffPictures } from "@/api/pages/aboutUs";
+import { FadeLoader } from "react-spinners";
 
 const AboutUs = () => {
+  const { data: introductionData, isLoading: introductionLoading } =
+    useIntroduction();
+
   const { data: getPictures, isLoading: getPicturesLoading } =
     useGetStaffPictures();
 
@@ -23,11 +30,27 @@ const AboutUs = () => {
           <div className="mobile-introduction-billboard-header">
             <h2 style={{ color: "#243E29" }}>About us</h2>
           </div>
-          <img src={aboutus} />
+          {introductionLoading ? (
+            <div className="spinner_container">
+              <FadeLoader />
+            </div>
+          ) : introductionData && introductionData.length > 0 ? (
+            <img src={introductionData[0].cover_img} />
+          ) : (
+            <img src={aboutus} />
+          )}
         </section>
         <section className="mobile-introduction-page-presentation">
           <div className="mobile-introduction-presentation-container">
-            <img src={plantImg} />
+            {introductionLoading ? (
+              <div className="spinner_container">
+                <FadeLoader />
+              </div>
+            ) : introductionData && introductionData.length > 0 ? (
+              <img src={introductionData[0].thumbnail} />
+            ) : (
+              <img src={plantImg} />
+            )}
             <div>
               <h3
                 style={{
@@ -36,7 +59,7 @@ const AboutUs = () => {
                   marginTop: "10%",
                 }}
               >
-                테스트
+                We Build to Order With Only the Freshest Flowers
               </h3>
               <div
                 style={{
@@ -45,9 +68,19 @@ const AboutUs = () => {
                   fontFamily: "Noto Sans KR-Light",
                 }}
               >
-                테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트
-                테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트
-                테스트 테스트 테스트 테스트 테스트
+                {introductionLoading ? (
+                  <div className="spinner_container">
+                    <FadeLoader />
+                  </div>
+                ) : introductionData && introductionData.length > 0 ? (
+                  introductionData[0].content.length > 0 ? (
+                    introductionData[0].content
+                  ) : (
+                    "데이터가 없습니다."
+                  )
+                ) : (
+                  "데이터가 없습니다."
+                )}
               </div>
             </div>
           </div>
