@@ -12,15 +12,9 @@
 
 .mySwiper img {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 3 / 3;
   display: block;
   object-fit: cover;
-}
-
-@media (max-width: 513px) {
-  .mySwiper img {
-    aspect-ratio: 3 / 3;
-  }
 }
 
 .product-slide {
