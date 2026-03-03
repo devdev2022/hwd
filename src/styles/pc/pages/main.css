@@ -91,7 +91,7 @@
   padding: 20px;
   margin-top: 10px;
   height: 50vh;
-  gap: 20px;
+  gap: 35px;
 }
 .main-introduction-content-box img {
   width: 50%;
@@ -103,7 +103,7 @@
   flex-direction: column;
   font-family: Montserrat-ExtraLight;
   justify-content: space-between;
-  width: 60%;
+  width: 50%;
   height: 100%;
   gap: 30px;
   padding-top: 10px;
