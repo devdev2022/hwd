@@ -94,7 +94,7 @@
   gap: 20px;
 }
 .main-introduction-content-box img {
-  width: 100%;
+  width: 50%;
   height: 100%;
 }
 
@@ -152,7 +152,7 @@
 
 .product_introduction img {
   width: 100%;
-  height: auto;
+  height: 90%;
 }
 
 .product-header {
@@ -175,7 +175,7 @@
   align-items: center;
   font-family: "Noto Sans KR-Light";
   padding: 10px;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 /*메인-SNS링크*/
