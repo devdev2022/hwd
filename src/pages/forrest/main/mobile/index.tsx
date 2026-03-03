@@ -106,7 +106,12 @@ const Main = () => {
                   >
                     {planterior.data.data.slice(0, 3).map((item) => (
                       <SwiperSlide key={item.id}>
-                        <img src={item.link} alt={item.name ?? ""} />
+                        <div className="product-slide">
+                          <img src={item.link} alt={item.name ?? ""} />
+                          <div className="product-name">
+                            {item.name?.replaceAll("_", " ")}
+                          </div>
+                        </div>
                       </SwiperSlide>
                     ))}
                   </Swiper>
@@ -134,7 +139,12 @@ const Main = () => {
                   >
                     {gardening.data.data.slice(0, 3).map((item) => (
                       <SwiperSlide key={item.id}>
-                        <img src={item.link} alt={item.name ?? ""} />
+                        <div className="product-slide">
+                          <img src={item.link} alt={item.name ?? ""} />
+                          <div className="product-name">
+                            {item.name?.replaceAll("_", " ")}
+                          </div>
+                        </div>
                       </SwiperSlide>
                     ))}
                   </Swiper>
@@ -162,7 +172,12 @@ const Main = () => {
                   >
                     {popupStore.data.data.slice(0, 3).map((item) => (
                       <SwiperSlide key={item.id}>
-                        <img src={item.link} alt={item.name ?? ""} />
+                        <div className="product-slide">
+                          <img src={item.link} alt={item.name ?? ""} />
+                          <div className="product-name">
+                            {item.name?.replaceAll("_", " ")}
+                          </div>
+                        </div>
                       </SwiperSlide>
                     ))}
                   </Swiper>
@@ -190,7 +205,12 @@ const Main = () => {
                   >
                     {winterdec.data.data.slice(0, 3).map((item) => (
                       <SwiperSlide key={item.id}>
-                        <img src={item.link} alt={item.name ?? ""} />
+                        <div className="product-slide">
+                          <img src={item.link} alt={item.name ?? ""} />
+                          <div className="product-name">
+                            {item.name?.replaceAll("_", " ")}
+                          </div>
+                        </div>
                       </SwiperSlide>
                     ))}
                   </Swiper>
