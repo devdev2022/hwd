@@ -28,7 +28,7 @@ const AboutUs = () => {
       <main className="mobile-introduction-page">
         <section className="introduction-page-billboard">
           <div className="mobile-introduction-billboard-header">
-            <h2 style={{ color: "#243E29" }}>About us</h2>
+            <h2 style={{ color: "#f5f3ea" }}>About us</h2>
           </div>
           {introductionLoading ? (
             <div className="spinner_container">
@@ -66,6 +66,7 @@ const AboutUs = () => {
                   width: "100%",
                   marginTop: "25px",
                   fontFamily: "Noto Sans KR-Light",
+                  whiteSpace: "pre-line",
                 }}
               >
                 {introductionLoading ? (
