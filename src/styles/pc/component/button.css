@@ -90,6 +90,7 @@
   padding: 0.94em 1.94em;
   border: 1px solid black;
   border-radius: 100px;
+  margin-bottom: 10px;
 }
 
 .introduction-button:hover {
