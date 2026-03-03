@@ -7,6 +7,7 @@ import Header from "@/components/mobileHeader";
 
 //resource
 import Instagram from "@/assets/instagram.svg?react";
+import Blog from "@/assets/blog.svg?react";
 import contactImage from "@/assets/forrest/contact/contact_us.png";
 
 const Contacts = () => {
@@ -73,6 +74,25 @@ const Contacts = () => {
                     >
                       <Instagram />
                       instagram
+                    </a>
+                  )}
+                  {getBusinessInfo && getBusinessInfo.length > 0 ? (
+                    <a
+                      href={getBusinessInfo[0].blog_link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Blog />
+                      네이버 블로그
+                    </a>
+                  ) : (
+                    <a
+                      href="https://blog.naver.com/forrestbyhyd"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Blog />
+                      네이버 블로그
                     </a>
                   )}
                 </div>

@@ -76,6 +76,13 @@
   line-height: 1.6;
 }
 
+.social-links-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+}
+
 .social-link-content-in-page a {
   display: flex;
   align-items: center;
