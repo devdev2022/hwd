@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 //api
-import { useGetSnsImg } from "@/api/pages/main";
+import { useIntroduction, useGetSnsImg } from "@/api/pages/main";
 import { useMultipleWorks } from "@/query/works";
 
 //component
@@ -22,11 +22,11 @@ import { HOME_WORKS_PARAMS } from "@/types/works";
 import Banner from "@/assets/forrest/main/forrestbanner.png";
 import NoImg from "@/assets/no-image.svg?react";
 
-import sns6 from "@/assets/forrest/sns_6.png";
-
 const Main = () => {
   const goToPath = useGoToPath();
 
+  const { data: introductionData, isLoading: introductionLoading } =
+    useIntroduction();
   const { data: snsImgData, isLoading: snsImgLoading } = useGetSnsImg();
   const [planterior, gardening, artificial_plants] =
     useMultipleWorks(HOME_WORKS_PARAMS);
@@ -50,20 +50,27 @@ const Main = () => {
                     <h2 className="mobile-introduction-header">About us</h2>
                   </div>
                   <div className="mobile-introduction-content-box">
-                    <img src={sns6} />
+                    {introductionData && introductionData.length > 0 ? (
+                      <img src={introductionData[0].thumbnail} />
+                    ) : (
+                      <NoImg />
+                    )}
                     <div className="mobile-introduction-content-text-box">
-                      <div className="mobile-introduction-content-text">
-                        테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
-                        입니다. 테스트 입니다. 테스트 입니다. 테스트 입니다.
-                        테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
-                        입니다. 테스트 입니다. 테스트 입니다. 테스트 입니다.
-                        테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
-                        입니다. 테스트 입니다. 테스트 입니다. 테스트 입니다.
-                        테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
-                        입니다. 테스트 입니다. 테스트 입니다. 테스트 입니다.
-                        테스트 입니다. 테스트 입니다. 테스트 입니다. 테스트
-                        입니다. 테스트 입니다. 테스트 입니다.
-                      </div>
+                      {introductionLoading ? (
+                        <div className="spinner_container">
+                          <FadeLoader />
+                        </div>
+                      ) : introductionData && introductionData.length > 0 ? (
+                        introductionData[0].content ? (
+                          <div className="mobile-introduction-content-text">
+                            {introductionData[0].content}
+                          </div>
+                        ) : (
+                          <div>데이터가 없습니다.</div>
+                        )
+                      ) : (
+                        <div>데이터가 없습니다.</div>
+                      )}
                       <div
                         className="mobile-introduction-button"
                         onClick={() => goToPath("/forrest/aboutus")}
