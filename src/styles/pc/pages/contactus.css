@@ -50,7 +50,7 @@
 
 .contact-page-content-container {
   display: flex;
-  gap: 5vw;
+  gap: 3vw;
 }
 
 .contact-content-box {
@@ -104,7 +104,7 @@
 /* ── 반응형 ── */
 @media (min-width: 1440px) and (max-width: 1920px) {
   .contact-info-panel {
-    padding: 60px 70px;
+    padding: 60px 55px;
   }
   .contact-page-header {
     font-size: 52px;
@@ -131,7 +131,7 @@
     width: 40%;
   }
   .contact-info-panel {
-    padding: 50px 56px;
+    padding: 40px 30px;
   }
   .contact-page-header {
     font-size: 48px;
@@ -147,7 +147,7 @@
     font-size: 16px;
   }
   .blog-link a {
-    font-size: 15px;
+    font-size: 13px;
   }
   .social-links-row {
     gap: 18px;
@@ -159,7 +159,7 @@
     width: 38%;
   }
   .contact-info-panel {
-    padding: 40px 48px;
+    padding: 40px 30px;
   }
   .contact-page-header {
     font-size: 44px;
@@ -175,7 +175,7 @@
     font-size: 15px;
   }
   .blog-link a {
-    font-size: 14px;
+    font-size: 12px;
   }
   .social-links-row {
     gap: 16px;
