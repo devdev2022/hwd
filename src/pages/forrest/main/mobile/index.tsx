@@ -28,7 +28,7 @@ const Main = () => {
   const { data: introductionData, isLoading: introductionLoading } =
     useIntroduction();
   const { data: snsImgData, isLoading: snsImgLoading } = useGetSnsImg();
-  const [planterior, gardening, artificial_plants] =
+  const [planterior, gardening, popupStore, winterdec] =
     useMultipleWorks(HOME_WORKS_PARAMS);
 
   return (
@@ -119,8 +119,7 @@ const Main = () => {
               </div>
             </div>
             <div className="mobile-product-container">
-              <h2 className="mobile-product-header">Gardening</h2>
-
+              <h2 className="mobile-product-header">LandScaping</h2>
               <div className="mobile-product-introduction">
                 {gardening.isLoading ? (
                   <div className="spinner_container">
@@ -148,21 +147,48 @@ const Main = () => {
               </div>
             </div>
             <div className="mobile-product-container">
-              <h2 className="mobile-product-header">Artificial plants</h2>
-
+              <h2 className="mobile-product-header">Pop-up store</h2>
               <div className="mobile-product-introduction">
-                {artificial_plants.isLoading ? (
+                {popupStore.isLoading ? (
                   <div className="spinner_container">
                     <FadeLoader />
                   </div>
-                ) : artificial_plants.data?.data?.length ? (
+                ) : popupStore.data?.data?.length ? (
                   <Swiper
                     pagination={{ dynamicBullets: true }}
                     loop
                     modules={[Pagination]}
                     className="mySwiper"
                   >
-                    {artificial_plants.data.data.slice(0, 3).map((item) => (
+                    {popupStore.data.data.slice(0, 3).map((item) => (
+                      <SwiperSlide key={item.id}>
+                        <img src={item.link} alt={item.name ?? ""} />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                ) : (
+                  <div className="empty">
+                    <NoImg />
+                    <p>데이터가 없습니다</p>
+                  </div>
+                )}
+              </div>
+            </div>
+            <div className="mobile-product-container">
+              <h2 className="mobile-product-header">Winter decoration</h2>
+              <div className="mobile-product-introduction">
+                {winterdec.isLoading ? (
+                  <div className="spinner_container">
+                    <FadeLoader />
+                  </div>
+                ) : winterdec.data?.data?.length ? (
+                  <Swiper
+                    pagination={{ dynamicBullets: true }}
+                    loop
+                    modules={[Pagination]}
+                    className="mySwiper"
+                  >
+                    {winterdec.data.data.slice(0, 3).map((item) => (
                       <SwiperSlide key={item.id}>
                         <img src={item.link} alt={item.name ?? ""} />
                       </SwiperSlide>
