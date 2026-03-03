@@ -16,7 +16,7 @@ import NoImg from "@/assets/no-image.svg?react";
 import { FadeLoader } from "react-spinners";
 
 const initialState = {
-  open1: false,
+  open1: true,
   open2: false,
   open3: false,
 };
@@ -80,6 +80,10 @@ const Works = () => {
     }
   }, [totalCnt, active]);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [menu.category, menu.subMenu, menu.page]);
+
   return (
     <>
       <Header />
@@ -94,7 +98,7 @@ const Works = () => {
                 }`}
                 onClick={() => dispatch({ type: "TOGGLE", key: "open1" })}
               >
-                <h2 className="mobile-works-category-title">Planterior</h2>
+                <h2 className="mobile-works-category-title">PLANTERIOR</h2>
                 <span className="arrow">
                   <Arrow />
                 </span>
@@ -126,7 +130,7 @@ const Works = () => {
                     setMenu({ page: 1, category: "planterior", subMenu: 2 })
                   }
                 >
-                  나무1
+                  실내
                 </li>
                 <li
                   className={`works-category-item-kr ${
@@ -138,7 +142,19 @@ const Works = () => {
                     setMenu({ page: 1, category: "planterior", subMenu: 3 })
                   }
                 >
-                  나무2
+                  실외
+                </li>
+                <li
+                  className={`works-category-item-kr ${
+                    menu.category === "planterior" && menu.subMenu === 4
+                      ? "selected"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    setMenu({ page: 1, category: "planterior", subMenu: 4 })
+                  }
+                >
+                  아트웍 & 오브제
                 </li>
               </ul>
             </div>
@@ -149,7 +165,7 @@ const Works = () => {
                 }`}
                 onClick={() => dispatch({ type: "TOGGLE", key: "open2" })}
               >
-                <h2 className="mobile-works-category-title">gardening</h2>
+                <h2 className="mobile-works-category-title">LANDSCAPING</h2>
                 <span className="arrow">
                   <Arrow />
                 </span>
@@ -161,110 +177,69 @@ const Works = () => {
               >
                 <li
                   className={`works-category-item-en ${
-                    menu.category === "gardening" && menu.subMenu === 1
+                    menu.category === "landscaping" && menu.subMenu === 1
                       ? "selected"
                       : ""
                   }`}
                   onClick={() =>
-                    setMenu({ page: 1, category: "gardening", subMenu: 1 })
+                    setMenu({ page: 1, category: "landscaping", subMenu: 1 })
                   }
                 >
                   All
                 </li>
                 <li
                   className={`works-category-item-kr ${
-                    menu.category === "gardening" && menu.subMenu === 4
+                    menu.category === "landscaping" && menu.subMenu === 5
                       ? "selected"
                       : ""
                   }`}
                   onClick={() =>
-                    setMenu({ page: 1, category: "gardening", subMenu: 4 })
+                    setMenu({ page: 1, category: "landscaping", subMenu: 5 })
                   }
                 >
-                  나무1
+                  실내·외 조경
                 </li>
                 <li
                   className={`works-category-item-kr ${
-                    menu.category === "gardening" && menu.subMenu === 5
+                    menu.category === "landscaping" && menu.subMenu === 6
                       ? "selected"
                       : ""
                   }`}
                   onClick={() =>
-                    setMenu({ page: 1, category: "gardening", subMenu: 5 })
+                    setMenu({ page: 1, category: "landscaping", subMenu: 6 })
                   }
                 >
-                  나무2
+                  실내 조경
+                </li>
+                <li
+                  className={`works-category-item-kr ${
+                    menu.category === "landscaping" && menu.subMenu === 7
+                      ? "selected"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    setMenu({ page: 1, category: "landscaping", subMenu: 7 })
+                  }
+                >
+                  실외 조경
                 </li>
               </ul>
             </div>
-            <div>
-              <div
-                className={`mobile-category-item ${
-                  state.open3 ? "active" : ""
-                }`}
-                onClick={() => dispatch({ type: "TOGGLE", key: "open3" })}
-              >
-                <h2 className="mobile-works-category-title">
-                  artificial plants
-                </h2>
-                <span className="arrow">
-                  <Arrow />
-                </span>
-              </div>
-              <ul
-                className={`mobile-category-list ${
-                  state.open3 ? "active" : ""
-                }`}
-              >
-                <li
-                  className={`works-category-item-en ${
-                    menu.category === "artificial_plants" && menu.subMenu === 1
-                      ? "selected"
-                      : ""
-                  }`}
-                  onClick={() =>
-                    setMenu({
-                      page: 1,
-                      category: "artificial_plants",
-                      subMenu: 1,
-                    })
-                  }
-                >
-                  All
-                </li>
-                <li
-                  className={`works-category-item-kr ${
-                    menu.category === "artificial_plants" && menu.subMenu === 6
-                      ? "selected"
-                      : ""
-                  }`}
-                  onClick={() =>
-                    setMenu({
-                      page: 1,
-                      category: "artificial_plants",
-                      subMenu: 6,
-                    })
-                  }
-                >
-                  나무1
-                </li>
-                <li
-                  className={`works-category-item-kr ${
-                    menu.category === "artificial_plants" && menu.subMenu === 7
-                      ? "selected"
-                      : ""
-                  }`}
-                  onClick={() =>
-                    setMenu({
-                      page: 1,
-                      category: "artificial_plants",
-                      subMenu: 7,
-                    })
-                  }
-                >
-                  나무2
-                </li>
-              </ul>
+            <div
+              className="mobile-category-item"
+              onClick={() =>
+                setMenu({ page: 1, category: "pop-up_store", subMenu: 1 })
+              }
+            >
+              <h2 className="mobile-works-category-title">POP-UP STORE</h2>
+            </div>
+            <div
+              className="mobile-category-item"
+              onClick={() =>
+                setMenu({ page: 1, category: "winter_decoration", subMenu: 1 })
+              }
+            >
+              <h2 className="mobile-works-category-title">WINTER DECORATION</h2>
             </div>
           </div>
         </section>

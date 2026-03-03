@@ -75,6 +75,10 @@
   width: 100%;
 }
 
+mobile-product-image-name {
+  font-family: "Noto Sans KR-Light";
+}
+
 .mobile-works-product-box {
   display: flex;
   flex-direction: column;
