@@ -187,7 +187,7 @@ const Main = () => {
                     <li>
                       <img src={item.link} />
                       <div className="product-name" key={item.id}>
-                        {item.name}
+                        {item.name.replaceAll("_", " ")}
                       </div>
                     </li>
                   ))
@@ -217,7 +217,7 @@ const Main = () => {
                     <li>
                       <img src={item.link} />
                       <div className="product-name" key={item.id}>
-                        {item.name}
+                        {item.name.replaceAll("_", " ")}
                       </div>
                     </li>
                   ))
@@ -247,7 +247,7 @@ const Main = () => {
                     <li>
                       <img src={item.link} />
                       <div className="product-name" key={item.id}>
-                        {item.name}
+                        {item.name.replaceAll("_", " ")}
                       </div>
                     </li>
                   ))
@@ -277,7 +277,7 @@ const Main = () => {
                     <li>
                       <img src={item.link} />
                       <div className="product-name" key={item.id}>
-                        {item.name}
+                        {item.name.replaceAll("_", " ")}
                       </div>
                     </li>
                   ))

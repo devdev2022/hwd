@@ -16,3 +16,9 @@
 .swiper-pagination-bullet-active {
   background-color: white !important;
 }
+
+.product-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
