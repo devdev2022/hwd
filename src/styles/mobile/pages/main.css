@@ -64,7 +64,12 @@
 }
 
 .mobile-introduction-content-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
   white-space: pre-line;
+  font-family: "Noto Sans KR-Light";
+  overflow: hidden;
 }
 
 .mobile-introduction-content-text-box {
