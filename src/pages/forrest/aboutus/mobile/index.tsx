@@ -54,7 +54,7 @@ const AboutUs = () => {
             <div>
               <h3
                 style={{
-                  fontSize: "40px",
+                  fontSize: "35px",
                   fontFamily: "Noto Sans KR-Regular",
                   marginTop: "10%",
                 }}
@@ -105,7 +105,7 @@ const AboutUs = () => {
             </div>
             <div className="mobile-introduction-page-task-content">
               <Tree />
-              <div style={{ fontWeight: "600" }}>Tree</div>
+              <div style={{ fontWeight: "600" }}>Winter Decoration</div>
               <div style={{ fontFamily: "Noto Sans KR-Light" }}>
                 테스트 입니다.
               </div>
@@ -114,7 +114,7 @@ const AboutUs = () => {
         </section>
         <section className="mobile-introduction-page-staff">
           <div className="introduction-page-staff-container">
-            <h2 style={{ fontSize: "56px", fontFamily: "Italiana" }}>Staff</h2>
+            <h2 style={{ fontSize: "50px", fontFamily: "Italiana" }}>Staff</h2>
             <div className="mobile-introduction-page-staff-imgbox">
               {getPictures && getPictures.length > 0 ? (
                 getPictures.map((item) => (
