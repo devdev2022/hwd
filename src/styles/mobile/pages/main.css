@@ -72,7 +72,7 @@
   flex-direction: column;
   justify-content: space-between;
   font-family: Montserrat-ExtraLight;
-  width: 60%;
+  width: 100%;
   margin-top: 10px;
   height: 100%;
   gap: 20px;
@@ -89,7 +89,6 @@
   .mobile-introduction-content-text-box {
     margin-top: 15px;
     padding: 0 20px;
-    width: 100%;
   }
 }
 
