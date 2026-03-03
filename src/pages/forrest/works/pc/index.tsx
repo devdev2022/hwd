@@ -34,6 +34,7 @@ function reducer(state: State, action: Action): State {
 
 const Works = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [menu, setMenu] = useState({
     page: 1,
     category: "planterior",
@@ -243,7 +244,12 @@ const Works = () => {
                 {data.data.map((item) => (
                   <li key={item.id} className="work-item">
                     {item.link ? (
-                      <img src={item.link} className="product-image" />
+                      <img
+                        src={item.link}
+                        className="product-image"
+                        onClick={() => setSelectedImage(item.link)}
+                        style={{ cursor: "zoom-in" }}
+                      />
                     ) : (
                       <NoImg />
                     )}
@@ -272,6 +278,18 @@ const Works = () => {
         </section>
       </main>
       <Footer />
+      {selectedImage && (
+        <div className="lightbox-overlay" onClick={() => setSelectedImage(null)}>
+          <img
+            src={selectedImage}
+            className="lightbox-image"
+            onClick={(e) => e.stopPropagation()}
+          />
+          <button className="lightbox-close" onClick={() => setSelectedImage(null)}>
+            ✕
+          </button>
+        </div>
+      )}
     </>
   );
 };

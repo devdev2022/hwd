@@ -17,14 +17,6 @@
   object-fit: cover;
 }
 
-.swiper-pagination-bullet {
-  background-color: black !important;
-}
-
-.swiper-pagination-bullet-active {
-  background-color: black !important;
-}
-
 .product-slide {
   display: flex;
   flex-direction: column;
