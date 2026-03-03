@@ -30,7 +30,7 @@ const Main = () => {
 
   const { data: snsImgData, isLoading: snsImgLoading } = useGetSnsImg();
 
-  const [planterior, gardening, artificial_plants] =
+  const [planterior, landscaping, popupStore, winterdec] =
     useMultipleWorks(HOME_WORKS_PARAMS);
 
   useEffect(() => {
@@ -200,20 +200,20 @@ const Main = () => {
               </ul>
             </div>
             <div className="product-container">
-              <h2 className="product-header">Gardening</h2>
+              <h2 className="product-header">LandScaping</h2>
               <ul
                 className={`product_introduction ${
-                  gardening.data && gardening.data.data?.length < 3
+                  landscaping.data && landscaping.data.data?.length < 3
                     ? "less"
                     : ""
                 }`}
               >
-                {gardening.isLoading ? (
+                {landscaping.isLoading ? (
                   <div className="spinner_container">
                     <FadeLoader />
                   </div>
-                ) : gardening.data && gardening.data.data ? (
-                  gardening.data.data.map((item) => (
+                ) : landscaping.data && landscaping.data.data ? (
+                  landscaping.data.data.map((item) => (
                     <li>
                       <img src={item.link} />
                       <div className="product-name" key={item.id}>
@@ -230,21 +230,50 @@ const Main = () => {
               </ul>
             </div>
             <div className="product-container">
-              <h2 className="product-header">Artificial plants</h2>
+              <h2 className="product-header">Pop-up store</h2>
               <ul
                 className={`product_introduction ${
-                  artificial_plants.data &&
-                  artificial_plants.data.data?.length < 3
+                  popupStore.data && popupStore.data.data?.length < 3
                     ? "less"
                     : ""
                 }`}
               >
-                {artificial_plants.isLoading ? (
+                {popupStore.isLoading ? (
                   <div className="spinner_container">
                     <FadeLoader />
                   </div>
-                ) : artificial_plants.data && artificial_plants.data.data ? (
-                  artificial_plants.data.data.slice(0, 3).map((item) => (
+                ) : popupStore.data && popupStore.data.data ? (
+                  popupStore.data.data.slice(0, 3).map((item) => (
+                    <li>
+                      <img src={item.link} />
+                      <div className="product-name" key={item.id}>
+                        {item.name}
+                      </div>
+                    </li>
+                  ))
+                ) : (
+                  <li>
+                    <NoImg />
+                    <p>데이터가 없습니다</p>
+                  </li>
+                )}
+              </ul>
+            </div>
+            <div className="product-container">
+              <h2 className="product-header">Winter decoration</h2>
+              <ul
+                className={`product_introduction ${
+                  winterdec.data && winterdec.data.data?.length < 3
+                    ? "less"
+                    : ""
+                }`}
+              >
+                {winterdec.isLoading ? (
+                  <div className="spinner_container">
+                    <FadeLoader />
+                  </div>
+                ) : winterdec.data && winterdec.data.data ? (
+                  winterdec.data.data.slice(0, 3).map((item) => (
                     <li>
                       <img src={item.link} />
                       <div className="product-name" key={item.id}>
