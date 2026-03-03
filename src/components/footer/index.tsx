@@ -21,7 +21,6 @@ const Footer = () => {
               <br />
               상호 : {getBusinessInfo[0].business_name} <br />
               대표 : {getBusinessInfo[0].ceo_name} <br />
-              팩스: {getBusinessInfo[0].fax_number} <br />
               이메일: {getBusinessInfo[0].email_address} <br />
             </div>
             <div className="social-link">
