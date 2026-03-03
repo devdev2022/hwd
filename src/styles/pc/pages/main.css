@@ -166,8 +166,9 @@
 }
 
 .product-image {
-  width: 90%;
-  height: 90%;
+  width: 350px;
+  height: 400px;
+  object-fit: cover;
 }
 
 .product-name {

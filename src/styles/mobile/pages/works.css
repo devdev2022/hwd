@@ -17,7 +17,7 @@
 
 .mobile-product-image {
   width: 100%;
-  height: 100%;
+  height: 270px;
 }
 
 .mobile-product-name {
@@ -73,6 +73,10 @@
 
 .mobile-works-product-container {
   width: 100%;
+}
+
+mobile-product-image-name {
+  font-family: "Noto Sans KR-Light";
 }
 
 .mobile-works-product-box {
