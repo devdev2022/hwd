@@ -95,17 +95,18 @@
 }
 .main-introduction-content-box img {
   width: 50%;
-  height: 80%;
+  height: 100%;
 }
 
 .main-introduction-content-text-box {
   display: flex;
   flex-direction: column;
   font-family: Montserrat-ExtraLight;
+  justify-content: space-between;
   width: 60%;
-  padding: 10px;
   height: 100%;
   gap: 30px;
+  padding-top: 10px;
 }
 
 .main-introduction-content-text {
