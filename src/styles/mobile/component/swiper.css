@@ -17,6 +17,12 @@
   object-fit: cover;
 }
 
+@media (max-width: 513px) {
+  .mySwiper img {
+    aspect-ratio: 3 / 3;
+  }
+}
+
 .product-slide {
   display: flex;
   flex-direction: column;
