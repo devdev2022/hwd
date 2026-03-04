@@ -99,6 +99,7 @@
 
 @media (min-width: 680px) and (max-width: 1024px) {
   .mobile-introduction-content-box {
+    margin-top: 20px;
     height: 350px;
   }
 
