@@ -15,12 +15,10 @@ import Arrow from "@/assets/arrow_select.svg?react";
 
 const initialState = {
   open1: true,
-  open2: false,
-  open3: false,
 };
 
 type State = typeof initialState;
-type Action = { type: "TOGGLE"; key: keyof State } | { type: "CLOSE_ALL" };
+type Action = { type: "TOGGLE"; key: keyof State };
 
 function reducer(state: State, action: Action): State {
   switch (action.type) {
@@ -32,12 +30,20 @@ function reducer(state: State, action: Action): State {
   }
 }
 
+const CATEGORY_LABELS: Record<string, string> = {
+  wedding: "Wedding",
+  wedding_bouquet: "Wedding Bouquet",
+  flower_arrangement: "Flower Arrangement",
+  gift_flower: "Gift Flower",
+  flower_class: "Flower Class",
+};
+
 const WeddingWorksPc = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [menu, setMenu] = useState({
     page: 1,
-    category: "ceremony",
+    category: "wedding",
     subMenu: 1,
   });
 
@@ -95,7 +101,7 @@ const WeddingWorksPc = () => {
                 className={`wedding-category-item ${state.open1 ? "active" : ""}`}
                 onClick={() => dispatch({ type: "TOGGLE", key: "open1" })}
               >
-                <h2 className="wedding-category-title">CEREMONY</h2>
+                <h2 className="wedding-category-title">Wedding</h2>
                 <span className="arrow">
                   <Arrow />
                 </span>
@@ -103,112 +109,79 @@ const WeddingWorksPc = () => {
               <ul className={`wedding-category-list ${state.open1 ? "active" : ""}`}>
                 <li
                   className={`works-category-item-en ${
-                    menu.category === "ceremony" && menu.subMenu === 1
+                    menu.category === "wedding" && menu.subMenu === 1
                       ? "selected"
                       : ""
                   }`}
                   onClick={() =>
-                    setMenu({ page: 1, category: "ceremony", subMenu: 1 })
+                    setMenu({ page: 1, category: "wedding", subMenu: 1 })
                   }
                 >
                   All
                 </li>
                 <li
                   className={`works-category-item-kr ${
-                    menu.category === "ceremony" && menu.subMenu === 2
+                    menu.category === "wedding" && menu.subMenu === 2
                       ? "selected"
                       : ""
                   }`}
                   onClick={() =>
-                    setMenu({ page: 1, category: "ceremony", subMenu: 2 })
-                  }
-                >
-                  실내
-                </li>
-                <li
-                  className={`works-category-item-kr ${
-                    menu.category === "ceremony" && menu.subMenu === 3
-                      ? "selected"
-                      : ""
-                  }`}
-                  onClick={() =>
-                    setMenu({ page: 1, category: "ceremony", subMenu: 3 })
+                    setMenu({ page: 1, category: "wedding", subMenu: 2 })
                   }
                 >
                   야외
                 </li>
-              </ul>
-            </div>
-            <div>
-              <div
-                className={`wedding-category-item ${state.open2 ? "active" : ""}`}
-                onClick={() => dispatch({ type: "TOGGLE", key: "open2" })}
-              >
-                <h2 className="wedding-category-title">RECEPTION</h2>
-                <span className="arrow">
-                  <Arrow />
-                </span>
-              </div>
-              <ul className={`wedding-category-list ${state.open2 ? "active" : ""}`}>
-                <li
-                  className={`works-category-item-en ${
-                    menu.category === "reception" && menu.subMenu === 1
-                      ? "selected"
-                      : ""
-                  }`}
-                  onClick={() =>
-                    setMenu({ page: 1, category: "reception", subMenu: 1 })
-                  }
-                >
-                  All
-                </li>
                 <li
                   className={`works-category-item-kr ${
-                    menu.category === "reception" && menu.subMenu === 5
+                    menu.category === "wedding" && menu.subMenu === 3
                       ? "selected"
                       : ""
                   }`}
                   onClick={() =>
-                    setMenu({ page: 1, category: "reception", subMenu: 5 })
+                    setMenu({ page: 1, category: "wedding", subMenu: 3 })
                   }
                 >
-                  피로연
-                </li>
-                <li
-                  className={`works-category-item-kr ${
-                    menu.category === "reception" && menu.subMenu === 6
-                      ? "selected"
-                      : ""
-                  }`}
-                  onClick={() =>
-                    setMenu({ page: 1, category: "reception", subMenu: 6 })
-                  }
-                >
-                  리셉션
+                  실내
                 </li>
               </ul>
             </div>
             <div
               className="wedding-category-item"
               onClick={() =>
-                setMenu({ page: 1, category: "floral", subMenu: 1 })
+                setMenu({ page: 1, category: "wedding_bouquet", subMenu: 1 })
               }
             >
-              <h2 className="wedding-category-title">FLORAL</h2>
+              <h2 className="wedding-category-title">Wedding Bouquet</h2>
             </div>
             <div
               className="wedding-category-item"
               onClick={() =>
-                setMenu({ page: 1, category: "styling", subMenu: 1 })
+                setMenu({ page: 1, category: "flower_arrangement", subMenu: 1 })
               }
             >
-              <h2 className="wedding-category-title">STYLING</h2>
+              <h2 className="wedding-category-title">Flower Arrangement</h2>
+            </div>
+            <div
+              className="wedding-category-item"
+              onClick={() =>
+                setMenu({ page: 1, category: "gift_flower", subMenu: 1 })
+              }
+            >
+              <h2 className="wedding-category-title">Gift Flower</h2>
+            </div>
+            <div
+              className="wedding-category-item"
+              onClick={() =>
+                setMenu({ page: 1, category: "flower_class", subMenu: 1 })
+              }
+            >
+              <h2 className="wedding-category-title">Flower Class</h2>
             </div>
           </div>
         </section>
         <section className="wedding-works-portfolio">
           <h2 className="wedding-works-product-header">
-            {menu.category.replaceAll("_", " ").replaceAll(".png", "")}
+            {CATEGORY_LABELS[menu.category] ?? menu.category.replaceAll("_", " ")}
           </h2>
           <div className="wedding-works-product-container">
             {isLoading ? (
