@@ -97,6 +97,16 @@
   }
 }
 
+@media (min-width: 680px) and (max-width: 1024px) {
+  .mobile-introduction-content-box {
+    height: 350px;
+  }
+
+  .mobile-introduction-content-box img {
+    object-fit: fill;
+  }
+}
+
 @media (max-width: 680px) {
   .mobile-introduction-header-container {
     margin-bottom: 20px;
