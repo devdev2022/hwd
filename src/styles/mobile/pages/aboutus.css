@@ -34,7 +34,7 @@
 .mobile-introduction-page-presentation {
   display: flex;
   width: 100%;
-  padding-top: 110px 0;
+  padding: 110px 0;
 }
 
 .mobile-introduction-presentation-container {
