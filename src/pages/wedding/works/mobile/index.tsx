@@ -1,0 +1,292 @@
+import { useReducer, useState, useMemo, useEffect } from "react";
+
+//query
+import { useWorks } from "@/query/works";
+
+//component
+import Footer from "@/components/footer";
+import Header from "@/components/weddingMobileHeader";
+import Pagination from "@/components/pagination";
+
+//resource
+import Arrow from "@/assets/arrow_select.svg?react";
+import NoImg from "@/assets/no-image.svg?react";
+import { FadeLoader } from "react-spinners";
+
+const initialState = {
+  open1: true,
+  open2: false,
+  open3: false,
+};
+
+type State = typeof initialState;
+type Action = { type: "TOGGLE"; key: keyof State } | { type: "CLOSE_ALL" };
+
+function reducer(state: State, action: Action): State {
+  switch (action.type) {
+    case "TOGGLE":
+      return { ...state, [action.key]: !state[action.key] };
+
+    default:
+      return state;
+  }
+}
+
+const WeddingWorksMobile = () => {
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [menu, setMenu] = useState({
+    page: 1,
+    category: "ceremony",
+    subMenu: 1,
+  });
+
+  //pagination
+  const [active, setActive] = useState(1);
+  const [blck, setBlck] = useState(0);
+  const [totalCnt, setTotalCnt] = useState(0);
+
+  const handlePageChange = (data: number) => {
+    setMenu((prev) => ({ ...prev, page: Number(data) }));
+    setActive(Number(data));
+  };
+
+  const { data, isLoading } = useWorks(
+    useMemo(
+      () => ({
+        page: menu.page,
+        category: menu.category,
+        subMenu: menu.subMenu,
+        limit: 9,
+      }),
+      [menu.page, menu.category, menu.subMenu],
+    ),
+  );
+
+  useEffect(() => {
+    if (data && data.totalCount !== 0) {
+      setTotalCnt(data.totalCount);
+    } else {
+      setTotalCnt(0);
+    }
+  }, [data]);
+
+  useEffect(() => {
+    if (totalCnt > 0) {
+      setBlck(Math.ceil(totalCnt / 9));
+    } else {
+      setBlck(1);
+    }
+  }, [totalCnt, active]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [menu.category, menu.subMenu, menu.page]);
+
+  return (
+    <>
+      <Header />
+      <main className="wedding-mobile-works">
+        <section className="wedding-mobile-works-category">
+          <div className="wedding-mobile-works-category-container">
+            <h2 className="wedding-mobile-works-header">Category</h2>
+            <div>
+              <div
+                className={`wedding-mobile-category-item ${
+                  state.open1 ? "active" : ""
+                }`}
+                onClick={() => dispatch({ type: "TOGGLE", key: "open1" })}
+              >
+                <h2 className="wedding-mobile-works-category-title">CEREMONY</h2>
+                <span className="arrow">
+                  <Arrow />
+                </span>
+              </div>
+              <ul
+                className={`wedding-mobile-category-list ${
+                  state.open1 ? "active" : ""
+                }`}
+              >
+                <li
+                  className={`works-category-item-en ${
+                    menu.category === "ceremony" && menu.subMenu === 1
+                      ? "selected"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    setMenu({ page: 1, category: "ceremony", subMenu: 1 })
+                  }
+                >
+                  All
+                </li>
+                <li
+                  className={`works-category-item-kr ${
+                    menu.category === "ceremony" && menu.subMenu === 2
+                      ? "selected"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    setMenu({ page: 1, category: "ceremony", subMenu: 2 })
+                  }
+                >
+                  실내
+                </li>
+                <li
+                  className={`works-category-item-kr ${
+                    menu.category === "ceremony" && menu.subMenu === 3
+                      ? "selected"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    setMenu({ page: 1, category: "ceremony", subMenu: 3 })
+                  }
+                >
+                  야외
+                </li>
+              </ul>
+            </div>
+            <div>
+              <div
+                className={`wedding-mobile-category-item ${
+                  state.open2 ? "active" : ""
+                }`}
+                onClick={() => dispatch({ type: "TOGGLE", key: "open2" })}
+              >
+                <h2 className="wedding-mobile-works-category-title">RECEPTION</h2>
+                <span className="arrow">
+                  <Arrow />
+                </span>
+              </div>
+              <ul
+                className={`wedding-mobile-category-list ${
+                  state.open2 ? "active" : ""
+                }`}
+              >
+                <li
+                  className={`works-category-item-en ${
+                    menu.category === "reception" && menu.subMenu === 1
+                      ? "selected"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    setMenu({ page: 1, category: "reception", subMenu: 1 })
+                  }
+                >
+                  All
+                </li>
+                <li
+                  className={`works-category-item-kr ${
+                    menu.category === "reception" && menu.subMenu === 5
+                      ? "selected"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    setMenu({ page: 1, category: "reception", subMenu: 5 })
+                  }
+                >
+                  피로연
+                </li>
+                <li
+                  className={`works-category-item-kr ${
+                    menu.category === "reception" && menu.subMenu === 6
+                      ? "selected"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    setMenu({ page: 1, category: "reception", subMenu: 6 })
+                  }
+                >
+                  리셉션
+                </li>
+              </ul>
+            </div>
+            <div
+              className="wedding-mobile-category-item"
+              onClick={() =>
+                setMenu({ page: 1, category: "floral", subMenu: 1 })
+              }
+            >
+              <h2 className="wedding-mobile-works-category-title">FLORAL</h2>
+            </div>
+            <div
+              className="wedding-mobile-category-item"
+              onClick={() =>
+                setMenu({ page: 1, category: "styling", subMenu: 1 })
+              }
+            >
+              <h2 className="wedding-mobile-works-category-title">STYLING</h2>
+            </div>
+          </div>
+        </section>
+        <section className="wedding-mobile-works-portfolio">
+          <h2 className="wedding-mobile-works-product-header">
+            {menu.category.replaceAll("_", " ").replaceAll(".png", "")}
+          </h2>
+          <div className="wedding-mobile-works-product-container">
+            {isLoading ? (
+              <div className="spinner_container">
+                <FadeLoader />
+              </div>
+            ) : data && data.data.length > 0 ? (
+              <ul className="wedding-mobile-works-container">
+                {data.data.map((item) => (
+                  <li key={item.id} className="wedding-mobile-work-item">
+                    {item.link ? (
+                      <img
+                        src={item.link}
+                        className="wedding-mobile-product-image"
+                        onClick={() => setSelectedImage(item.link)}
+                        style={{ cursor: "pointer" }}
+                      />
+                    ) : (
+                      <NoImg />
+                    )}
+                    {item.name ? (
+                      <p>{item.name.replaceAll("_", " ")}</p>
+                    ) : (
+                      <p>null</p>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <ul>
+                <div className="work-no-item">
+                  <NoImg />
+                  <p>데이터가 없습니다</p>
+                </div>
+              </ul>
+            )}
+
+            <Pagination
+              totalPage={blck}
+              currentPage={active}
+              handlePageChange={(p) => handlePageChange(p)}
+            />
+          </div>
+        </section>
+      </main>
+      <Footer />
+      {selectedImage && (
+        <div
+          className="lightbox-overlay"
+          onClick={() => setSelectedImage(null)}
+        >
+          <img
+            src={selectedImage}
+            className="lightbox-image"
+            onClick={(e) => e.stopPropagation()}
+          />
+          <button
+            className="lightbox-close"
+            onClick={() => setSelectedImage(null)}
+          >
+            ✕
+          </button>
+        </div>
+      )}
+    </>
+  );
+};
+
+export default WeddingWorksMobile;
