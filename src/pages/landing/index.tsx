@@ -9,6 +9,10 @@ const Main = () => {
     navigate("/forrest");
   };
 
+  const goWedding = () => {
+    navigate("/wedding");
+  };
+
   return (
     <div className="landing_container">
       <div className="landing_content_box">
@@ -26,7 +30,9 @@ const Main = () => {
         <img src={wedding} />
         <div className="overlay">
           <h2>WEDDING</h2>
-          <button className="btn">이동하기</button>
+          <button className="btn" onClick={goWedding}>
+            이동하기
+          </button>
         </div>
       </div>
     </div>

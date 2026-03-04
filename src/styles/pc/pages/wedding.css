@@ -1,0 +1,840 @@
+/* ====== 웨딩 헤더 - 메인 페이지 ====== */
+.wedding-header {
+  color: white;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding-top: 40px;
+  z-index: 100;
+}
+
+.wedding-header-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.wedding-header.scrolled {
+  color: black;
+  position: fixed;
+  padding-top: 0;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.wedding-header.scrolled.visible {
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+
+.wedding-header.scrolled.hidden {
+  transform: translateY(-100%);
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.wedding-header > .wedding-flexbox {
+  position: relative;
+  display: block;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.wedding-header-logo {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 55px;
+}
+
+.wedding-header-logo a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.wedding-header-logo,
+.wedding-header-logo a,
+.wedding-header-logo span {
+  font-family: "Italiana", serif !important;
+}
+
+/* ====== 웨딩 헤더 - 세부 페이지 ====== */
+.wedding-detail-page-header {
+  background-color: white;
+  color: black;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 40px;
+  border-bottom: 1px solid #ddd;
+  z-index: 100;
+}
+
+.wedding-detail-page-header.hidden {
+  transform: translateY(-100%);
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.wedding-detail-page-header.scrolled {
+  padding-top: 0px;
+  background-color: white;
+  color: black;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #ddd;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  position: fixed;
+  opacity: 1;
+}
+
+.wedding-detail-page-header.scrolled.visible {
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+
+.wedding-detail-page-header.scrolled.hidden {
+  transform: translateY(-100%);
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.wedding-detail-page-header-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.wedding-detail-page-header-logo {
+  text-align: center;
+  font-size: 55px;
+  color: black;
+}
+
+.wedding-detail-page-header > .wedding-detail-page-flexbox {
+  position: relative;
+  display: block;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.wedding-detail-page-header-logo a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.wedding-detail-page-header-logo,
+.wedding-detail-page-header-logo a,
+.wedding-detail-page-header-logo span {
+  font-family: "Italiana", serif !important;
+}
+
+/* 웨딩 네비게이션 - 메인 페이지 */
+.wedding-header-gnb {
+  display: block;
+}
+
+.wedding-gnb {
+  margin-top: 6px;
+}
+
+.wedding-gnb.scrolled {
+  margin-top: 0px;
+}
+
+.wedding-gnb-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 14.0625%;
+  padding-left: 14.0625%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.wedding-gnb-item > .block {
+  position: relative;
+  color: #fff;
+  padding: 37px 0 34px;
+  width: 100%;
+}
+
+.wedding-gnb-item > .block.scrolled {
+  padding: 30px 0 27px;
+  color: black;
+}
+
+.wedding-gnb-item > .block .underline {
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: Montserrat-ExtraLight;
+  font-weight: 500;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 5px;
+  margin-bottom: -5px;
+  line-height: 1;
+  display: inline-block;
+}
+
+.wedding-gnb-item > .block .underline::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s linear;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: currentColor;
+  will-change: transform;
+}
+
+.wedding-gnb-item > .block .underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* 웨딩 네비게이션 - 세부 페이지 */
+.wedding-detail-page-header-gnb {
+  display: block;
+}
+
+.wedding-detail-page-gnb {
+  margin-top: 6px;
+}
+
+.wedding-detail-page-gnb-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 14.0625%;
+  padding-left: 14.0625%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.wedding-detail-page-gnb-item > .block {
+  position: relative;
+  color: black;
+  padding: 37px 0 34px;
+  width: 100%;
+}
+
+.wedding-detail-page-gnb-item > .block .underline {
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: Montserrat-ExtraLight;
+  font-weight: 500;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 5px;
+  margin-bottom: -5px;
+  line-height: 1;
+  display: inline-block;
+}
+
+.wedding-detail-page-gnb-item > .block .underline::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s linear;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: currentColor;
+  will-change: transform;
+}
+
+.wedding-detail-page-gnb-item > .block .underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ====== 웨딩 메인 페이지 ====== */
+.wedding-main-page-container {
+  max-width: 100%;
+  padding: 0 90px;
+}
+
+.wedding-main {
+  position: relative;
+  width: 100vw;
+  height: auto;
+  min-height: 100vh;
+  margin-bottom: 40px;
+}
+
+.wedding-main-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Italiana";
+  font-size: 46px;
+  margin-bottom: 50px;
+}
+
+/* 메인 빌보드 */
+.wedding-main-page-billboard-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.wedding-main-page-billboard-container img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.wedding-banner-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #e8d5c4;
+}
+
+/* 메인 소개 */
+.wedding-main-introduction-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 140px;
+  margin-bottom: 140px;
+}
+
+.wedding-main-introduction-header-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.wedding-main-introduction-header {
+  font-family: "Italiana";
+  color: black;
+  font-size: 46px;
+}
+
+.wedding-main-introduction-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1%;
+  width: 100%;
+  height: 100%;
+}
+
+.wedding-main-introduction-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: Montserrat-ExtraLight;
+  width: 100%;
+  height: 100%;
+}
+
+.wedding-main-introduction-content-box {
+  display: flex;
+  justify-content: center;
+  font-family: Montserrat-ExtraLight;
+  width: 100%;
+  padding: 20px;
+  margin-top: 10px;
+  height: 50vh;
+  gap: 35px;
+}
+
+.wedding-main-introduction-content-box img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wedding-main-introduction-content-text-box {
+  display: flex;
+  flex-direction: column;
+  font-family: Montserrat-ExtraLight;
+  justify-content: space-between;
+  width: 50%;
+  height: 100%;
+  gap: 30px;
+  padding-top: 10px;
+}
+
+.wedding-main-introduction-content-text {
+  display: -webkit-box;
+  font-family: "Noto Sans KR-Light";
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 18px;
+  white-space: pre-line;
+}
+
+.wedding-introduction-button {
+  cursor: pointer;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  font-family: Montserrat-Regular;
+  font-size: 16px;
+  padding: 0.94em 1.94em;
+  border: 1px solid black;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+
+.wedding-introduction-button:hover {
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+/* 메인 포트폴리오 */
+.wedding-product-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 160px;
+  margin-bottom: 50px;
+}
+
+.wedding-product_introduction {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+
+.wedding-product_introduction.less {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 400px);
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.wedding-product_introduction img {
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+}
+
+.wedding-product-header {
+  display: flex;
+  font-family: "Italiana";
+  font-size: 46px;
+  margin-bottom: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.wedding-product-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Noto Sans KR-Light";
+  padding: 10px;
+  font-size: 17px;
+}
+
+/* 메인 SNS */
+.wedding-sb-instagram {
+  box-sizing: border-box;
+  margin: 140px auto 0;
+  padding: 0;
+  width: 100%;
+}
+
+.wedding-sb-instagram img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  aspect-ratio: 1 / 1;
+}
+
+.wedding-sbi-images {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+}
+
+.wedding-sbi-images a {
+  display: block;
+  overflow: hidden;
+}
+
+.wedding-sbi-images img {
+  transition:
+    transform 0.8s cubic-bezier(0.19, 1, 0.22, 1),
+    filter 0.4s ease;
+  transform: scale(1);
+}
+
+.wedding-sbi-images img:hover {
+  transform: scale(1.15);
+  filter: brightness(0.85);
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .wedding-sbi-images {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ====== 웨딩 About Us 페이지 ====== */
+.wedding-introduction-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  margin-top: 210px;
+}
+
+.wedding-introduction-page-billboard {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+}
+
+.wedding-introduction-page-billboard img {
+  width: 110%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wedding-introduction-billboard-header {
+  position: absolute;
+  z-index: 10;
+}
+
+.wedding-introduction-billboard-header h2 {
+  font-family: "Italiana";
+  font-size: 100px;
+  color: #f5f3ea;
+}
+
+.wedding-cover-placeholder {
+  width: 110%;
+  height: 100%;
+  background-color: #e8d5c4;
+}
+
+.wedding-introduction-page-presentation {
+  display: flex;
+  width: 100%;
+  height: 85vh;
+  padding-top: 140px;
+}
+
+.wedding-introduction-presentation-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0 12%;
+  gap: 5%;
+}
+
+.wedding-introduction-presentation-container img {
+  width: 50%;
+  height: 80%;
+  object-fit: cover;
+}
+
+.wedding-introduction-text {
+  width: 100%;
+  margin-top: 25px;
+  font-family: "Noto Sans KR-Light";
+  white-space: pre-line;
+}
+
+.wedding-introduction-page-task {
+  display: flex;
+  flex-direction: column;
+  width: 76%;
+  height: 60vh;
+  margin-top: 100px;
+  padding: 7% 12%;
+  background-color: #fbfbfb;
+}
+
+.wedding-introduction-page-task-box {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.wedding-introduction-page-task-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  font-size: 18px;
+}
+
+.wedding-introduction-page-staff {
+  display: flex;
+  flex-direction: column;
+  width: 76%;
+  height: 70vh;
+  margin-top: 70px;
+  padding: 10% 12%;
+}
+
+.wedding-introduction-page-staff-container {
+  width: 100%;
+  text-align: center;
+}
+
+.wedding-introduction-page-staff-imgbox {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+  margin-top: 50px;
+}
+
+/* ====== 웨딩 Works 페이지 ====== */
+.wedding-works-page {
+  display: flex;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  margin-top: 220px;
+  margin-bottom: 100px;
+}
+
+.wedding-works-category {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.wedding-works-portfolio {
+  flex: 5;
+  width: 100%;
+  padding: 0 min(75px, 3.90625%);
+}
+
+.wedding-works-page-category-container {
+  margin-top: 50px;
+  padding: 0 30px;
+}
+
+.wedding-category-header {
+  font-family: "Italiana";
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.wedding-category-item {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.wedding-category-item:hover {
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.wedding-category-title {
+  font-size: 17px;
+  font-family: "Montserrat-Regular";
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.wedding-category-list {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height 0.4s ease,
+    opacity 0.3s ease;
+}
+
+.wedding-category-list.active {
+  max-height: 200px;
+  opacity: 1;
+}
+
+.wedding-category-item .arrow {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%) rotateZ(0deg);
+  transform-origin: right center;
+  transition: transform 0.4s ease;
+  width: 10px;
+  height: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.wedding-category-item.active .arrow {
+  transform: translateY(-50%) rotateZ(180deg);
+}
+
+.wedding-works-product-container {
+  width: 100%;
+}
+
+.wedding-works-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 30px;
+  column-gap: 10px;
+  row-gap: 100px;
+}
+
+.wedding-work-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wedding-works-product-header {
+  display: flex;
+  font-family: "Italiana";
+  font-size: 55px;
+  margin-top: 50px;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  text-transform: capitalize;
+}
+
+.wedding-product-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* ====== 웨딩 Contact Us 페이지 ====== */
+.wedding-contact-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  margin-top: 210px;
+}
+
+.wedding-contact-page-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: calc(100vh - 210px);
+}
+
+.wedding-contact-image-panel {
+  width: 44%;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.wedding-contact-image-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.wedding-contact-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #e8d5c4;
+  min-height: 500px;
+}
+
+.wedding-contact-info-panel {
+  flex: 1;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 80px;
+  box-sizing: border-box;
+}
+
+.wedding-contact-page-header {
+  display: block;
+  font-size: 56px;
+  font-family: "Italiana";
+  margin-bottom: 48px;
+}
+
+.wedding-contact-page-content-container {
+  display: flex;
+  gap: 3vw;
+}
+
+.wedding-contact-content-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4vh;
+}
+
+.wedding-contact-content-header {
+  display: block;
+  font-size: 13px;
+  font-family: "Montserrat-Light";
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 6px;
+}
+
+.wedding-contact-page-content {
+  display: block;
+  font-size: 18px;
+  font-family: "Noto Sans KR-Light";
+  line-height: 1.6;
+}
+
+/* 반응형 */
+@media (min-width: 1280px) and (max-width: 1440px) {
+  .wedding-contact-image-panel {
+    width: 40%;
+  }
+  .wedding-contact-info-panel {
+    padding: 40px 30px;
+  }
+  .wedding-contact-page-header {
+    font-size: 48px;
+    margin-bottom: 36px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .wedding-contact-image-panel {
+    width: 38%;
+  }
+  .wedding-contact-info-panel {
+    padding: 40px 30px;
+  }
+  .wedding-contact-page-header {
+    font-size: 44px;
+    margin-bottom: 30px;
+  }
+}
