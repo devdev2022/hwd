@@ -59,6 +59,7 @@
   align-items: center;
 }
 
+/* PC: 카드 없이 이미지만 */
 .lightbox-image {
   max-width: 90vw;
   max-height: 90vh;
@@ -83,6 +84,39 @@
 
 .lightbox-close:hover {
   opacity: 1;
+}
+
+/* 인스타그램 스타일 카드 (모바일 works) */
+.lightbox-card {
+  background: #fff;
+  border-radius: 3px;
+  width: min(92vw, 480px);
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-card .lightbox-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  max-width: none;
+  max-height: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.lightbox-caption {
+  padding: 14px 16px;
+  border-top: 1px solid #efefef;
+}
+
+.lightbox-caption-name {
+  font-size: 14px;
+  font-family: "Noto Sans KR-Light", sans-serif;
+  color: #262626;
+  margin: 0;
+  letter-spacing: 0.02em;
 }
 
 /*애니메이션*/
