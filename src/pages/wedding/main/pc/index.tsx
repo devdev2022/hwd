@@ -3,7 +3,10 @@ import { FadeLoader } from "react-spinners";
 import cx from "classnames";
 
 //query
-import { useWeddingIntroduction, useGetWeddingSnsImg } from "@/api/pages/weddingMain";
+import {
+  useWeddingIntroduction,
+  useGetWeddingSnsImg,
+} from "@/api/pages/weddingMain";
 import { useMultipleWorks } from "@/query/works";
 
 //component
@@ -30,8 +33,9 @@ const WeddingMainPc = () => {
 
   const { data: snsImgData, isLoading: snsImgLoading } = useGetWeddingSnsImg();
 
-  const [ceremony, reception, floral, styling] =
-    useMultipleWorks(WEDDING_HOME_WORKS_PARAMS);
+  const [ceremony, reception, floral, styling] = useMultipleWorks(
+    WEDDING_HOME_WORKS_PARAMS,
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -134,7 +138,9 @@ const WeddingMainPc = () => {
               <div className="wedding-main-introduction-box">
                 <div className="wedding-main-introduction-content">
                   <div className="wedding-main-introduction-header-container">
-                    <h2 className="wedding-main-introduction-header">About us</h2>
+                    <h2 className="wedding-main-introduction-header">
+                      About us
+                    </h2>
                   </div>
                   <div className="wedding-main-introduction-content-box">
                     {introductionData && introductionData.length > 0 ? (
@@ -174,7 +180,7 @@ const WeddingMainPc = () => {
         <section className="wedding-portfolio">
           <div className="wedding-main-page-container">
             <div className="wedding-product-container">
-              <h2 className="wedding-product-header">Ceremony</h2>
+              <h2 className="wedding-product-header">Wedding</h2>
               <ul
                 className={`wedding-product_introduction ${
                   ceremony.data && ceremony.data.data?.length < 3 ? "less" : ""
@@ -209,7 +215,9 @@ const WeddingMainPc = () => {
               <h2 className="wedding-product-header">Reception</h2>
               <ul
                 className={`wedding-product_introduction ${
-                  reception.data && reception.data.data?.length < 3 ? "less" : ""
+                  reception.data && reception.data.data?.length < 3
+                    ? "less"
+                    : ""
                 }`}
               >
                 {reception.isLoading ? (
