@@ -1,10 +1,7 @@
 import type { getBuinsessInfoResponse } from "@/types/common";
-import { QueryAPI } from "../queryAPI";
+import api from "../axiosInstance";
 
-const baseURL = import.meta.env.VITE_API_URL;
-const api = new QueryAPI(baseURL);
-
-export const useGetBusinessInfo = api.createUseQuery<getBuinsessInfoResponse>(
-  ["businessInfo"],
-  "/forrest/common/businessInfo"
-);
+export const fetchBusinessInfo = async (): Promise<getBuinsessInfoResponse> => {
+  const res = await api.get<getBuinsessInfoResponse>("/forrest/common/businessInfo");
+  return res.data;
+};

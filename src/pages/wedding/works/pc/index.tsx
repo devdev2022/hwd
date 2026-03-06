@@ -2,7 +2,7 @@ import { useReducer, useState, useMemo, useEffect } from "react";
 import { FadeLoader } from "react-spinners";
 
 //query
-import { useWorks } from "@/query/works";
+import { useWeddingWorks } from "@/query/works";
 
 //component
 import Footer from "@/components/footer";
@@ -57,7 +57,7 @@ const WeddingWorksPc = () => {
     setActive(Number(data));
   };
 
-  const { data, isLoading } = useWorks(
+  const { data, isLoading } = useWeddingWorks(
     useMemo(
       () => ({
         page: menu.page,
@@ -106,7 +106,9 @@ const WeddingWorksPc = () => {
                   <Arrow />
                 </span>
               </div>
-              <ul className={`wedding-category-list ${state.open1 ? "active" : ""}`}>
+              <ul
+                className={`wedding-category-list ${state.open1 ? "active" : ""}`}
+              >
                 <li
                   className={`works-category-item-en ${
                     menu.category === "wedding" && menu.subMenu === 1
@@ -181,7 +183,8 @@ const WeddingWorksPc = () => {
         </section>
         <section className="wedding-works-portfolio">
           <h2 className="wedding-works-product-header">
-            {CATEGORY_LABELS[menu.category] ?? menu.category.replaceAll("_", " ")}
+            {CATEGORY_LABELS[menu.category] ??
+              menu.category.replaceAll("_", " ")}
           </h2>
           <div className="wedding-works-product-container">
             {isLoading ? (

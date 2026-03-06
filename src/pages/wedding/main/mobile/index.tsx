@@ -8,8 +8,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 //api
-import { useWeddingIntroduction, useGetWeddingSnsImg } from "@/api/pages/weddingMain";
-import { useMultipleWorks } from "@/query/works";
+import { useWeddingIntroduction, useGetWeddingSnsImg } from "@/query/main";
+import { useMultipleWeddingWorks } from "@/query/works";
 
 //component
 import Footer from "@/components/footer";
@@ -29,8 +29,9 @@ const WeddingMainMobile = () => {
   const { data: introductionData, isLoading: introductionLoading } =
     useWeddingIntroduction();
   const { data: snsImgData, isLoading: snsImgLoading } = useGetWeddingSnsImg();
-  const [ceremony, reception, floral, styling] =
-    useMultipleWorks(WEDDING_HOME_WORKS_PARAMS);
+  const [ceremony, reception, floral, styling] = useMultipleWeddingWorks(
+    WEDDING_HOME_WORKS_PARAMS,
+  );
 
   return (
     <>
@@ -52,7 +53,9 @@ const WeddingMainMobile = () => {
               <div className="wedding-mobile-introduction-box">
                 <div className="wedding-mobile-introduction-content">
                   <div className="wedding-mobile-introduction-header-container">
-                    <h2 className="wedding-mobile-introduction-header">About us</h2>
+                    <h2 className="wedding-mobile-introduction-header">
+                      About us
+                    </h2>
                   </div>
                   <div className="wedding-mobile-introduction-content-box">
                     {introductionData && introductionData.length > 0 ? (

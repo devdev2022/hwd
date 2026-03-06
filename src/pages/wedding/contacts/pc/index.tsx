@@ -1,5 +1,5 @@
 //query
-import { useGetWeddingBusinessInfo } from "@/api/pages/weddingCommon";
+import { useGetWeddingBusinessInfo } from "@/query/common";
 
 //component
 import Footer from "@/components/footer";

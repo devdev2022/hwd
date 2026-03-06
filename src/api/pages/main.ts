@@ -1,15 +1,12 @@
 import type { MainResponse, SnsImgResponse } from "@/types/main";
-import { QueryAPI } from "../queryAPI";
+import api from "../axiosInstance";
 
-const baseURL = import.meta.env.VITE_API_URL;
-const api = new QueryAPI(baseURL);
+export const fetchIntroduction = async (): Promise<MainResponse> => {
+  const res = await api.get<MainResponse>("/forrest/main/introduction");
+  return res.data;
+};
 
-export const useIntroduction = api.createUseQuery<MainResponse>(
-  ["introduction"],
-  "/forrest/main/introduction"
-);
-
-export const useGetSnsImg = api.createUseQuery<SnsImgResponse>(
-  ["snsimg"],
-  "/forrest/main/snsimg"
-);
+export const fetchSnsImg = async (): Promise<SnsImgResponse> => {
+  const res = await api.get<SnsImgResponse>("/forrest/main/snsimg");
+  return res.data;
+};

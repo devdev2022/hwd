@@ -1,6 +1,6 @@
 //query
-import { useGetStaffPictures } from "@/api/pages/aboutUs";
-import { useIntroduction } from "@/api/pages/main";
+import { useGetStaffPictures } from "@/query/aboutUs";
+import { useIntroduction } from "@/query/main";
 
 //component
 import Footer from "@/components/footer";
