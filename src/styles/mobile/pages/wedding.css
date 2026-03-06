@@ -284,7 +284,7 @@
   grid-template-columns: repeat(3, 1fr);
   padding: 20px 0;
   column-gap: 1px;
-  row-gap: 70px;
+  row-gap: 1px;
 }
 
 .wedding-mobile-works-product-container {

@@ -36,7 +36,7 @@ function reducer(state: State, action: Action): State {
 
 const Works = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState<{ link: string; name: string } | null>(null);
   const [menu, setMenu] = useState({
     page: 1,
     category: "planterior",
@@ -261,16 +261,11 @@ const Works = () => {
                       <img
                         src={item.link}
                         className="mobile-product-image"
-                        onClick={() => setSelectedImage(item.link)}
+                        onClick={() => setSelectedImage({ link: item.link, name: item.name || "" })}
                         style={{ cursor: "pointer" }}
                       />
                     ) : (
                       <NoImg />
-                    )}
-                    {item.name ? (
-                      <p>{item.name.replaceAll("_", " ")}</p>
-                    ) : (
-                      <p>null</p>
                     )}
                   </li>
                 ))}
@@ -295,14 +290,19 @@ const Works = () => {
       <Footer />
       {selectedImage && (
         <div className="lightbox-overlay" onClick={() => setSelectedImage(null)}>
-          <img
-            src={selectedImage}
-            className="lightbox-image"
-            onClick={(e) => e.stopPropagation()}
-          />
           <button className="lightbox-close" onClick={() => setSelectedImage(null)}>
             ✕
           </button>
+          <div className="lightbox-card" onClick={(e) => e.stopPropagation()}>
+            <img src={selectedImage.link} className="lightbox-image" />
+            {selectedImage.name && (
+              <div className="lightbox-caption">
+                <p className="lightbox-caption-name">
+                  {selectedImage.name.replaceAll("_", " ")}
+                </p>
+              </div>
+            )}
+          </div>
         </div>
       )}
     </>
