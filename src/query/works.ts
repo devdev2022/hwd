@@ -3,7 +3,8 @@ import {
   useQueries,
   type UseQueryResult,
 } from "@tanstack/react-query";
-import { fetchWorks } from "@/api/works";
+import { fetchWorks } from "@/api/pages/works";
+import { fetchWeddingWorks } from "@/api/pages/weddingWorks";
 
 //type
 import type { multipleParams, WorksResponse } from "@/types/works";
@@ -18,6 +19,15 @@ export const useWorks = (params: multipleParams) =>
     retry: 2,
   });
 
+export const useWeddingWorks = (params: multipleParams) =>
+  useQuery({
+    queryKey: ["works", params],
+    queryFn: () => fetchWeddingWorks(params),
+    staleTime: 1000 * 60 * 60,
+    refetchOnWindowFocus: false,
+    retry: 2,
+  });
+
 // 다중 요청
 export const useMultipleWorks = (
   paramList: Record<string, any>,
@@ -26,6 +36,19 @@ export const useMultipleWorks = (
     queries: paramList.map((params: multipleParams) => ({
       queryKey: ["works", params],
       queryFn: () => fetchWorks(params),
+      staleTime: 1000 * 60 * 60,
+      refetchOnWindowFocus: false,
+      retry: 2,
+    })),
+  });
+
+export const useMultipleWeddingWorks = (
+  paramList: Record<string, any>,
+): UseQueryResult<WorksResponse>[] =>
+  useQueries({
+    queries: paramList.map((params: multipleParams) => ({
+      queryKey: ["works", params],
+      queryFn: () => fetchWeddingWorks(params),
       staleTime: 1000 * 60 * 60,
       refetchOnWindowFocus: false,
       retry: 2,

@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 //api
-import { useIntroduction, useGetSnsImg } from "@/api/pages/main";
+import { useIntroduction, useGetSnsImg } from "@/query/main";
 import { useMultipleWorks } from "@/query/works";
 
 //component

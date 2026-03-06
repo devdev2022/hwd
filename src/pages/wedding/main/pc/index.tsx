@@ -3,11 +3,8 @@ import { FadeLoader } from "react-spinners";
 import cx from "classnames";
 
 //query
-import {
-  useWeddingIntroduction,
-  useGetWeddingSnsImg,
-} from "@/api/pages/weddingMain";
-import { useMultipleWorks } from "@/query/works";
+import { useWeddingIntroduction, useGetWeddingSnsImg } from "@/query/main";
+import { useMultipleWeddingWorks } from "@/query/works";
 
 //component
 import Footer from "@/components/footer";
@@ -33,7 +30,7 @@ const WeddingMainPc = () => {
 
   const { data: snsImgData, isLoading: snsImgLoading } = useGetWeddingSnsImg();
 
-  const [ceremony, reception, floral, styling] = useMultipleWorks(
+  const [ceremony, reception, floral, styling] = useMultipleWeddingWorks(
     WEDDING_HOME_WORKS_PARAMS,
   );
 

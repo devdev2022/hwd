@@ -1,15 +1,12 @@
 import type { MainResponse, SnsImgResponse } from "@/types/main";
-import { QueryAPI } from "../queryAPI";
+import api from "../axiosInstance";
 
-const baseURL = import.meta.env.VITE_API_URL;
-const api = new QueryAPI(baseURL);
+export const fetchWeddingIntroduction = async (): Promise<MainResponse> => {
+  const res = await api.get<MainResponse>("/wedding/main/introduction");
+  return res.data;
+};
 
-export const useWeddingIntroduction = api.createUseQuery<MainResponse>(
-  ["weddingIntroduction"],
-  "/wedding/main/introduction"
-);
-
-export const useGetWeddingSnsImg = api.createUseQuery<SnsImgResponse>(
-  ["weddingSnsimg"],
-  "/wedding/main/snsimg"
-);
+export const fetchWeddingSnsImg = async (): Promise<SnsImgResponse> => {
+  const res = await api.get<SnsImgResponse>("/wedding/main/snsimg");
+  return res.data;
+};

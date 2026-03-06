@@ -1,5 +1,5 @@
 //api
-import { useGetBusinessInfo } from "@/api/pages/common";
+import { useGetBusinessInfo } from "@/query/common";
 
 //component
 import Footer from "@/components/footer";

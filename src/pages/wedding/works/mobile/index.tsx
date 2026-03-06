@@ -1,7 +1,7 @@
 import { useReducer, useState, useMemo, useEffect } from "react";
 
 //query
-import { useWorks } from "@/query/works";
+import { useWeddingWorks } from "@/query/works";
 
 //component
 import Footer from "@/components/footer";
@@ -56,7 +56,7 @@ const WeddingWorksMobile = () => {
     setActive(Number(data));
   };
 
-  const { data, isLoading } = useWorks(
+  const { data, isLoading } = useWeddingWorks(
     useMemo(
       () => ({
         page: menu.page,

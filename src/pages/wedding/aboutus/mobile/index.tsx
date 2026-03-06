@@ -1,6 +1,6 @@
 //query
-import { useGetWeddingStaffPictures } from "@/api/pages/weddingAboutUs";
-import { useWeddingIntroduction } from "@/api/pages/weddingMain";
+import { useGetWeddingStaffPictures } from "@/query/aboutUs";
+import { useWeddingIntroduction } from "@/query/main";
 
 //component
 import Footer from "@/components/footer";

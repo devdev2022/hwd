@@ -1,10 +1,7 @@
 import type { getPicturesResponse } from "@/types/aboutUs";
-import { QueryAPI } from "../queryAPI";
+import api from "../axiosInstance";
 
-const baseURL = import.meta.env.VITE_API_URL;
-const api = new QueryAPI(baseURL);
-
-export const useGetStaffPictures = api.createUseQuery<getPicturesResponse>(
-  ["staff"],
-  "/forrest/aboutus/pictures"
-);
+export const fetchStaffPictures = async (): Promise<getPicturesResponse> => {
+  const res = await api.get<getPicturesResponse>("/forrest/aboutus/pictures");
+  return res.data;
+};
