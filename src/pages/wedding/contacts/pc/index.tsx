@@ -105,7 +105,7 @@ const WeddingContactsPc = () => {
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer variant="wedding" />
     </>
   );
 };

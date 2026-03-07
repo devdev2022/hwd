@@ -6,12 +6,12 @@ import Phone from "@/assets/phone.svg?react";
 import Instagram from "@/assets/instagram.svg?react";
 import Blog from "@/assets/blog.svg?react";
 
-const Footer = () => {
+const Footer = ({ variant }: { variant?: "wedding" }) => {
   const { data: getBusinessInfo } = useGetBusinessInfo();
 
   return (
     <footer>
-      <section className="contacts">
+      <section className={`contacts${variant === "wedding" ? " contacts-wedding" : ""}`}>
         {getBusinessInfo && getBusinessInfo.length > 0 ? (
           <div className="contacts-container">
             <div className="contact-content">

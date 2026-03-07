@@ -98,6 +98,10 @@
   width: 100%;
 }
 
+.contacts-wedding {
+  background-color: #ffeee0;
+}
+
 .contacts-container {
   display: flex;
   justify-content: space-between;
@@ -116,7 +120,7 @@
   flex-direction: column;
   justify-content: center;
   font-family: "Noto Sans KR-Regular";
-  font-size: clamp(11px, 2.3vw, 15px);
+  font-size: clamp(11px, 2.8vw, 15px);
   color: #5c3217;
 }
 
