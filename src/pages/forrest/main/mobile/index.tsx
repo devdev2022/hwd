@@ -52,7 +52,11 @@ const Main = () => {
                     <h2 className="mobile-introduction-header">About us</h2>
                   </div>
                   <div className="mobile-introduction-content-box">
-                    {introductionData && introductionData.length > 0 ? (
+                    {introductionLoading ? (
+                      <div className="spinner_container">
+                        <FadeLoader />
+                      </div>
+                    ) : introductionData && introductionData.length > 0 ? (
                       <img src={introductionData[0].thumbnail} />
                     ) : (
                       <NoImg />

@@ -39,7 +39,10 @@ const CATEGORY_LABELS: Record<string, string> = {
 
 const WeddingWorksMobile = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const [selectedImage, setSelectedImage] = useState<{ link: string; name: string } | null>(null);
+  const [selectedImage, setSelectedImage] = useState<{
+    link: string;
+    name: string;
+  } | null>(null);
   const [menu, setMenu] = useState({
     page: 1,
     category: "wedding",
@@ -210,11 +213,19 @@ const WeddingWorksMobile = () => {
                       <img
                         src={item.link}
                         className="wedding-mobile-product-image"
-                        onClick={() => setSelectedImage({ link: item.link, name: item.name || "" })}
+                        onClick={() =>
+                          setSelectedImage({
+                            link: item.link,
+                            name: item.name || "",
+                          })
+                        }
                         style={{ cursor: "pointer" }}
                       />
                     ) : (
-                      <NoImg />
+                      <div className="work-no-item">
+                        <NoImg />
+                        <p>데이터가 없습니다</p>
+                      </div>
                     )}
                   </li>
                 ))}
@@ -238,8 +249,14 @@ const WeddingWorksMobile = () => {
       </main>
       <Footer />
       {selectedImage && (
-        <div className="lightbox-overlay" onClick={() => setSelectedImage(null)}>
-          <button className="lightbox-close" onClick={() => setSelectedImage(null)}>
+        <div
+          className="lightbox-overlay"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            className="lightbox-close"
+            onClick={() => setSelectedImage(null)}
+          >
             ✕
           </button>
           <div className="lightbox-card" onClick={(e) => e.stopPropagation()}>
