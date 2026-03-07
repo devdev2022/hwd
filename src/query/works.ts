@@ -21,7 +21,7 @@ export const useWorks = (params: multipleParams) =>
 
 export const useWeddingWorks = (params: multipleParams) =>
   useQuery({
-    queryKey: ["works", params],
+    queryKey: ["weddingWorks", params],
     queryFn: () => fetchWeddingWorks(params),
     staleTime: 1000 * 60 * 60,
     refetchOnWindowFocus: false,
@@ -47,7 +47,7 @@ export const useMultipleWeddingWorks = (
 ): UseQueryResult<WorksResponse>[] =>
   useQueries({
     queries: paramList.map((params: multipleParams) => ({
-      queryKey: ["works", params],
+      queryKey: ["weddingWorks", params],
       queryFn: () => fetchWeddingWorks(params),
       staleTime: 1000 * 60 * 60,
       refetchOnWindowFocus: false,
