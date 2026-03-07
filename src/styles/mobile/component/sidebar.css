@@ -33,7 +33,21 @@
 
 .mobile-sidebar-category-container {
   width: 100%;
-  padding: 0 20px;
+  height: 100%;
+  padding: 0 20px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+/*HYD 랜딩 로고 버튼 - 사이드바*/
+.mobile-sidebar-hyd-logo {
+  display: block;
+  margin-top: auto;
+}
+
+.mobile-sidebar-hyd-logo img {
+  width: 50%;
+  height: auto;
 }
 
 .mobile-sidebar-item {

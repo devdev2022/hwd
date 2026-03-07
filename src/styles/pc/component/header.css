@@ -157,6 +157,29 @@
   font-family: "Italiana", serif !important;
 }
 
+/*HYD 랜딩 로고 버튼 - PC 메인 헤더*/
+.forrest-header-hyd-logo,
+.wedding-header-hyd-logo {
+  position: absolute;
+  left: 2%;
+  transform: translateY(-50%);
+  z-index: 10;
+  text-decoration: none;
+}
+
+.forrest-header-hyd-logo img,
+.wedding-header-hyd-logo img {
+  height: 55px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+
+.forrest-header.scrolled .forrest-header-hyd-logo img,
+.wedding-header.scrolled .wedding-header-hyd-logo img {
+  filter: none;
+}
+
 /*네비게이션 바 - 메인 페이지*/
 .forrest-header-gnb {
   display: block;
