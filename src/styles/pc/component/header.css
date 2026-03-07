@@ -175,9 +175,9 @@
   transition: filter 0.3s ease;
 }
 
-.forrest-header.scrolled .forrest-header-hyd-logo img,
-.wedding-header.scrolled .wedding-header-hyd-logo img {
-  filter: none;
+.forrest-header.scrolled .forrest-header-hyd-logo,
+.wedding-header.scrolled .wedding-header-hyd-logo {
+  display: none;
 }
 
 /*네비게이션 바 - 메인 페이지*/
