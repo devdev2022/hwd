@@ -122,7 +122,9 @@ const WeddingMainPc = () => {
         <section className="wedding-main-page-billboard">
           <div className="wedding-main-page-billboard-container">
             <div className="dim-cover" />
-            {introductionData && introductionData.length > 0 ? (
+            {introductionLoading ? (
+              <div className="wedding-banner-placeholder" />
+            ) : introductionData && introductionData.length > 0 ? (
               <img src={introductionData[0].cover_img} />
             ) : (
               <div className="wedding-banner-placeholder" />
@@ -140,7 +142,11 @@ const WeddingMainPc = () => {
                     </h2>
                   </div>
                   <div className="wedding-main-introduction-content-box">
-                    {introductionData && introductionData.length > 0 ? (
+                    {introductionLoading ? (
+                      <div className="spinner_container">
+                        <FadeLoader />
+                      </div>
+                    ) : introductionData && introductionData.length > 0 ? (
                       <img src={introductionData[0].thumbnail} />
                     ) : (
                       <NoImg />
