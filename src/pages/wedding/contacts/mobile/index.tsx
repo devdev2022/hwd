@@ -97,7 +97,7 @@ const WeddingContactsMobile = () => {
           </section>
         </div>
       </main>
-      <Footer />
+      <Footer variant="wedding" />
     </>
   );
 };

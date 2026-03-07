@@ -126,7 +126,7 @@ const WeddingAboutUsMobile = () => {
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer variant="wedding" />
     </>
   );
 };

@@ -287,7 +287,7 @@ const WeddingMainMobile = () => {
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer variant="wedding" />
       {selectedImage && (
         <div
           className="lightbox-overlay"
