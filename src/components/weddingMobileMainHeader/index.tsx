@@ -5,6 +5,9 @@ import { useEffect, useState, useRef } from "react";
 import { useGoToPath } from "@/utils/function";
 import { useLocation } from "react-router";
 
+//resource
+import HydLogo from "@/assets/hyd_logo_stamp.png";
+
 const WeddingMobileMainHeader = () => {
   const goToPath = useGoToPath();
   const location = useLocation();
@@ -99,6 +102,9 @@ const WeddingMobileMainHeader = () => {
                 <h2 className="mobile-category-title">CONTACT US</h2>
               </div>
             </div>
+            <a href="/" className="mobile-sidebar-hyd-logo">
+              <img src={HydLogo} alt="HYD" />
+            </a>
           </div>
         </div>
       </header>

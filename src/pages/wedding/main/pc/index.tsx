@@ -15,6 +15,7 @@ import { WEDDING_HOME_WORKS_PARAMS } from "@/types/wedding";
 
 //resource
 import NoImg from "@/assets/no-image.svg?react";
+import HydLogo from "@/assets/hyd_logo_stamp.png";
 
 const WeddingMainPc = () => {
   const goToPath = useGoToPath();
@@ -73,6 +74,9 @@ const WeddingMainPc = () => {
         })}
       >
         <div className="wedding-flexbox">
+          <a href="/" className="wedding-header-hyd-logo">
+            <img src={HydLogo} alt="HYD" />
+          </a>
           <div className="wedding-header-logo">
             <a href="/wedding">
               <span>Wedding</span>

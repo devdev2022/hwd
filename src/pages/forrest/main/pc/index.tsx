@@ -16,6 +16,7 @@ import { HOME_WORKS_PARAMS } from "@/types/works";
 //resource
 import Banner from "@/assets/forrest/main/forrestbanner.png";
 import NoImg from "@/assets/no-image.svg?react";
+import HydLogo from "@/assets/hyd_logo_stamp.png";
 
 const Main = () => {
   const goToPath = useGoToPath();
@@ -73,6 +74,9 @@ const Main = () => {
         })}
       >
         <div className="forrest-flexbox">
+          <a href="/" className="forrest-header-hyd-logo">
+            <img src={HydLogo} alt="HYD" />
+          </a>
           <div className="forrest-header-logo">
             <a href="/forrest">
               <span>For, rest</span>
