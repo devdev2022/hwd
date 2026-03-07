@@ -805,8 +805,8 @@
 }
 
 .wedding-contact-page-content {
-  display: block;
-  font-size: 18px;
+  display: flex;
+  font-size: 16px;
   font-family: "Noto Sans KR-Light";
   line-height: 1.6;
 }
