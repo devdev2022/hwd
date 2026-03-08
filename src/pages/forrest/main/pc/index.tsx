@@ -10,7 +10,7 @@ import { useMultipleWorks } from "@/query/works";
 import Footer from "@/components/footer";
 
 //utils
-import { useGoToPath } from "@/utils/function";
+import { useGoToPath, formatName } from "@/utils/function";
 import { HOME_WORKS_PARAMS } from "@/types/works";
 
 //resource
@@ -200,7 +200,7 @@ const Main = () => {
                         onClick={() => setSelectedImage(item.link)}
                       />
                       <div className="product-name" key={item.id}>
-                        {item.name.replaceAll("_", " ")}
+                        {formatName(item.name)}
                       </div>
                     </li>
                   ))
@@ -234,7 +234,7 @@ const Main = () => {
                         onClick={() => setSelectedImage(item.link)}
                       />
                       <div className="product-name" key={item.id}>
-                        {item.name.replaceAll("_", " ")}
+                        {formatName(item.name)}
                       </div>
                     </li>
                   ))
@@ -268,7 +268,7 @@ const Main = () => {
                         onClick={() => setSelectedImage(item.link)}
                       />
                       <div className="product-name" key={item.id}>
-                        {item.name.replaceAll("_", " ")}
+                        {formatName(item.name)}
                       </div>
                     </li>
                   ))
@@ -302,7 +302,7 @@ const Main = () => {
                         onClick={() => setSelectedImage(item.link)}
                       />
                       <div className="product-name" key={item.id}>
-                        {item.name.replaceAll("_", " ")}
+                        {formatName(item.name)}
                       </div>
                     </li>
                   ))

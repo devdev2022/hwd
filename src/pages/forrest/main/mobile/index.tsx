@@ -16,7 +16,7 @@ import Footer from "@/components/footer";
 import Header from "@/components/mobileMainHeader";
 
 //utils
-import { useGoToPath } from "@/utils/function";
+import { useGoToPath, formatName } from "@/utils/function";
 import { HOME_WORKS_PARAMS } from "@/types/works";
 
 //resource
@@ -120,7 +120,7 @@ const Main = () => {
                             onClick={() => setSelectedImage(item.link)}
                           />
                           <div className="product-name">
-                            {item.name?.replaceAll("_", " ")}
+                            {formatName(item.name ?? "")}
                           </div>
                         </div>
                       </SwiperSlide>
@@ -158,7 +158,7 @@ const Main = () => {
                             onClick={() => setSelectedImage(item.link)}
                           />
                           <div className="product-name">
-                            {item.name?.replaceAll("_", " ")}
+                            {formatName(item.name ?? "")}
                           </div>
                         </div>
                       </SwiperSlide>
@@ -196,7 +196,7 @@ const Main = () => {
                             onClick={() => setSelectedImage(item.link)}
                           />
                           <div className="product-name">
-                            {item.name?.replaceAll("_", " ")}
+                            {formatName(item.name ?? "")}
                           </div>
                         </div>
                       </SwiperSlide>
@@ -239,7 +239,7 @@ const Main = () => {
                             onClick={() => setSelectedImage(item.link)}
                           />
                           <div className="product-name">
-                            {item.name?.replaceAll("_", " ")}
+                            {formatName(item.name ?? "")}
                           </div>
                         </div>
                       </SwiperSlide>
