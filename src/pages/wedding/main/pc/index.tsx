@@ -10,7 +10,7 @@ import { useMultipleWeddingWorks } from "@/query/works";
 import Footer from "@/components/footer";
 
 //utils
-import { useGoToPath, formatName } from "@/utils/function";
+import { useGoToPath } from "@/utils/function";
 import { WEDDING_HOME_WORKS_PARAMS } from "@/types/wedding";
 
 //resource
@@ -204,9 +204,6 @@ const WeddingMainPc = () => {
                         style={{ cursor: "pointer" }}
                         onClick={() => setSelectedImage(item.link)}
                       />
-                      <div className="wedding-product-name">
-                        {formatName(item.name)}
-                      </div>
                     </li>
                   ))
                 ) : (
@@ -238,9 +235,6 @@ const WeddingMainPc = () => {
                         style={{ cursor: "pointer" }}
                         onClick={() => setSelectedImage(item.link)}
                       />
-                      <div className="wedding-product-name">
-                        {formatName(item.name)}
-                      </div>
                     </li>
                   ))
                 ) : (
@@ -273,9 +267,6 @@ const WeddingMainPc = () => {
                         style={{ cursor: "pointer" }}
                         onClick={() => setSelectedImage(item.link)}
                       />
-                      <div className="wedding-product-name">
-                        {formatName(item.name)}
-                      </div>
                     </li>
                   ))
                 ) : (
@@ -307,9 +298,6 @@ const WeddingMainPc = () => {
                         style={{ cursor: "pointer" }}
                         onClick={() => setSelectedImage(item.link)}
                       />
-                      <div className="wedding-product-name">
-                        {formatName(item.name)}
-                      </div>
                     </li>
                   ))
                 ) : (

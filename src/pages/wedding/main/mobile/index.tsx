@@ -16,7 +16,7 @@ import Footer from "@/components/footer";
 import Header from "@/components/weddingMobileMainHeader";
 
 //utils
-import { useGoToPath, formatName } from "@/utils/function";
+import { useGoToPath } from "@/utils/function";
 import { WEDDING_HOME_WORKS_PARAMS } from "@/types/wedding";
 
 //resource
@@ -126,9 +126,6 @@ const WeddingMainMobile = () => {
                             style={{ cursor: "pointer" }}
                             onClick={() => setSelectedImage(item.link)}
                           />
-                          <div className="product-name">
-                            {formatName(item.name ?? "")}
-                          </div>
                         </div>
                       </SwiperSlide>
                     ))}
@@ -164,9 +161,6 @@ const WeddingMainMobile = () => {
                             style={{ cursor: "pointer" }}
                             onClick={() => setSelectedImage(item.link)}
                           />
-                          <div className="product-name">
-                            {formatName(item.name ?? "")}
-                          </div>
                         </div>
                       </SwiperSlide>
                     ))}
@@ -204,9 +198,6 @@ const WeddingMainMobile = () => {
                             style={{ cursor: "pointer" }}
                             onClick={() => setSelectedImage(item.link)}
                           />
-                          <div className="product-name">
-                            {formatName(item.name ?? "")}
-                          </div>
                         </div>
                       </SwiperSlide>
                     ))}
@@ -242,9 +233,6 @@ const WeddingMainMobile = () => {
                             style={{ cursor: "pointer" }}
                             onClick={() => setSelectedImage(item.link)}
                           />
-                          <div className="product-name">
-                            {formatName(item.name ?? "")}
-                          </div>
                         </div>
                       </SwiperSlide>
                     ))}
