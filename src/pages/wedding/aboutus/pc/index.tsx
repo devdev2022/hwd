@@ -10,10 +10,10 @@ import Header from "@/components/weddingHeader";
 import { FadeLoader } from "react-spinners";
 import NoImg from "@/assets/no-image.svg?react";
 
-import Arch from "@/assets/wedding/introduction/arch.svg";
-import Bouquet from "@/assets/wedding/introduction/bouquet.svg";
-import FlowerClass from "@/assets/wedding/introduction/flower_class.svg";
-import Vase from "@/assets/wedding/introduction/vase.svg";
+import Arch from "@/assets/wedding/introduction/arch.svg?react";
+import Bouquet from "@/assets/wedding/introduction/bouquet.svg?react";
+import FlowerClass from "@/assets/wedding/introduction/flower_class.svg?react";
+import Vase from "@/assets/wedding/introduction/vase.svg?react";
 
 const WeddingAboutUsPc = () => {
   const { data: introductionData, isLoading: introductionLoading } =
