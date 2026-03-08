@@ -85,6 +85,10 @@ const Works = () => {
   }, [totalCnt, active]);
 
   useEffect(() => {
+    setActive(1);
+  }, [menu.category, menu.subMenu]);
+
+  useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [menu.category, menu.subMenu, menu.page]);
 
