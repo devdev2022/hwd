@@ -137,7 +137,7 @@ const WeddingWorksPc = () => {
                     setMenu({ page: 1, category: "wedding", subMenu: 2 })
                   }
                 >
-                  야외
+                  실내
                 </li>
                 <li
                   className={`works-category-item-kr ${
@@ -149,7 +149,7 @@ const WeddingWorksPc = () => {
                     setMenu({ page: 1, category: "wedding", subMenu: 3 })
                   }
                 >
-                  실내
+                  야외
                 </li>
               </ul>
             </div>
