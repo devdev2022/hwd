@@ -115,7 +115,11 @@ const AboutUs = () => {
           <div className="introduction-page-staff-container">
             <h2 style={{ fontSize: "50px", fontFamily: "Italiana" }}>Staff</h2>
             <div className="mobile-introduction-page-staff-imgbox">
-              {getPictures && getPictures.length > 0 ? (
+              {getPicturesLoading ? (
+                <div className="spinner_container">
+                  <FadeLoader />
+                </div>
+              ) : getPictures && getPictures.length > 0 ? (
                 getPictures.map((item) => (
                   <div className="staff-information" key={`staff_${item.id}`}>
                     <img src={item.link} />
