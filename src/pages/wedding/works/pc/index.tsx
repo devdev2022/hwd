@@ -168,14 +168,6 @@ const WeddingWorksPc = () => {
             <div
               className="wedding-category-item"
               onClick={() =>
-                setMenu({ page: 1, category: "gift_flower", subMenu: 1 })
-              }
-            >
-              <h2 className="wedding-category-title">Gift Flower</h2>
-            </div>
-            <div
-              className="wedding-category-item"
-              onClick={() =>
                 setMenu({ page: 1, category: "flower_class", subMenu: 1 })
               }
             >
