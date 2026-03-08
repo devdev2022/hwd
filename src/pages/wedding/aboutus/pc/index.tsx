@@ -92,26 +92,26 @@ const WeddingAboutUsPc = () => {
             <h2 style={{ fontSize: "56px", fontFamily: "Italiana" }}>Task</h2>
             <div className="wedding-introduction-page-task-box">
               <div className="wedding-introduction-page-task-content">
-                <Arch />
+                <Arch width={143} height={143} />
                 <div style={{ fontWeight: "600" }}>Wedding</div>
                 <div style={{ fontFamily: "Noto Sans KR-Light" }}>
                   웨딩 세레모니 연출
                 </div>
               </div>
               <div className="wedding-introduction-page-task-content">
-                <Bouquet />
+                <Bouquet width={143} height={143} />
                 <div style={{ fontWeight: "600" }}>Bouquet</div>
                 <div style={{ fontFamily: "Noto Sans KR-Light" }}>
                   부케 제작
                 </div>
               </div>
               <div className="wedding-introduction-page-task-content">
-                <Vase />
+                <Vase width={143} height={143} />
                 <div style={{ fontWeight: "600" }}>Flower Arrangement</div>
                 <div style={{ fontFamily: "Noto Sans KR-Light" }}>컨디셔닝</div>
               </div>
               <div className="wedding-introduction-page-task-content">
-                <FlowerClass />
+                <FlowerClass width={143} height={143} />
                 <div style={{ fontWeight: "600" }}>Flower class</div>
                 <div style={{ fontFamily: "Noto Sans KR-Light" }}>
                   플라워 클래스
