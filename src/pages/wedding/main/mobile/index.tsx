@@ -29,9 +29,8 @@ const WeddingMainMobile = () => {
   const { data: introductionData, isLoading: introductionLoading } =
     useWeddingIntroduction();
   const { data: snsImgData, isLoading: snsImgLoading } = useGetWeddingSnsImg();
-  const [ceremony, reception, floral, styling] = useMultipleWeddingWorks(
-    WEDDING_HOME_WORKS_PARAMS,
-  );
+  const [wedding, weddingBouquet, flowerArrangement, flowerClass] =
+    useMultipleWeddingWorks(WEDDING_HOME_WORKS_PARAMS);
 
   return (
     <>
@@ -101,24 +100,24 @@ const WeddingMainMobile = () => {
         <section className="wedding-portfolio">
           <div className="wedding-mobile-main-page-container">
             <div className="wedding-mobile-product-container">
-              <h2 className="wedding-mobile-product-header">Ceremony</h2>
+              <h2 className="wedding-mobile-product-header">Wedding</h2>
               <div className="wedding-mobile-product-introduction">
-                {ceremony.isLoading ? (
+                {wedding.isLoading ? (
                   <div className="spinner_container">
                     <FadeLoader />
                   </div>
-                ) : ceremony.data?.data?.length ? (
+                ) : wedding.data?.data?.length ? (
                   <Swiper
                     pagination={
-                      ceremony.data.data.length > 0
+                      wedding.data.data.length > 0
                         ? { dynamicBullets: true }
                         : false
                     }
-                    loop={ceremony.data.data.length > 1}
+                    loop={wedding.data.data.length > 1}
                     modules={[Pagination]}
                     className="mySwiper"
                   >
-                    {ceremony.data.data.slice(0, 3).map((item) => (
+                    {wedding.data.data.slice(0, 3).map((item) => (
                       <SwiperSlide key={item.id}>
                         <div className="product-slide">
                           <img
@@ -143,20 +142,20 @@ const WeddingMainMobile = () => {
               </div>
             </div>
             <div className="wedding-mobile-product-container">
-              <h2 className="wedding-mobile-product-header">Reception</h2>
+              <h2 className="wedding-mobile-product-header">Wedding Bouquet</h2>
               <div className="wedding-mobile-product-introduction">
-                {reception.isLoading ? (
+                {weddingBouquet.isLoading ? (
                   <div className="spinner_container">
                     <FadeLoader />
                   </div>
-                ) : reception.data?.data?.length ? (
+                ) : weddingBouquet.data?.data?.length ? (
                   <Swiper
                     pagination={{ dynamicBullets: true }}
                     loop
                     modules={[Pagination]}
                     className="mySwiper"
                   >
-                    {reception.data.data.slice(0, 3).map((item) => (
+                    {weddingBouquet.data.data.slice(0, 3).map((item) => (
                       <SwiperSlide key={item.id}>
                         <div className="product-slide">
                           <img
@@ -181,20 +180,22 @@ const WeddingMainMobile = () => {
               </div>
             </div>
             <div className="wedding-mobile-product-container">
-              <h2 className="wedding-mobile-product-header">Floral</h2>
+              <h2 className="wedding-mobile-product-header">
+                Flower Arrangement
+              </h2>
               <div className="wedding-mobile-product-introduction">
-                {floral.isLoading ? (
+                {flowerArrangement.isLoading ? (
                   <div className="spinner_container">
                     <FadeLoader />
                   </div>
-                ) : floral.data?.data?.length ? (
+                ) : flowerArrangement.data?.data?.length ? (
                   <Swiper
                     pagination={{ dynamicBullets: true }}
                     loop
                     modules={[Pagination]}
                     className="mySwiper"
                   >
-                    {floral.data.data.slice(0, 3).map((item) => (
+                    {flowerArrangement.data.data.slice(0, 3).map((item) => (
                       <SwiperSlide key={item.id}>
                         <div className="product-slide">
                           <img
@@ -219,20 +220,20 @@ const WeddingMainMobile = () => {
               </div>
             </div>
             <div className="wedding-mobile-product-container">
-              <h2 className="wedding-mobile-product-header">Styling</h2>
+              <h2 className="wedding-mobile-product-header">Flower Class</h2>
               <div className="wedding-mobile-product-introduction">
-                {styling.isLoading ? (
+                {flowerClass.isLoading ? (
                   <div className="spinner_container">
                     <FadeLoader />
                   </div>
-                ) : styling.data?.data?.length ? (
+                ) : flowerClass.data?.data?.length ? (
                   <Swiper
                     pagination={{ dynamicBullets: true }}
                     loop
                     modules={[Pagination]}
                     className="mySwiper"
                   >
-                    {styling.data.data.slice(0, 3).map((item) => (
+                    {flowerClass.data.data.slice(0, 3).map((item) => (
                       <SwiperSlide key={item.id}>
                         <div className="product-slide">
                           <img
