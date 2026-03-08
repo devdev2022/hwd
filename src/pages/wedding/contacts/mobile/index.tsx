@@ -8,6 +8,7 @@ import Header from "@/components/weddingMobileHeader";
 //resource
 import Instagram from "@/assets/instagram.svg?react";
 import Blog from "@/assets/blog.svg?react";
+import contactImage from "@/assets/wedding/contact/wedding_contact_image.png";
 
 const WeddingContactsMobile = () => {
   const { data: getBusinessInfo } = useGetWeddingBusinessInfo();
@@ -19,15 +20,16 @@ const WeddingContactsMobile = () => {
         <div className="wedding-mobile-contact-container">
           {/* 상단: 사진 패널 */}
           <div className="wedding-mobile-contact-image-panel">
-            <div className="wedding-contact-placeholder" />
+            <img src={contactImage} alt="Contact Us" />
           </div>
-
           {/* 하단: 정보 패널 */}
           <section className="wedding-mobile-contact-info-panel">
             <h2 className="wedding-mobile-contact-header">Contact Us</h2>
             <div className="wedding-mobile-contact-content-container">
               <div>
-                <div className="wedding-mobile-contact-content-header">address</div>
+                <div className="wedding-mobile-contact-content-header">
+                  address
+                </div>
                 <div className="wedding-mobile-contact-content">
                   {getBusinessInfo && getBusinessInfo.length > 0
                     ? getBusinessInfo[0].business_address
@@ -35,7 +37,9 @@ const WeddingContactsMobile = () => {
                 </div>
               </div>
               <div>
-                <div className="wedding-mobile-contact-content-header">Email</div>
+                <div className="wedding-mobile-contact-content-header">
+                  Email
+                </div>
                 <div className="wedding-mobile-contact-content">
                   {getBusinessInfo && getBusinessInfo.length > 0
                     ? getBusinessInfo[0].email_address
@@ -43,7 +47,9 @@ const WeddingContactsMobile = () => {
                 </div>
               </div>
               <div>
-                <div className="wedding-mobile-contact-content-header">Phone</div>
+                <div className="wedding-mobile-contact-content-header">
+                  Phone
+                </div>
                 <div className="wedding-mobile-contact-content">
                   {getBusinessInfo && getBusinessInfo.length > 0
                     ? getBusinessInfo[0].phone_number
@@ -51,7 +57,9 @@ const WeddingContactsMobile = () => {
                 </div>
               </div>
               <div>
-                <div className="wedding-mobile-contact-content-header">social</div>
+                <div className="wedding-mobile-contact-content-header">
+                  social
+                </div>
                 <div className="mobile-social-link-content">
                   {getBusinessInfo && getBusinessInfo.length > 0 ? (
                     <a
