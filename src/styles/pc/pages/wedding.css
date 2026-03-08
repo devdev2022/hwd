@@ -582,9 +582,14 @@
 .wedding-introduction-page-task-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
   gap: 15px;
   font-size: 18px;
+}
+
+.wedding-introduction-page-task-content > svg {
+  height: 143px;
 }
 
 .wedding-introduction-page-staff {
