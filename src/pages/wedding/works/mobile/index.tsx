@@ -179,16 +179,6 @@ const WeddingWorksMobile = () => {
             <div
               className="wedding-mobile-category-item"
               onClick={() =>
-                setMenu({ page: 1, category: "gift_flower", subMenu: 1 })
-              }
-            >
-              <h2 className="wedding-mobile-works-category-title">
-                Gift Flower
-              </h2>
-            </div>
-            <div
-              className="wedding-mobile-category-item"
-              onClick={() =>
                 setMenu({ page: 1, category: "flower_class", subMenu: 1 })
               }
             >
@@ -200,8 +190,7 @@ const WeddingWorksMobile = () => {
         </section>
         <section className="wedding-mobile-works-portfolio">
           <h2 className="wedding-mobile-works-product-header">
-            {CATEGORY_LABELS[menu.category] ??
-              formatName(menu.category)}
+            {CATEGORY_LABELS[menu.category] ?? formatName(menu.category)}
           </h2>
           <div className="wedding-mobile-works-product-container">
             {isLoading ? (
