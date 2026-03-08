@@ -72,7 +72,7 @@ const WeddingContactsMobile = () => {
                     </a>
                   ) : (
                     <a
-                      href="https://www.instagram.com/wedding_hwayeondang/"
+                      href="https://www.instagram.com/hwayeondangflower_/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >

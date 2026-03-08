@@ -259,7 +259,7 @@ const WeddingMainMobile = () => {
                 snsImgData.map((item) => (
                   <a
                     key={item.link}
-                    href="https://www.instagram.com/wedding_hwayeondang/"
+                    href="https://www.instagram.com/hwayeondangflower_/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
