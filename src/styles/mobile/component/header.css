@@ -190,6 +190,22 @@
   z-index: 5;
 }
 
+/*HYD 랜딩 로고 버튼 - 모바일 세부 페이지 헤더*/
+.mobile-detail-header-hyd-logo {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  text-decoration: none;
+}
+
+.mobile-detail-header-hyd-logo img {
+  height: 35px;
+  width: auto;
+  filter: brightness(0);
+}
+
 /**헤더 - 세부 페이지(모바일)**/
 .mobile-detail-header-logo,
 .mobile-detail-header-logo a,

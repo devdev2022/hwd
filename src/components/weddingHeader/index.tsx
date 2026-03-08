@@ -5,6 +5,9 @@ import { useLocation } from "react-router-dom";
 //utils
 import { useGoToPath } from "@/utils/function";
 
+//resource
+import HydLogo from "@/assets/hyd_logo_stamp.png";
+
 const WeddingHeader = () => {
   const goToPath = useGoToPath();
   const location = useLocation();
@@ -68,6 +71,9 @@ const WeddingHeader = () => {
       })}
     >
       <div className="wedding-detail-page-flexbox">
+        <a href="/" className="detail-page-header-hyd-logo">
+          <img src={HydLogo} alt="HYD" />
+        </a>
         <div className="wedding-detail-page-header-logo">
           <a href="/wedding">
             <span>Wedding</span>

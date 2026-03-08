@@ -157,6 +157,21 @@
   font-family: "Italiana", serif !important;
 }
 
+/*HYD 랜딩 로고 버튼 - PC 세부 페이지 헤더*/
+.detail-page-header-hyd-logo {
+  position: absolute;
+  left: 2%;
+  transform: translateY(-50%);
+  z-index: 10;
+  text-decoration: none;
+}
+
+.detail-page-header-hyd-logo img {
+  height: 55px;
+  width: auto;
+  filter: brightness(0);
+}
+
 /*HYD 랜딩 로고 버튼 - PC 메인 헤더*/
 .forrest-header-hyd-logo,
 .wedding-header-hyd-logo {
