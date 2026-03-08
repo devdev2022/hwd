@@ -91,6 +91,10 @@ const WeddingWorksMobile = () => {
   }, [totalCnt, active]);
 
   useEffect(() => {
+    setActive(1);
+  }, [menu.category, menu.subMenu]);
+
+  useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [menu.category, menu.subMenu, menu.page]);
 
@@ -140,7 +144,7 @@ const WeddingWorksMobile = () => {
                     setMenu({ page: 1, category: "wedding", subMenu: 2 })
                   }
                 >
-                  야외
+                  실내
                 </li>
                 <li
                   className={`works-category-item-kr ${
@@ -152,7 +156,7 @@ const WeddingWorksMobile = () => {
                     setMenu({ page: 1, category: "wedding", subMenu: 3 })
                   }
                 >
-                  실내
+                  야외
                 </li>
               </ul>
             </div>
