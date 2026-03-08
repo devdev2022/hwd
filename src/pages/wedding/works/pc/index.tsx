@@ -37,7 +37,6 @@ const CATEGORY_LABELS: Record<string, string> = {
   wedding: "Wedding",
   wedding_bouquet: "Wedding Bouquet",
   flower_arrangement: "Flower Arrangement",
-  gift_flower: "Gift Flower",
   flower_class: "Flower Class",
 };
 
@@ -186,8 +185,7 @@ const WeddingWorksPc = () => {
         </section>
         <section className="wedding-works-portfolio">
           <h2 className="wedding-works-product-header">
-            {CATEGORY_LABELS[menu.category] ??
-              formatName(menu.category)}
+            {CATEGORY_LABELS[menu.category] ?? formatName(menu.category)}
           </h2>
           <div className="wedding-works-product-container">
             {isLoading ? (
@@ -207,11 +205,6 @@ const WeddingWorksPc = () => {
                       />
                     ) : (
                       <NoImg />
-                    )}
-                    {item.name ? (
-                      <p>{formatName(item.name)}</p>
-                    ) : (
-                      <p>null</p>
                     )}
                   </li>
                 ))}
