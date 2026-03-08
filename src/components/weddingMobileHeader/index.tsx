@@ -4,9 +4,6 @@ import { useState } from "react";
 //utils
 import { useGoToPath } from "@/utils/function";
 
-//resource
-import HydLogo from "@/assets/hyd_logo_stamp.png";
-
 const WeddingMobileHeader = () => {
   const goToPath = useGoToPath();
 
@@ -33,9 +30,6 @@ const WeddingMobileHeader = () => {
           })}
         >
           <div className="mobile-detail-flexbox">
-            <a href="/" className="mobile-detail-header-hyd-logo">
-              <img src={HydLogo} alt="HYD" />
-            </a>
             <div className="mobile-detail-header-logo">
               <a href="/wedding">
                 <span>Wedding</span>
