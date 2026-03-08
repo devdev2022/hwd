@@ -31,9 +31,8 @@ const WeddingMainPc = () => {
 
   const { data: snsImgData, isLoading: snsImgLoading } = useGetWeddingSnsImg();
 
-  const [ceremony, reception, floral, styling] = useMultipleWeddingWorks(
-    WEDDING_HOME_WORKS_PARAMS,
-  );
+  const [wedding, weddingBouquet, flowerArrangement, flowerClass] =
+    useMultipleWeddingWorks(WEDDING_HOME_WORKS_PARAMS);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -190,15 +189,15 @@ const WeddingMainPc = () => {
               <h2 className="wedding-product-header">Wedding</h2>
               <ul
                 className={`wedding-product_introduction ${
-                  ceremony.data && ceremony.data.data?.length < 3 ? "less" : ""
+                  wedding.data && wedding.data.data?.length < 3 ? "less" : ""
                 }`}
               >
-                {ceremony.isLoading ? (
+                {wedding.isLoading ? (
                   <div className="spinner_container">
                     <FadeLoader />
                   </div>
-                ) : ceremony.data && ceremony.data.data ? (
-                  ceremony.data.data.map((item) => (
+                ) : wedding.data && wedding.data.data ? (
+                  wedding.data.data.map((item) => (
                     <li key={item.id}>
                       <img
                         src={item.link}
@@ -219,20 +218,20 @@ const WeddingMainPc = () => {
               </ul>
             </div>
             <div className="wedding-product-container">
-              <h2 className="wedding-product-header">Reception</h2>
+              <h2 className="wedding-product-header">Wedding Bouquet</h2>
               <ul
                 className={`wedding-product_introduction ${
-                  reception.data && reception.data.data?.length < 3
+                  weddingBouquet.data && weddingBouquet.data.data?.length < 3
                     ? "less"
                     : ""
                 }`}
               >
-                {reception.isLoading ? (
+                {weddingBouquet.isLoading ? (
                   <div className="spinner_container">
                     <FadeLoader />
                   </div>
-                ) : reception.data && reception.data.data ? (
-                  reception.data.data.map((item) => (
+                ) : weddingBouquet.data && weddingBouquet.data.data ? (
+                  weddingBouquet.data.data.map((item) => (
                     <li key={item.id}>
                       <img
                         src={item.link}
@@ -253,18 +252,21 @@ const WeddingMainPc = () => {
               </ul>
             </div>
             <div className="wedding-product-container">
-              <h2 className="wedding-product-header">Floral</h2>
+              <h2 className="wedding-product-header">Flower Arrangement</h2>
               <ul
                 className={`wedding-product_introduction ${
-                  floral.data && floral.data.data?.length < 3 ? "less" : ""
+                  flowerArrangement.data &&
+                  flowerArrangement.data.data?.length < 3
+                    ? "less"
+                    : ""
                 }`}
               >
-                {floral.isLoading ? (
+                {flowerArrangement.isLoading ? (
                   <div className="spinner_container">
                     <FadeLoader />
                   </div>
-                ) : floral.data && floral.data.data ? (
-                  floral.data.data.slice(0, 3).map((item) => (
+                ) : flowerArrangement.data && flowerArrangement.data.data ? (
+                  flowerArrangement.data.data.slice(0, 3).map((item) => (
                     <li key={item.id}>
                       <img
                         src={item.link}
@@ -285,18 +287,20 @@ const WeddingMainPc = () => {
               </ul>
             </div>
             <div className="wedding-product-container">
-              <h2 className="wedding-product-header">Styling</h2>
+              <h2 className="wedding-product-header">Flower Class</h2>
               <ul
                 className={`wedding-product_introduction ${
-                  styling.data && styling.data.data?.length < 3 ? "less" : ""
+                  flowerClass.data && flowerClass.data.data?.length < 3
+                    ? "less"
+                    : ""
                 }`}
               >
-                {styling.isLoading ? (
+                {flowerClass.isLoading ? (
                   <div className="spinner_container">
                     <FadeLoader />
                   </div>
-                ) : styling.data && styling.data.data ? (
-                  styling.data.data.slice(0, 3).map((item) => (
+                ) : flowerClass.data && flowerClass.data.data ? (
+                  flowerClass.data.data.slice(0, 3).map((item) => (
                     <li key={item.id}>
                       <img
                         src={item.link}
