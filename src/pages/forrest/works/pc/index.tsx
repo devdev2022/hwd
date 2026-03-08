@@ -1,6 +1,9 @@
 import { useReducer, useState, useMemo, useEffect } from "react";
 import { FadeLoader } from "react-spinners";
 
+//utils
+import { formatName } from "@/utils/function";
+
 //query
 import { useWorks } from "@/query/works";
 
@@ -232,7 +235,7 @@ const Works = () => {
         </section>
         <section className="works-portfolio">
           <h2 className="works-product-header">
-            {menu.category.replaceAll("_", " ").replaceAll(".png", "")}
+            {formatName(menu.category)}
           </h2>
           <div className="works-product-container">
             {isLoading ? (
@@ -254,7 +257,7 @@ const Works = () => {
                       <NoImg />
                     )}
                     {item.name ? (
-                      <p>{item.name.replaceAll("_", " ")}</p>
+                      <p>{formatName(item.name)}</p>
                     ) : (
                       <p>null</p>
                     )}

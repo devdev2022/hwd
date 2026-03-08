@@ -13,6 +13,9 @@ import Arrow from "@/assets/arrow_select.svg?react";
 import NoImg from "@/assets/no-image.svg?react";
 import { FadeLoader } from "react-spinners";
 
+//utils
+import { formatName } from "@/utils/function";
+
 const initialState = {
   open1: true,
 };
@@ -198,7 +201,7 @@ const WeddingWorksMobile = () => {
         <section className="wedding-mobile-works-portfolio">
           <h2 className="wedding-mobile-works-product-header">
             {CATEGORY_LABELS[menu.category] ??
-              menu.category.replaceAll("_", " ")}
+              formatName(menu.category)}
           </h2>
           <div className="wedding-mobile-works-product-container">
             {isLoading ? (
@@ -264,7 +267,7 @@ const WeddingWorksMobile = () => {
             {selectedImage.name && (
               <div className="lightbox-caption">
                 <p className="lightbox-caption-name">
-                  {selectedImage.name.replaceAll("_", " ")}
+                  {formatName(selectedImage.name)}
                 </p>
               </div>
             )}

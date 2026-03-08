@@ -1,6 +1,9 @@
 import { useReducer, useState, useMemo, useEffect } from "react";
 import { FadeLoader } from "react-spinners";
 
+//utils
+import { formatName } from "@/utils/function";
+
 //query
 import { useWeddingWorks } from "@/query/works";
 
@@ -184,7 +187,7 @@ const WeddingWorksPc = () => {
         <section className="wedding-works-portfolio">
           <h2 className="wedding-works-product-header">
             {CATEGORY_LABELS[menu.category] ??
-              menu.category.replaceAll("_", " ")}
+              formatName(menu.category)}
           </h2>
           <div className="wedding-works-product-container">
             {isLoading ? (
@@ -206,7 +209,7 @@ const WeddingWorksPc = () => {
                       <NoImg />
                     )}
                     {item.name ? (
-                      <p>{item.name.replaceAll("_", " ")}</p>
+                      <p>{formatName(item.name)}</p>
                     ) : (
                       <p>null</p>
                     )}

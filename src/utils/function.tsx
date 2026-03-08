@@ -6,3 +6,12 @@ export function useGoToPath() {
     navigate(path, { state });
   };
 }
+
+export function formatName(name: string): string {
+  return name
+    .replaceAll(".png", "")
+    .replaceAll("_", " ")
+    .replace(/\d+/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
