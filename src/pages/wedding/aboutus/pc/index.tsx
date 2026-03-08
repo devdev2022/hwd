@@ -10,6 +10,11 @@ import Header from "@/components/weddingHeader";
 import { FadeLoader } from "react-spinners";
 import NoImg from "@/assets/no-image.svg?react";
 
+import Arch from "@/assets/wedding/introduction/arch.svg";
+import Bouquet from "@/assets/wedding/introduction/bouquet.svg";
+import FlowerClass from "@/assets/wedding/introduction/flower_class.svg";
+import Vase from "@/assets/wedding/introduction/vase.svg";
+
 const WeddingAboutUsPc = () => {
   const { data: introductionData, isLoading: introductionLoading } =
     useWeddingIntroduction();
@@ -61,7 +66,8 @@ const WeddingAboutUsPc = () => {
                     <FadeLoader />
                   </div>
                 ) : introductionData && introductionData.length > 0 ? (
-                  introductionData[0].content && introductionData[0].content.length > 0 ? (
+                  introductionData[0].content &&
+                  introductionData[0].content.length > 0 ? (
                     introductionData[0].content
                   ) : (
                     "데이터가 없습니다."
@@ -86,21 +92,29 @@ const WeddingAboutUsPc = () => {
             <h2 style={{ fontSize: "56px", fontFamily: "Italiana" }}>Task</h2>
             <div className="wedding-introduction-page-task-box">
               <div className="wedding-introduction-page-task-content">
-                <div style={{ fontWeight: "600" }}>Ceremony</div>
+                <Arch />
+                <div style={{ fontWeight: "600" }}>Wedding</div>
                 <div style={{ fontFamily: "Noto Sans KR-Light" }}>
                   웨딩 세레모니 연출
                 </div>
               </div>
               <div className="wedding-introduction-page-task-content">
-                <div style={{ fontWeight: "600" }}>Reception</div>
+                <Bouquet />
+                <div style={{ fontWeight: "600" }}>Bouquet</div>
                 <div style={{ fontFamily: "Noto Sans KR-Light" }}>
-                  피로연 & 리셉션
+                  부케 제작
                 </div>
               </div>
               <div className="wedding-introduction-page-task-content">
-                <div style={{ fontWeight: "600" }}>Floral</div>
+                <Vase />
+                <div style={{ fontWeight: "600" }}>Flower Arrangement</div>
+                <div style={{ fontFamily: "Noto Sans KR-Light" }}>컨디셔닝</div>
+              </div>
+              <div className="wedding-introduction-page-task-content">
+                <FlowerClass />
+                <div style={{ fontWeight: "600" }}>Flower class</div>
                 <div style={{ fontFamily: "Noto Sans KR-Light" }}>
-                  웨딩 플라워 장식
+                  플라워 클래스
                 </div>
               </div>
             </div>

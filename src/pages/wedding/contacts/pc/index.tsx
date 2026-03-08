@@ -6,11 +6,12 @@ import Footer from "@/components/footer";
 import Header from "@/components/weddingHeader";
 
 //resource
+import contactImage from "@/assets/wedding/contact/wedding_contact_image.png";
 import Instagram from "@/assets/instagram.svg?react";
 import Blog from "@/assets/blog.svg?react";
 
 const WeddingContactsPc = () => {
-  const { data: getBusinessInfo } = useGetWeddingBusinessInfo();
+  const { data: getWeddingBizInfo } = useGetWeddingBusinessInfo();
 
   return (
     <>
@@ -19,7 +20,7 @@ const WeddingContactsPc = () => {
         <section className="wedding-contact-page-container">
           {/* 왼쪽: 사진 패널 */}
           <div className="wedding-contact-image-panel">
-            <div className="wedding-contact-placeholder" />
+            <img src={contactImage} alt="Contact Us" />
           </div>
 
           {/* 오른쪽: 정보 패널 */}
@@ -30,16 +31,16 @@ const WeddingContactsPc = () => {
                 <div>
                   <div className="wedding-contact-content-header">Address</div>
                   <div className="wedding-contact-page-content">
-                    {getBusinessInfo && getBusinessInfo.length > 0
-                      ? getBusinessInfo[0].business_address
+                    {getWeddingBizInfo && getWeddingBizInfo.length > 0
+                      ? getWeddingBizInfo[0].business_address
                       : "서울특별시 강남구 논현로 155길 6\n신사프라자 라동 104호, 화연당"}
                   </div>
                 </div>
                 <div>
                   <div className="wedding-contact-content-header">Email</div>
                   <div className="wedding-contact-page-content">
-                    {getBusinessInfo && getBusinessInfo.length > 0
-                      ? getBusinessInfo[0].email_address
+                    {getWeddingBizInfo && getWeddingBizInfo.length > 0
+                      ? getWeddingBizInfo[0].email_address
                       : "hwd@hwayeondang.com"}
                   </div>
                 </div>
@@ -48,8 +49,8 @@ const WeddingContactsPc = () => {
                 <div>
                   <div className="wedding-contact-content-header">Phone</div>
                   <div className="wedding-contact-page-content">
-                    {getBusinessInfo && getBusinessInfo.length > 0
-                      ? getBusinessInfo[0].phone_number
+                    {getWeddingBizInfo && getWeddingBizInfo.length > 0
+                      ? getWeddingBizInfo[0].phone_number
                       : "010-4458-5821"}
                   </div>
                 </div>
@@ -57,9 +58,9 @@ const WeddingContactsPc = () => {
                   <div className="wedding-contact-content-header">social</div>
                   <div className="wedding-contact-page-content social-links-row">
                     <div className="social-link-content-in-page">
-                      {getBusinessInfo && getBusinessInfo.length > 0 ? (
+                      {getWeddingBizInfo && getWeddingBizInfo.length > 0 ? (
                         <a
-                          href={getBusinessInfo[0].instagram_link}
+                          href={getWeddingBizInfo[0].instagram_link}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -78,9 +79,9 @@ const WeddingContactsPc = () => {
                       )}
                     </div>
                     <div className="social-link-content-in-page blog-link">
-                      {getBusinessInfo && getBusinessInfo.length > 0 ? (
+                      {getWeddingBizInfo && getWeddingBizInfo.length > 0 ? (
                         <a
-                          href={getBusinessInfo[0].blog_link}
+                          href={getWeddingBizInfo[0].blog_link}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
