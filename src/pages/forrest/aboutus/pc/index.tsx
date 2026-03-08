@@ -42,15 +42,17 @@ const AboutUs = () => {
         </section>
         <section className="introduction-page-presentation">
           <div className="introduction-presentation-container">
-            {introductionLoading ? (
-              <div className="spinner_container">
-                <FadeLoader />
-              </div>
-            ) : introductionData && introductionData.length > 0 ? (
-              <img src={introductionData[0].thumbnail} />
-            ) : (
-              <img src={plantImg} />
-            )}
+            <div className="introduction-presentation-img-box">
+              {introductionLoading ? (
+                <div className="spinner_container">
+                  <FadeLoader />
+                </div>
+              ) : introductionData && introductionData.length > 0 ? (
+                <img src={introductionData[0].thumbnail} />
+              ) : (
+                <img src={plantImg} />
+              )}
+            </div>
             <div style={{ width: "50%" }}>
               <h3
                 style={{
