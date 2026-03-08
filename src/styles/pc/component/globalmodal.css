@@ -70,8 +70,8 @@
 
 .lightbox-close {
   position: absolute;
-  top: 24px;
-  right: 32px;
+  top: 3px;
+  right: 10px;
   background: none;
   border: none;
   color: #fff;
