@@ -115,6 +115,8 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   font-size: 18px;
+  line-height: 1.8;
+  padding-bottom: 4px;
   white-space: pre-line;
 }
 
