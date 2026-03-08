@@ -161,6 +161,7 @@
 .detail-page-header-hyd-logo {
   position: absolute;
   left: 2%;
+  top: 10%;
   transform: translateY(-50%);
   z-index: 10;
   text-decoration: none;
@@ -170,6 +171,11 @@
   height: 55px;
   width: auto;
   filter: brightness(0);
+}
+
+.detail-page-header.scrolled .detail-page-header-hyd-logo,
+.wedding-detail-page-header.scrolled .detail-page-header-hyd-logo {
+  display: none;
 }
 
 /*HYD 랜딩 로고 버튼 - PC 메인 헤더*/
