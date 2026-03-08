@@ -68,7 +68,7 @@ const AboutUs = () => {
                     <FadeLoader />
                   </div>
                 ) : introductionData && introductionData.length > 0 ? (
-                  introductionData[0].content.length > 0 ? (
+                  introductionData[0].content && introductionData[0].content.length > 0 ? (
                     introductionData[0].content
                   ) : (
                     "데이터가 없습니다."
