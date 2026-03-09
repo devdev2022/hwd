@@ -273,7 +273,7 @@
 
 @media screen and (max-width: 600px) {
   .mobile-detail-header.open {
-    left: 50%;
+    left: 210px;
   }
 }
 
@@ -340,7 +340,7 @@
 
 @media screen and (max-width: 600px) {
   .mobile-detail-header-menu.open {
-    left: 50%;
+    left: 230px;
   }
 }
 
