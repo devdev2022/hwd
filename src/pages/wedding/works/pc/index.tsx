@@ -1,10 +1,8 @@
 import { useReducer, useState, useMemo, useEffect } from "react";
+import { FadeLoader } from "react-spinners";
 
 //utils
 import { formatName } from "@/utils/function";
-
-//component
-import ImageLoader from "@/components/image-loader";
 
 //query
 import { useWeddingWorks } from "@/query/works";
@@ -186,33 +184,35 @@ const WeddingWorksPc = () => {
             {CATEGORY_LABELS[menu.category] ?? formatName(menu.category)}
           </h2>
           <div className="wedding-works-product-container">
-            <ImageLoader isLoading={isLoading}>
-              {data && data.data.length > 0 ? (
-                <ul className="wedding-works-container">
-                  {data.data.map((item) => (
-                    <li key={item.id} className="wedding-work-item">
-                      {item.link ? (
-                        <img
-                          src={item.link}
-                          className="wedding-product-image"
-                          onClick={() => setSelectedImage(item.link)}
-                          style={{ cursor: "pointer" }}
-                        />
-                      ) : (
-                        <NoImg />
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <ul>
-                  <div className="work-no-item">
-                    <NoImg />
-                    <p>데이터가 없습니다</p>
-                  </div>
-                </ul>
-              )}
-            </ImageLoader>
+            {isLoading ? (
+              <div className="spinner_container">
+                <FadeLoader />
+              </div>
+            ) : data && data.data.length > 0 ? (
+              <ul className="wedding-works-container">
+                {data.data.map((item) => (
+                  <li key={item.id} className="wedding-work-item">
+                    {item.link ? (
+                      <img
+                        src={item.link}
+                        className="wedding-product-image"
+                        onClick={() => setSelectedImage(item.link)}
+                        style={{ cursor: "pointer" }}
+                      />
+                    ) : (
+                      <NoImg />
+                    )}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <ul>
+                <div className="work-no-item">
+                  <NoImg />
+                  <p>데이터가 없습니다</p>
+                </div>
+              </ul>
+            )}
             <Pagination
               totalPage={blck}
               currentPage={active}

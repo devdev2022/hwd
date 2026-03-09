@@ -1,7 +1,5 @@
 import { useReducer, useState, useMemo, useEffect } from "react";
-
-//component
-import ImageLoader from "@/components/image-loader";
+import { FadeLoader } from "react-spinners";
 
 //query
 import { useWorks } from "@/query/works";
@@ -257,33 +255,35 @@ const Works = () => {
             {formatName(menu.category)}
           </h2>
           <div className="mobile-works-product-container">
-            <ImageLoader isLoading={isLoading}>
-              {data && data.data.length > 0 ? (
-                <ul className="mobile-works-container">
-                  {data.data.map((item) => (
-                    <li key={item.id} className="mobile-work-item">
-                      {item.link ? (
-                        <img
-                          src={item.link}
-                          className="mobile-product-image"
-                          onClick={() => setSelectedImage({ link: item.link, name: item.name || "" })}
-                          style={{ cursor: "pointer" }}
-                        />
-                      ) : (
-                        <NoImg />
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <ul>
-                  <div className="work-no-item">
-                    <NoImg />
-                    <p>데이터가 없습니다</p>
-                  </div>
-                </ul>
-              )}
-            </ImageLoader>
+            {isLoading ? (
+              <div className="spinner_container">
+                <FadeLoader />
+              </div>
+            ) : data && data.data.length > 0 ? (
+              <ul className="mobile-works-container">
+                {data.data.map((item) => (
+                  <li key={item.id} className="mobile-work-item">
+                    {item.link ? (
+                      <img
+                        src={item.link}
+                        className="mobile-product-image"
+                        onClick={() => setSelectedImage({ link: item.link, name: item.name || "" })}
+                        style={{ cursor: "pointer" }}
+                      />
+                    ) : (
+                      <NoImg />
+                    )}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <ul>
+                <div className="work-no-item">
+                  <NoImg />
+                  <p>데이터가 없습니다</p>
+                </div>
+              </ul>
+            )}
 
             <Pagination
               totalPage={blck}

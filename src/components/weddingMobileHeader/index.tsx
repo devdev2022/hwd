@@ -4,6 +4,9 @@ import { useState } from "react";
 //utils
 import { useGoToPath } from "@/utils/function";
 
+//resouce
+import HydLogo from "@/assets/hyd_logo_stamp.png";
+
 const WeddingMobileHeader = () => {
   const goToPath = useGoToPath();
 
@@ -51,29 +54,26 @@ const WeddingMobileHeader = () => {
           })}
         >
           <div className="mobile-sidebar-category-container">
-            <div>
-              <div
-                className="mobile-sidebar-item"
-                onClick={() => goToPath("/wedding/aboutus")}
-              >
-                <h2 className="mobile-category-title">ABOUT US</h2>
-              </div>
+            <a href="/" className="detail-page-header-hyd-logo">
+              <img src={HydLogo} alt="HYD" />
+            </a>
+            <div
+              className="mobile-sidebar-item"
+              onClick={() => goToPath("/wedding/aboutus")}
+            >
+              <h2 className="mobile-category-title">ABOUT US</h2>
             </div>
-            <div>
-              <div
-                className="mobile-sidebar-item"
-                onClick={() => goToPath("/wedding/works")}
-              >
-                <h2 className="mobile-category-title">WORKS</h2>
-              </div>
+            <div
+              className="mobile-sidebar-item"
+              onClick={() => goToPath("/wedding/works")}
+            >
+              <h2 className="mobile-category-title">WORKS</h2>
             </div>
-            <div>
-              <div
-                className="mobile-sidebar-item"
-                onClick={() => goToPath("/wedding/contacts")}
-              >
-                <h2 className="mobile-category-title">CONTACT US</h2>
-              </div>
+            <div
+              className="mobile-sidebar-item"
+              onClick={() => goToPath("/wedding/contacts")}
+            >
+              <h2 className="mobile-category-title">CONTACT US</h2>
             </div>
           </div>
         </div>

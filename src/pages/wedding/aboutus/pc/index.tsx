@@ -5,7 +5,6 @@ import { useWeddingIntroduction } from "@/query/main";
 //component
 import Footer from "@/components/footer";
 import Header from "@/components/weddingHeader";
-import ImageLoader from "@/components/image-loader";
 
 //resource
 import { FadeLoader } from "react-spinners";
@@ -125,19 +124,21 @@ const WeddingAboutUsPc = () => {
           <div className="wedding-introduction-page-staff-container">
             <h2 style={{ fontSize: "56px", fontFamily: "Italiana" }}>Staff</h2>
             <div className="wedding-introduction-page-staff-imgbox">
-              <ImageLoader isLoading={staffPicLoading}>
-                {getStaffPictures && getStaffPictures.length > 0 ? (
-                  getStaffPictures.map((item) => (
-                    <div className="staff-information" key={`staff_${item.id}`}>
-                      <img src={item.link} />
-                      <div style={{ fontWeight: "600" }}>{item.status}</div>
-                      <div>{item.name}</div>
-                    </div>
-                  ))
-                ) : (
-                  <div className="staff-information">데이터가 없습니다.</div>
-                )}
-              </ImageLoader>
+              {staffPicLoading ? (
+                <div className="spinner_container">
+                  <FadeLoader />
+                </div>
+              ) : getStaffPictures && getStaffPictures.length > 0 ? (
+                getStaffPictures.map((item) => (
+                  <div className="staff-information" key={`staff_${item.id}`}>
+                    <img src={item.link} />
+                    <div style={{ fontWeight: "600" }}>{item.status}</div>
+                    <div>{item.name}</div>
+                  </div>
+                ))
+              ) : (
+                <div className="staff-information">데이터가 없습니다.</div>
+              )}
             </div>
           </div>
         </section>
