@@ -14,6 +14,7 @@ import { useMultipleWeddingWorks } from "@/query/works";
 //component
 import Footer from "@/components/footer";
 import Header from "@/components/weddingMobileMainHeader";
+import ImageLoader from "@/components/image-loader";
 
 //utils
 import { useGoToPath } from "@/utils/function";
@@ -102,75 +103,71 @@ const WeddingMainMobile = () => {
             <div className="wedding-mobile-product-container">
               <h2 className="wedding-mobile-product-header">Wedding</h2>
               <div className="wedding-mobile-product-introduction">
-                {wedding.isLoading ? (
-                  <div className="spinner_container">
-                    <FadeLoader />
-                  </div>
-                ) : wedding.data?.data?.length ? (
-                  <Swiper
-                    pagination={
-                      wedding.data.data.length > 0
-                        ? { dynamicBullets: true }
-                        : false
-                    }
-                    loop={wedding.data.data.length > 1}
-                    modules={[Pagination]}
-                    className="mySwiper"
-                  >
-                    {wedding.data.data.slice(0, 3).map((item) => (
-                      <SwiperSlide key={item.id}>
-                        <div className="product-slide">
-                          <img
-                            src={item.link}
-                            alt={item.name ?? ""}
-                            style={{ cursor: "pointer" }}
-                            onClick={() => setSelectedImage(item.link)}
-                          />
-                        </div>
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                ) : (
-                  <div className="empty">
-                    <NoImg />
-                    <p>데이터가 없습니다</p>
-                  </div>
-                )}
+                <ImageLoader isLoading={wedding.isLoading} urls={wedding.data?.data?.slice(0, 3).map((i) => i.link)}>
+                  {wedding.data?.data?.length ? (
+                    <Swiper
+                      pagination={
+                        wedding.data.data.length > 0
+                          ? { dynamicBullets: true }
+                          : false
+                      }
+                      loop={wedding.data.data.length > 1}
+                      modules={[Pagination]}
+                      className="mySwiper"
+                    >
+                      {wedding.data.data.slice(0, 3).map((item) => (
+                        <SwiperSlide key={item.id}>
+                          <div className="product-slide">
+                            <img
+                              src={item.link}
+                              alt={item.name ?? ""}
+                              style={{ cursor: "pointer" }}
+                              onClick={() => setSelectedImage(item.link)}
+                            />
+                          </div>
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+                  ) : (
+                    <div className="empty">
+                      <NoImg />
+                      <p>데이터가 없습니다</p>
+                    </div>
+                  )}
+                </ImageLoader>
               </div>
             </div>
             <div className="wedding-mobile-product-container">
               <h2 className="wedding-mobile-product-header">Wedding Bouquet</h2>
               <div className="wedding-mobile-product-introduction">
-                {weddingBouquet.isLoading ? (
-                  <div className="spinner_container">
-                    <FadeLoader />
-                  </div>
-                ) : weddingBouquet.data?.data?.length ? (
-                  <Swiper
-                    pagination={{ dynamicBullets: true }}
-                    loop
-                    modules={[Pagination]}
-                    className="mySwiper"
-                  >
-                    {weddingBouquet.data.data.slice(0, 3).map((item) => (
-                      <SwiperSlide key={item.id}>
-                        <div className="product-slide">
-                          <img
-                            src={item.link}
-                            alt={item.name ?? ""}
-                            style={{ cursor: "pointer" }}
-                            onClick={() => setSelectedImage(item.link)}
-                          />
-                        </div>
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                ) : (
-                  <div className="empty">
-                    <NoImg />
-                    <p>데이터가 없습니다</p>
-                  </div>
-                )}
+                <ImageLoader isLoading={weddingBouquet.isLoading} urls={weddingBouquet.data?.data?.slice(0, 3).map((i) => i.link)}>
+                  {weddingBouquet.data?.data?.length ? (
+                    <Swiper
+                      pagination={{ dynamicBullets: true }}
+                      loop
+                      modules={[Pagination]}
+                      className="mySwiper"
+                    >
+                      {weddingBouquet.data.data.slice(0, 3).map((item) => (
+                        <SwiperSlide key={item.id}>
+                          <div className="product-slide">
+                            <img
+                              src={item.link}
+                              alt={item.name ?? ""}
+                              style={{ cursor: "pointer" }}
+                              onClick={() => setSelectedImage(item.link)}
+                            />
+                          </div>
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+                  ) : (
+                    <div className="empty">
+                      <NoImg />
+                      <p>데이터가 없습니다</p>
+                    </div>
+                  )}
+                </ImageLoader>
               </div>
             </div>
             <div className="wedding-mobile-product-container">
@@ -178,71 +175,67 @@ const WeddingMainMobile = () => {
                 Flower Arrangement
               </h2>
               <div className="wedding-mobile-product-introduction">
-                {flowerArrangement.isLoading ? (
-                  <div className="spinner_container">
-                    <FadeLoader />
-                  </div>
-                ) : flowerArrangement.data?.data?.length ? (
-                  <Swiper
-                    pagination={{ dynamicBullets: true }}
-                    loop
-                    modules={[Pagination]}
-                    className="mySwiper"
-                  >
-                    {flowerArrangement.data.data.slice(0, 3).map((item) => (
-                      <SwiperSlide key={item.id}>
-                        <div className="product-slide">
-                          <img
-                            src={item.link}
-                            alt={item.name ?? ""}
-                            style={{ cursor: "pointer" }}
-                            onClick={() => setSelectedImage(item.link)}
-                          />
-                        </div>
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                ) : (
-                  <div className="empty">
-                    <NoImg />
-                    <p>데이터가 없습니다</p>
-                  </div>
-                )}
+                <ImageLoader isLoading={flowerArrangement.isLoading} urls={flowerArrangement.data?.data?.slice(0, 3).map((i) => i.link)}>
+                  {flowerArrangement.data?.data?.length ? (
+                    <Swiper
+                      pagination={{ dynamicBullets: true }}
+                      loop
+                      modules={[Pagination]}
+                      className="mySwiper"
+                    >
+                      {flowerArrangement.data.data.slice(0, 3).map((item) => (
+                        <SwiperSlide key={item.id}>
+                          <div className="product-slide">
+                            <img
+                              src={item.link}
+                              alt={item.name ?? ""}
+                              style={{ cursor: "pointer" }}
+                              onClick={() => setSelectedImage(item.link)}
+                            />
+                          </div>
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+                  ) : (
+                    <div className="empty">
+                      <NoImg />
+                      <p>데이터가 없습니다</p>
+                    </div>
+                  )}
+                </ImageLoader>
               </div>
             </div>
             <div className="wedding-mobile-product-container">
               <h2 className="wedding-mobile-product-header">Flower Class</h2>
               <div className="wedding-mobile-product-introduction">
-                {flowerClass.isLoading ? (
-                  <div className="spinner_container">
-                    <FadeLoader />
-                  </div>
-                ) : flowerClass.data?.data?.length ? (
-                  <Swiper
-                    pagination={{ dynamicBullets: true }}
-                    loop
-                    modules={[Pagination]}
-                    className="mySwiper"
-                  >
-                    {flowerClass.data.data.slice(0, 3).map((item) => (
-                      <SwiperSlide key={item.id}>
-                        <div className="product-slide">
-                          <img
-                            src={item.link}
-                            alt={item.name ?? ""}
-                            style={{ cursor: "pointer" }}
-                            onClick={() => setSelectedImage(item.link)}
-                          />
-                        </div>
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                ) : (
-                  <div className="empty">
-                    <NoImg />
-                    <p>데이터가 없습니다</p>
-                  </div>
-                )}
+                <ImageLoader isLoading={flowerClass.isLoading} urls={flowerClass.data?.data?.slice(0, 3).map((i) => i.link)}>
+                  {flowerClass.data?.data?.length ? (
+                    <Swiper
+                      pagination={{ dynamicBullets: true }}
+                      loop
+                      modules={[Pagination]}
+                      className="mySwiper"
+                    >
+                      {flowerClass.data.data.slice(0, 3).map((item) => (
+                        <SwiperSlide key={item.id}>
+                          <div className="product-slide">
+                            <img
+                              src={item.link}
+                              alt={item.name ?? ""}
+                              style={{ cursor: "pointer" }}
+                              onClick={() => setSelectedImage(item.link)}
+                            />
+                          </div>
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+                  ) : (
+                    <div className="empty">
+                      <NoImg />
+                      <p>데이터가 없습니다</p>
+                    </div>
+                  )}
+                </ImageLoader>
               </div>
             </div>
           </div>

@@ -1,5 +1,8 @@
 import { useReducer, useState, useMemo, useEffect } from "react";
 
+//component
+import ImageLoader from "@/components/image-loader";
+
 //query
 import { useWorks } from "@/query/works";
 
@@ -13,8 +16,6 @@ import Arrow from "@/assets/arrow_select.svg?react";
 
 //resource
 import NoImg from "@/assets/no-image.svg?react";
-import { FadeLoader } from "react-spinners";
-
 //utils
 import { formatName } from "@/utils/function";
 
@@ -256,35 +257,33 @@ const Works = () => {
             {formatName(menu.category)}
           </h2>
           <div className="mobile-works-product-container">
-            {isLoading ? (
-              <div className="spinner_container">
-                <FadeLoader />
-              </div>
-            ) : data && data.data.length > 0 ? (
-              <ul className="mobile-works-container">
-                {data.data.map((item) => (
-                  <li key={item.id} className="mobile-work-item">
-                    {item.link ? (
-                      <img
-                        src={item.link}
-                        className="mobile-product-image"
-                        onClick={() => setSelectedImage({ link: item.link, name: item.name || "" })}
-                        style={{ cursor: "pointer" }}
-                      />
-                    ) : (
-                      <NoImg />
-                    )}
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <ul>
-                <div className="work-no-item">
-                  <NoImg />
-                  <p>데이터가 없습니다</p>
-                </div>
-              </ul>
-            )}
+            <ImageLoader isLoading={isLoading} urls={data?.data?.map((i) => i.link)}>
+              {data && data.data.length > 0 ? (
+                <ul className="mobile-works-container">
+                  {data.data.map((item) => (
+                    <li key={item.id} className="mobile-work-item">
+                      {item.link ? (
+                        <img
+                          src={item.link}
+                          className="mobile-product-image"
+                          onClick={() => setSelectedImage({ link: item.link, name: item.name || "" })}
+                          style={{ cursor: "pointer" }}
+                        />
+                      ) : (
+                        <NoImg />
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <ul>
+                  <div className="work-no-item">
+                    <NoImg />
+                    <p>데이터가 없습니다</p>
+                  </div>
+                </ul>
+              )}
+            </ImageLoader>
 
             <Pagination
               totalPage={blck}

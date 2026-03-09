@@ -11,10 +11,10 @@ import Pagination from "@/components/pagination";
 //resource
 import Arrow from "@/assets/arrow_select.svg?react";
 import NoImg from "@/assets/no-image.svg?react";
-import { FadeLoader } from "react-spinners";
 
 //utils
 import { formatName } from "@/utils/function";
+import ImageLoader from "@/components/image-loader";
 
 const initialState = {
   open1: true,
@@ -197,43 +197,41 @@ const WeddingWorksMobile = () => {
             {CATEGORY_LABELS[menu.category] ?? formatName(menu.category)}
           </h2>
           <div className="wedding-mobile-works-product-container">
-            {isLoading ? (
-              <div className="spinner_container">
-                <FadeLoader />
-              </div>
-            ) : data && data.data.length > 0 ? (
-              <ul className="wedding-mobile-works-container">
-                {data.data.map((item) => (
-                  <li key={item.id} className="wedding-mobile-work-item">
-                    {item.link ? (
-                      <img
-                        src={item.link}
-                        className="wedding-mobile-product-image"
-                        onClick={() =>
-                          setSelectedImage({
-                            link: item.link,
-                            name: item.name || "",
-                          })
-                        }
-                        style={{ cursor: "pointer" }}
-                      />
-                    ) : (
-                      <div className="work-no-item">
-                        <NoImg />
-                        <p>데이터가 없습니다</p>
-                      </div>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <ul>
-                <div className="work-no-item">
-                  <NoImg />
-                  <p>데이터가 없습니다</p>
-                </div>
-              </ul>
-            )}
+            <ImageLoader isLoading={isLoading} urls={data?.data?.map((i) => i.link)}>
+              {data && data.data.length > 0 ? (
+                <ul className="wedding-mobile-works-container">
+                  {data.data.map((item) => (
+                    <li key={item.id} className="wedding-mobile-work-item">
+                      {item.link ? (
+                        <img
+                          src={item.link}
+                          className="wedding-mobile-product-image"
+                          onClick={() =>
+                            setSelectedImage({
+                              link: item.link,
+                              name: item.name || "",
+                            })
+                          }
+                          style={{ cursor: "pointer" }}
+                        />
+                      ) : (
+                        <div className="work-no-item">
+                          <NoImg />
+                          <p>데이터가 없습니다</p>
+                        </div>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <ul>
+                  <div className="work-no-item">
+                    <NoImg />
+                    <p>데이터가 없습니다</p>
+                  </div>
+                </ul>
+              )}
+            </ImageLoader>
 
             <Pagination
               totalPage={blck}
