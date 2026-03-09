@@ -26,7 +26,6 @@ const Main = () => {
       >
         <div className="blur" />
         <picture>
-          <source media="(max-width: 1023px)" srcSet={forrestMobile} />
           <img src={forrest} />
         </picture>
         <div className="overlay">
@@ -41,7 +40,6 @@ const Main = () => {
       >
         <div className="blur" />
         <picture>
-          <source media="(max-width: 1023px)" srcSet={weddingMobile} />
           <img src={wedding} />
         </picture>
         <div className="overlay">
