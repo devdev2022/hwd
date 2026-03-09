@@ -39,7 +39,7 @@ const Main = () => {
           <img src={wedding} />
         </picture>
         <div className="overlay">
-          <h2>WEDDING</h2>
+          <h2>HYD</h2>
           <button className="btn">이동하기</button>
         </div>
       </div>
