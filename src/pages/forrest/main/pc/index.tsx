@@ -10,7 +10,7 @@ import { useMultipleWorks } from "@/query/works";
 import Footer from "@/components/footer";
 
 //utils
-import { useGoToPath, formatName } from "@/utils/function";
+import { useGoToPath, formatName, useImagePreload } from "@/utils/function";
 import { HOME_WORKS_PARAMS } from "@/types/works";
 
 //resource
@@ -34,6 +34,11 @@ const Main = () => {
 
   const [planterior, landscaping, popupStore, winterdec] =
     useMultipleWorks(HOME_WORKS_PARAMS);
+
+  const planteriorReady = useImagePreload(planterior.data?.data?.map((i) => i.link));
+  const landscapingReady = useImagePreload(landscaping.data?.data?.map((i) => i.link));
+  const popupStoreReady = useImagePreload(popupStore.data?.data?.slice(0, 3).map((i) => i.link));
+  const winterdecReady = useImagePreload(winterdec.data?.data?.slice(0, 3).map((i) => i.link));
 
   useEffect(() => {
     const handleScroll = () => {
@@ -187,7 +192,7 @@ const Main = () => {
                     : ""
                 }`}
               >
-                {planterior.isLoading ? (
+                {planterior.isLoading || !planteriorReady ? (
                   <div className="spinner_container">
                     <FadeLoader />
                   </div>
@@ -221,7 +226,7 @@ const Main = () => {
                     : ""
                 }`}
               >
-                {landscaping.isLoading ? (
+                {landscaping.isLoading || !landscapingReady ? (
                   <div className="spinner_container">
                     <FadeLoader />
                   </div>
@@ -255,7 +260,7 @@ const Main = () => {
                     : ""
                 }`}
               >
-                {popupStore.isLoading ? (
+                {popupStore.isLoading || !popupStoreReady ? (
                   <div className="spinner_container">
                     <FadeLoader />
                   </div>
@@ -289,7 +294,7 @@ const Main = () => {
                     : ""
                 }`}
               >
-                {winterdec.isLoading ? (
+                {winterdec.isLoading || !winterdecReady ? (
                   <div className="spinner_container">
                     <FadeLoader />
                   </div>

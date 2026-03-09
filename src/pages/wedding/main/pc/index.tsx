@@ -10,7 +10,7 @@ import { useMultipleWeddingWorks } from "@/query/works";
 import Footer from "@/components/footer";
 
 //utils
-import { useGoToPath } from "@/utils/function";
+import { useGoToPath, useImagePreload } from "@/utils/function";
 import { WEDDING_HOME_WORKS_PARAMS } from "@/types/wedding";
 
 //resource
@@ -33,6 +33,11 @@ const WeddingMainPc = () => {
 
   const [wedding, weddingBouquet, flowerArrangement, flowerClass] =
     useMultipleWeddingWorks(WEDDING_HOME_WORKS_PARAMS);
+
+  const weddingReady = useImagePreload(wedding.data?.data?.map((i) => i.link));
+  const weddingBouquetReady = useImagePreload(weddingBouquet.data?.data?.map((i) => i.link));
+  const flowerArrangementReady = useImagePreload(flowerArrangement.data?.data?.slice(0, 3).map((i) => i.link));
+  const flowerClassReady = useImagePreload(flowerClass.data?.data?.slice(0, 3).map((i) => i.link));
 
   useEffect(() => {
     const handleScroll = () => {
@@ -192,7 +197,7 @@ const WeddingMainPc = () => {
                   wedding.data && wedding.data.data?.length < 3 ? "less" : ""
                 }`}
               >
-                {wedding.isLoading ? (
+                {wedding.isLoading || !weddingReady ? (
                   <div className="spinner_container">
                     <FadeLoader />
                   </div>
@@ -223,7 +228,7 @@ const WeddingMainPc = () => {
                     : ""
                 }`}
               >
-                {weddingBouquet.isLoading ? (
+                {weddingBouquet.isLoading || !weddingBouquetReady ? (
                   <div className="spinner_container">
                     <FadeLoader />
                   </div>
@@ -255,7 +260,7 @@ const WeddingMainPc = () => {
                     : ""
                 }`}
               >
-                {flowerArrangement.isLoading ? (
+                {flowerArrangement.isLoading || !flowerArrangementReady ? (
                   <div className="spinner_container">
                     <FadeLoader />
                   </div>
@@ -286,7 +291,7 @@ const WeddingMainPc = () => {
                     : ""
                 }`}
               >
-                {flowerClass.isLoading ? (
+                {flowerClass.isLoading || !flowerClassReady ? (
                   <div className="spinner_container">
                     <FadeLoader />
                   </div>
