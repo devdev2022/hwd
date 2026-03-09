@@ -30,7 +30,7 @@
 .forrest-mobile-header.open {
   transition: all 0.3s ease;
   top: 0;
-  left: 22%;
+  left: 230px;
 }
 
 .forrest-mobile-header-container {
@@ -51,7 +51,7 @@
 .forrest-mobile-header.scrolled.open {
   transition: all 0.3s ease;
   top: 0;
-  left: 22%;
+  left: 230px;
   position: fixed;
   padding-top: 0;
   background-color: white;
@@ -82,7 +82,7 @@
 }
 
 /*햄버거*/
-.forrest-mobile-header-menu {
+.mobile-header-menu {
   position: fixed;
   display: flex;
   justify-content: center;
@@ -97,9 +97,9 @@
   cursor: pointer;
 }
 
-.forrest-mobile-header-menu::before,
-.forrest-mobile-header-menu::after,
-.forrest-mobile-header-menu span {
+.mobile-header-menu::before,
+.mobile-header-menu::after,
+.mobile-header-menu span {
   content: "";
   position: absolute;
   left: 20px;
@@ -109,9 +109,9 @@
   transition: all 0.3s ease;
 }
 
-.forrest-mobile-header-menu.scrolled::before,
-.forrest-mobile-header-menu.scrolled::after,
-.forrest-mobile-header-menu.scrolled span {
+.mobile-header-menu.scrolled::before,
+.mobile-header-menu.scrolled::after,
+.mobile-header-menu.scrolled span {
   content: "";
   left: 20px;
   width: 29px;
@@ -120,8 +120,8 @@
   transition: all 0.3s ease;
 }
 
-.forrest-mobile-header-menu.open {
-  left: 30%;
+.mobile-header-menu.open {
+  left: 230px;
   transition: all 0.3s ease;
 }
 
@@ -134,45 +134,45 @@
   }
 }
 
-@media screen and (max-width: 768px) {
-  .forrest-mobile-header-menu.open {
+@media screen and (max-width: 460px) {
+  .mobile-header-menu.open {
     left: 50%;
   }
 
   .forrest-mobile-header.open {
-    left: 36%;
+    left: 50%;
   }
 
   .forrest-mobile-header.scrolled.open {
-    left: 36%;
+    left: 50%;
   }
 }
 
-.forrest-mobile-header-menu::before {
+.mobile-header-menu::before {
   top: calc(40% - 9px);
 }
 
-.forrest-mobile-header-menu::after {
+.mobile-header-menu::after {
   top: calc(40% + 8px);
 }
 
-.forrest-mobile-header-menu span {
+.mobile-header-menu span {
   top: calc(40% - 0.5px);
 }
 
-.forrest-mobile-header-menu.open::before {
+.mobile-header-menu.open::before {
   background-color: #fff;
   transform: translateY(-10px) rotate(-45deg);
   top: calc(75% - 9px);
 }
 
-.forrest-mobile-header-menu.open::after {
+.mobile-header-menu.open::after {
   background-color: #fff;
   transform: translateY(8px) rotate(45deg);
   top: calc(10% + 8px);
 }
 
-.forrest-mobile-header-menu.open span {
+.mobile-header-menu.open span {
   background-color: transparent;
   opacity: 0;
 }

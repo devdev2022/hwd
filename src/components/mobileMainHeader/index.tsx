@@ -64,7 +64,7 @@ const SideBar = () => {
           </div>
         </div>
         <div
-          className={cx("forrest-mobile-header-menu", {
+          className={cx("mobile-header-menu", {
             open: isOpen,
             scrolled: isScrolled,
           })}
@@ -78,33 +78,27 @@ const SideBar = () => {
           })}
         >
           <div className="mobile-sidebar-category-container">
-            <div>
-              <div
-                className="mobile-sidebar-item"
-                onClick={() => goToPath("/forrest/aboutus")}
-              >
-                <h2 className="mobile-category-title">ABOUT US</h2>
-              </div>
-            </div>
-            <div>
-              <div
-                className="mobile-sidebar-item"
-                onClick={() => goToPath("/forrest/works")}
-              >
-                <h2 className="mobile-category-title">WORKS</h2>
-              </div>
-            </div>
-            <div>
-              <div
-                className="mobile-sidebar-item"
-                onClick={() => goToPath("/forrest/contacts")}
-              >
-                <h2 className="mobile-category-title">CONTACT US</h2>
-              </div>
-            </div>
             <a href="/" className="mobile-sidebar-hyd-logo">
               <img src={HydLogo} alt="HYD" />
             </a>
+            <div
+              className="mobile-sidebar-item"
+              onClick={() => goToPath("/forrest/aboutus")}
+            >
+              <h2 className="mobile-category-title">ABOUT US</h2>
+            </div>
+            <div
+              className="mobile-sidebar-item"
+              onClick={() => goToPath("/forrest/works")}
+            >
+              <h2 className="mobile-category-title">WORKS</h2>
+            </div>
+            <div
+              className="mobile-sidebar-item"
+              onClick={() => goToPath("/forrest/contacts")}
+            >
+              <h2 className="mobile-category-title">CONTACT US</h2>
+            </div>
           </div>
         </div>
       </header>
