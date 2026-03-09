@@ -7,8 +7,9 @@ import Instagram from "@/assets/instagram.svg?react";
 import Blog from "@/assets/blog.svg?react";
 
 const Footer = ({ variant }: { variant?: "wedding" }) => {
-  const { data: businessInfo } = useGetBusinessInfo();
-  const { data: weddingBusinessInfo } = useGetWeddingBusinessInfo();
+  const isWedding = variant === "wedding";
+  const { data: businessInfo } = useGetBusinessInfo(!isWedding);
+  const { data: weddingBusinessInfo } = useGetWeddingBusinessInfo(isWedding);
 
   const info = variant === "wedding" ? weddingBusinessInfo?.[0] : businessInfo?.[0];
 
