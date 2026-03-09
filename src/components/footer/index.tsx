@@ -1,5 +1,5 @@
 //query
-import { useGetBusinessInfo } from "@/query/common";
+import { useGetBusinessInfo, useGetWeddingBusinessInfo } from "@/query/common";
 
 //resource
 import Phone from "@/assets/phone.svg?react";
@@ -7,26 +7,30 @@ import Instagram from "@/assets/instagram.svg?react";
 import Blog from "@/assets/blog.svg?react";
 
 const Footer = ({ variant }: { variant?: "wedding" }) => {
-  const { data: getBusinessInfo } = useGetBusinessInfo();
+  const isWedding = variant === "wedding";
+  const { data: businessInfo } = useGetBusinessInfo(!isWedding);
+  const { data: weddingBusinessInfo } = useGetWeddingBusinessInfo(isWedding);
+
+  const info = variant === "wedding" ? weddingBusinessInfo?.[0] : businessInfo?.[0];
 
   return (
     <footer>
       <section className={`contacts${variant === "wedding" ? " contacts-wedding" : ""}`}>
-        {getBusinessInfo && getBusinessInfo.length > 0 ? (
+        {info ? (
           <div className="contacts-container">
             <div className="contact-content">
-              {getBusinessInfo[0].business_address}
+              {info.business_address}
               <br />
-              사업자 번호 :{getBusinessInfo[0].business_number}
+              사업자 번호 :{info.business_number}
               <br />
-              상호 : {getBusinessInfo[0].business_name} <br />
-              대표 : {getBusinessInfo[0].ceo_name} <br />
-              이메일: {getBusinessInfo[0].email_address} <br />
+              상호 : {info.business_name} <br />
+              대표 : {info.ceo_name} <br />
+              이메일: {info.email_address} <br />
             </div>
             <div className="social-link">
               <div className="social-link-content">
                 <a
-                  href={getBusinessInfo[0].instagram_link}
+                  href={info.instagram_link}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -36,7 +40,7 @@ const Footer = ({ variant }: { variant?: "wedding" }) => {
               </div>
               <div className="social-link-content">
                 <a
-                  href={getBusinessInfo[0].blog_link}
+                  href={info.blog_link}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -45,7 +49,7 @@ const Footer = ({ variant }: { variant?: "wedding" }) => {
                 </a>
               </div>
               <div className="social-link-content">
-                <a href={`tel:${getBusinessInfo[0].contact_number}`}>
+                <a href={`tel:${info.contact_number}`}>
                   <Phone />
                   0507-1420-8110
                 </a>
