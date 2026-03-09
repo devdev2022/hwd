@@ -191,7 +191,7 @@ const Main = () => {
                     : ""
                 }`}
               >
-                <ImageLoader isLoading={planterior.isLoading} urls={planterior.data?.data?.map((i) => i.link)}>
+                <ImageLoader isLoading={planterior.isLoading}>
                   {planterior.data?.data ? (
                     planterior.data.data.map((item) => (
                       <li>
@@ -223,7 +223,7 @@ const Main = () => {
                     : ""
                 }`}
               >
-                <ImageLoader isLoading={landscaping.isLoading} urls={landscaping.data?.data?.map((i) => i.link)}>
+                <ImageLoader isLoading={landscaping.isLoading}>
                   {landscaping.data?.data ? (
                     landscaping.data.data.map((item) => (
                       <li>
@@ -255,7 +255,7 @@ const Main = () => {
                     : ""
                 }`}
               >
-                <ImageLoader isLoading={popupStore.isLoading} urls={popupStore.data?.data?.slice(0, 3).map((i) => i.link)}>
+                <ImageLoader isLoading={popupStore.isLoading}>
                   {popupStore.data?.data ? (
                     popupStore.data.data.slice(0, 3).map((item) => (
                       <li>
@@ -287,7 +287,7 @@ const Main = () => {
                     : ""
                 }`}
               >
-                <ImageLoader isLoading={winterdec.isLoading} urls={winterdec.data?.data?.slice(0, 3).map((i) => i.link)}>
+                <ImageLoader isLoading={winterdec.isLoading}>
                   {winterdec.data?.data ? (
                     winterdec.data.data.slice(0, 3).map((item) => (
                       <li>

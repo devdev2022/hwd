@@ -125,7 +125,7 @@ const WeddingAboutUsPc = () => {
           <div className="wedding-introduction-page-staff-container">
             <h2 style={{ fontSize: "56px", fontFamily: "Italiana" }}>Staff</h2>
             <div className="wedding-introduction-page-staff-imgbox">
-              <ImageLoader isLoading={staffPicLoading} urls={getStaffPictures?.map((i) => i.link)}>
+              <ImageLoader isLoading={staffPicLoading}>
                 {getStaffPictures && getStaffPictures.length > 0 ? (
                   getStaffPictures.map((item) => (
                     <div className="staff-information" key={`staff_${item.id}`}>

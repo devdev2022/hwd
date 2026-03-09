@@ -196,7 +196,7 @@ const WeddingMainPc = () => {
                   wedding.data && wedding.data.data?.length < 3 ? "less" : ""
                 }`}
               >
-                <ImageLoader isLoading={wedding.isLoading} urls={wedding.data?.data?.map((i) => i.link)}>
+                <ImageLoader isLoading={wedding.isLoading}>
                   {wedding.data?.data ? (
                     wedding.data.data.map((item) => (
                       <li key={item.id}>
@@ -225,7 +225,7 @@ const WeddingMainPc = () => {
                     : ""
                 }`}
               >
-                <ImageLoader isLoading={weddingBouquet.isLoading} urls={weddingBouquet.data?.data?.map((i) => i.link)}>
+                <ImageLoader isLoading={weddingBouquet.isLoading}>
                   {weddingBouquet.data?.data ? (
                     weddingBouquet.data.data.map((item) => (
                       <li key={item.id}>
@@ -255,7 +255,7 @@ const WeddingMainPc = () => {
                     : ""
                 }`}
               >
-                <ImageLoader isLoading={flowerArrangement.isLoading} urls={flowerArrangement.data?.data?.slice(0, 3).map((i) => i.link)}>
+                <ImageLoader isLoading={flowerArrangement.isLoading}>
                   {flowerArrangement.data?.data ? (
                     flowerArrangement.data.data.slice(0, 3).map((item) => (
                       <li key={item.id}>
@@ -284,7 +284,7 @@ const WeddingMainPc = () => {
                     : ""
                 }`}
               >
-                <ImageLoader isLoading={flowerClass.isLoading} urls={flowerClass.data?.data?.slice(0, 3).map((i) => i.link)}>
+                <ImageLoader isLoading={flowerClass.isLoading}>
                   {flowerClass.data?.data ? (
                     flowerClass.data.data.slice(0, 3).map((item) => (
                       <li key={item.id}>

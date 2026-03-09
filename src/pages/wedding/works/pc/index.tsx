@@ -186,7 +186,7 @@ const WeddingWorksPc = () => {
             {CATEGORY_LABELS[menu.category] ?? formatName(menu.category)}
           </h2>
           <div className="wedding-works-product-container">
-            <ImageLoader isLoading={isLoading} urls={data?.data?.map((i) => i.link)}>
+            <ImageLoader isLoading={isLoading}>
               {data && data.data.length > 0 ? (
                 <ul className="wedding-works-container">
                   {data.data.map((item) => (

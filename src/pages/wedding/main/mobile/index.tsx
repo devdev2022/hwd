@@ -103,7 +103,7 @@ const WeddingMainMobile = () => {
             <div className="wedding-mobile-product-container">
               <h2 className="wedding-mobile-product-header">Wedding</h2>
               <div className="wedding-mobile-product-introduction">
-                <ImageLoader isLoading={wedding.isLoading} urls={wedding.data?.data?.slice(0, 3).map((i) => i.link)}>
+                <ImageLoader isLoading={wedding.isLoading}>
                   {wedding.data?.data?.length ? (
                     <Swiper
                       pagination={
@@ -140,7 +140,7 @@ const WeddingMainMobile = () => {
             <div className="wedding-mobile-product-container">
               <h2 className="wedding-mobile-product-header">Wedding Bouquet</h2>
               <div className="wedding-mobile-product-introduction">
-                <ImageLoader isLoading={weddingBouquet.isLoading} urls={weddingBouquet.data?.data?.slice(0, 3).map((i) => i.link)}>
+                <ImageLoader isLoading={weddingBouquet.isLoading}>
                   {weddingBouquet.data?.data?.length ? (
                     <Swiper
                       pagination={{ dynamicBullets: true }}
@@ -175,7 +175,7 @@ const WeddingMainMobile = () => {
                 Flower Arrangement
               </h2>
               <div className="wedding-mobile-product-introduction">
-                <ImageLoader isLoading={flowerArrangement.isLoading} urls={flowerArrangement.data?.data?.slice(0, 3).map((i) => i.link)}>
+                <ImageLoader isLoading={flowerArrangement.isLoading}>
                   {flowerArrangement.data?.data?.length ? (
                     <Swiper
                       pagination={{ dynamicBullets: true }}
@@ -208,7 +208,7 @@ const WeddingMainMobile = () => {
             <div className="wedding-mobile-product-container">
               <h2 className="wedding-mobile-product-header">Flower Class</h2>
               <div className="wedding-mobile-product-introduction">
-                <ImageLoader isLoading={flowerClass.isLoading} urls={flowerClass.data?.data?.slice(0, 3).map((i) => i.link)}>
+                <ImageLoader isLoading={flowerClass.isLoading}>
                   {flowerClass.data?.data?.length ? (
                     <Swiper
                       pagination={{ dynamicBullets: true }}
