@@ -96,7 +96,7 @@ const Main = () => {
             <div className="mobile-product-container">
               <h2 className="mobile-product-header">Planterior</h2>
               <div className="mobile-product-introduction">
-                <ImageLoader isLoading={planterior.isLoading} urls={planterior.data?.data?.slice(0, 3).map((i) => i.link)}>
+                <ImageLoader isLoading={planterior.isLoading}>
                   {planterior.data?.data?.length ? (
                     <Swiper
                       pagination={
@@ -136,7 +136,7 @@ const Main = () => {
             <div className="mobile-product-container">
               <h2 className="mobile-product-header">LandScaping</h2>
               <div className="mobile-product-introduction">
-                <ImageLoader isLoading={gardening.isLoading} urls={gardening.data?.data?.slice(0, 3).map((i) => i.link)}>
+                <ImageLoader isLoading={gardening.isLoading}>
                   {gardening.data?.data?.length ? (
                     <Swiper
                       pagination={{ dynamicBullets: true }}
@@ -172,7 +172,7 @@ const Main = () => {
             <div className="mobile-product-container">
               <h2 className="mobile-product-header">Pop-up store</h2>
               <div className="mobile-product-introduction">
-                <ImageLoader isLoading={popupStore.isLoading} urls={popupStore.data?.data?.slice(0, 3).map((i) => i.link)}>
+                <ImageLoader isLoading={popupStore.isLoading}>
                   {popupStore.data?.data?.length ? (
                     <Swiper
                       pagination={{ dynamicBullets: true }}
@@ -213,7 +213,7 @@ const Main = () => {
                 Winter decoration
               </h2>
               <div className="mobile-product-introduction">
-                <ImageLoader isLoading={winterdec.isLoading} urls={winterdec.data?.data?.slice(0, 3).map((i) => i.link)}>
+                <ImageLoader isLoading={winterdec.isLoading}>
                   {winterdec.data?.data?.length ? (
                     <Swiper
                       pagination={{ dynamicBullets: true }}
