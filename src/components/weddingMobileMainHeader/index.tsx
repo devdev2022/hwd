@@ -64,7 +64,7 @@ const WeddingMobileMainHeader = () => {
           </div>
         </div>
         <div
-          className={cx("forrest-mobile-header-menu", {
+          className={cx("mobile-header-menu", {
             open: isOpen,
             scrolled: isScrolled,
           })}
@@ -78,6 +78,9 @@ const WeddingMobileMainHeader = () => {
           })}
         >
           <div className="mobile-sidebar-category-container">
+            <a href="/" className="mobile-sidebar-hyd-logo">
+              <img src={HydLogo} alt="HYD" />
+            </a>
             <div>
               <div
                 className="mobile-sidebar-item"
@@ -102,9 +105,6 @@ const WeddingMobileMainHeader = () => {
                 <h2 className="mobile-category-title">CONTACT US</h2>
               </div>
             </div>
-            <a href="/" className="mobile-sidebar-hyd-logo">
-              <img src={HydLogo} alt="HYD" />
-            </a>
           </div>
         </div>
       </header>

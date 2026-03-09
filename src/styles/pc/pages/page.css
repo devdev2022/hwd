@@ -69,24 +69,18 @@
 /*랜딩-모바일 */
 @media (max-width: 1023px) {
   .landing_container {
-    flex-direction: column;
-    height: auto;
+    height: 100vh;
   }
 
   .landing_content_box {
-    width: 100%;
-    height: 50vh;
+    height: 100vh;
     min-height: unset;
     aspect-ratio: unset;
   }
 
-  .landing_content_box:first-child {
-    clip-path: none;
-  }
-
-  .landing_content_box:last-child {
-    margin-left: 0;
-    clip-path: none;
+  .landing_content_box img {
+    object-fit: cover;
+    object-position: center;
   }
 }
 

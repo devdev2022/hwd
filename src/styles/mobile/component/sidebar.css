@@ -12,7 +12,7 @@
   transition: all 0.3s ease;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 460px) {
   .mobile-sidebar-category.open {
     width: 50%;
   }
@@ -42,7 +42,7 @@
 /*HYD 랜딩 로고 버튼 - 사이드바*/
 .mobile-sidebar-hyd-logo {
   display: block;
-  margin-top: auto;
+  margin-top: 10px;
 }
 
 .mobile-sidebar-hyd-logo img {
