@@ -54,7 +54,7 @@ const Header = () => {
           })}
         >
           <div className="mobile-sidebar-category-container">
-            <a href="/" className="detail-page-header-hyd-logo">
+            <a href="/" className="mobile-sidebar-hyd-logo">
               <img src={HydLogo} alt="HYD" />
             </a>
             <div
