@@ -2,7 +2,7 @@ import { FadeLoader } from "react-spinners";
 import { useImagePreload } from "@/utils/function";
 
 interface ImageLoaderProps {
-  isLoading: boolean;
+  isLoading?: boolean;
   urls?: string[];
   children: React.ReactNode;
 }
