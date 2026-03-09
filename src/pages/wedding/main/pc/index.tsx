@@ -10,8 +10,11 @@ import { useMultipleWeddingWorks } from "@/query/works";
 import Footer from "@/components/footer";
 
 //utils
-import { useGoToPath, useImagePreload } from "@/utils/function";
+import { useGoToPath } from "@/utils/function";
 import { WEDDING_HOME_WORKS_PARAMS } from "@/types/wedding";
+
+//component
+import ImageLoader from "@/components/image-loader";
 
 //resource
 import NoImg from "@/assets/no-image.svg?react";
@@ -34,10 +37,6 @@ const WeddingMainPc = () => {
   const [wedding, weddingBouquet, flowerArrangement, flowerClass] =
     useMultipleWeddingWorks(WEDDING_HOME_WORKS_PARAMS);
 
-  const weddingReady = useImagePreload(wedding.data?.data?.map((i) => i.link));
-  const weddingBouquetReady = useImagePreload(weddingBouquet.data?.data?.map((i) => i.link));
-  const flowerArrangementReady = useImagePreload(flowerArrangement.data?.data?.slice(0, 3).map((i) => i.link));
-  const flowerClassReady = useImagePreload(flowerClass.data?.data?.slice(0, 3).map((i) => i.link));
 
   useEffect(() => {
     const handleScroll = () => {
@@ -197,26 +196,24 @@ const WeddingMainPc = () => {
                   wedding.data && wedding.data.data?.length < 3 ? "less" : ""
                 }`}
               >
-                {wedding.isLoading || !weddingReady ? (
-                  <div className="spinner_container">
-                    <FadeLoader />
-                  </div>
-                ) : wedding.data && wedding.data.data ? (
-                  wedding.data.data.map((item) => (
-                    <li key={item.id}>
-                      <img
-                        src={item.link}
-                        style={{ cursor: "pointer" }}
-                        onClick={() => setSelectedImage(item.link)}
-                      />
+                <ImageLoader isLoading={wedding.isLoading} urls={wedding.data?.data?.map((i) => i.link)}>
+                  {wedding.data?.data ? (
+                    wedding.data.data.map((item) => (
+                      <li key={item.id}>
+                        <img
+                          src={item.link}
+                          style={{ cursor: "pointer" }}
+                          onClick={() => setSelectedImage(item.link)}
+                        />
+                      </li>
+                    ))
+                  ) : (
+                    <li>
+                      <NoImg />
+                      <p>데이터가 없습니다</p>
                     </li>
-                  ))
-                ) : (
-                  <li>
-                    <NoImg />
-                    <p>데이터가 없습니다</p>
-                  </li>
-                )}
+                  )}
+                </ImageLoader>
               </ul>
             </div>
             <div className="wedding-product-container">
@@ -228,26 +225,24 @@ const WeddingMainPc = () => {
                     : ""
                 }`}
               >
-                {weddingBouquet.isLoading || !weddingBouquetReady ? (
-                  <div className="spinner_container">
-                    <FadeLoader />
-                  </div>
-                ) : weddingBouquet.data && weddingBouquet.data.data ? (
-                  weddingBouquet.data.data.map((item) => (
-                    <li key={item.id}>
-                      <img
-                        src={item.link}
-                        style={{ cursor: "pointer" }}
-                        onClick={() => setSelectedImage(item.link)}
-                      />
+                <ImageLoader isLoading={weddingBouquet.isLoading} urls={weddingBouquet.data?.data?.map((i) => i.link)}>
+                  {weddingBouquet.data?.data ? (
+                    weddingBouquet.data.data.map((item) => (
+                      <li key={item.id}>
+                        <img
+                          src={item.link}
+                          style={{ cursor: "pointer" }}
+                          onClick={() => setSelectedImage(item.link)}
+                        />
+                      </li>
+                    ))
+                  ) : (
+                    <li>
+                      <NoImg />
+                      <p>데이터가 없습니다</p>
                     </li>
-                  ))
-                ) : (
-                  <li>
-                    <NoImg />
-                    <p>데이터가 없습니다</p>
-                  </li>
-                )}
+                  )}
+                </ImageLoader>
               </ul>
             </div>
             <div className="wedding-product-container">
@@ -260,26 +255,24 @@ const WeddingMainPc = () => {
                     : ""
                 }`}
               >
-                {flowerArrangement.isLoading || !flowerArrangementReady ? (
-                  <div className="spinner_container">
-                    <FadeLoader />
-                  </div>
-                ) : flowerArrangement.data && flowerArrangement.data.data ? (
-                  flowerArrangement.data.data.slice(0, 3).map((item) => (
-                    <li key={item.id}>
-                      <img
-                        src={item.link}
-                        style={{ cursor: "pointer" }}
-                        onClick={() => setSelectedImage(item.link)}
-                      />
+                <ImageLoader isLoading={flowerArrangement.isLoading} urls={flowerArrangement.data?.data?.slice(0, 3).map((i) => i.link)}>
+                  {flowerArrangement.data?.data ? (
+                    flowerArrangement.data.data.slice(0, 3).map((item) => (
+                      <li key={item.id}>
+                        <img
+                          src={item.link}
+                          style={{ cursor: "pointer" }}
+                          onClick={() => setSelectedImage(item.link)}
+                        />
+                      </li>
+                    ))
+                  ) : (
+                    <li>
+                      <NoImg />
+                      <p>데이터가 없습니다</p>
                     </li>
-                  ))
-                ) : (
-                  <li>
-                    <NoImg />
-                    <p>데이터가 없습니다</p>
-                  </li>
-                )}
+                  )}
+                </ImageLoader>
               </ul>
             </div>
             <div className="wedding-product-container">
@@ -291,26 +284,24 @@ const WeddingMainPc = () => {
                     : ""
                 }`}
               >
-                {flowerClass.isLoading || !flowerClassReady ? (
-                  <div className="spinner_container">
-                    <FadeLoader />
-                  </div>
-                ) : flowerClass.data && flowerClass.data.data ? (
-                  flowerClass.data.data.slice(0, 3).map((item) => (
-                    <li key={item.id}>
-                      <img
-                        src={item.link}
-                        style={{ cursor: "pointer" }}
-                        onClick={() => setSelectedImage(item.link)}
-                      />
+                <ImageLoader isLoading={flowerClass.isLoading} urls={flowerClass.data?.data?.slice(0, 3).map((i) => i.link)}>
+                  {flowerClass.data?.data ? (
+                    flowerClass.data.data.slice(0, 3).map((item) => (
+                      <li key={item.id}>
+                        <img
+                          src={item.link}
+                          style={{ cursor: "pointer" }}
+                          onClick={() => setSelectedImage(item.link)}
+                        />
+                      </li>
+                    ))
+                  ) : (
+                    <li>
+                      <NoImg />
+                      <p>데이터가 없습니다</p>
                     </li>
-                  ))
-                ) : (
-                  <li>
-                    <NoImg />
-                    <p>데이터가 없습니다</p>
-                  </li>
-                )}
+                  )}
+                </ImageLoader>
               </ul>
             </div>
           </div>

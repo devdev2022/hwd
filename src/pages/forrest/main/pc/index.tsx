@@ -10,8 +10,11 @@ import { useMultipleWorks } from "@/query/works";
 import Footer from "@/components/footer";
 
 //utils
-import { useGoToPath, formatName, useImagePreload } from "@/utils/function";
+import { useGoToPath, formatName } from "@/utils/function";
 import { HOME_WORKS_PARAMS } from "@/types/works";
+
+//component
+import ImageLoader from "@/components/image-loader";
 
 //resource
 import Banner from "@/assets/forrest/main/forrestbanner.png";
@@ -35,10 +38,6 @@ const Main = () => {
   const [planterior, landscaping, popupStore, winterdec] =
     useMultipleWorks(HOME_WORKS_PARAMS);
 
-  const planteriorReady = useImagePreload(planterior.data?.data?.map((i) => i.link));
-  const landscapingReady = useImagePreload(landscaping.data?.data?.map((i) => i.link));
-  const popupStoreReady = useImagePreload(popupStore.data?.data?.slice(0, 3).map((i) => i.link));
-  const winterdecReady = useImagePreload(winterdec.data?.data?.slice(0, 3).map((i) => i.link));
 
   useEffect(() => {
     const handleScroll = () => {
@@ -192,29 +191,27 @@ const Main = () => {
                     : ""
                 }`}
               >
-                {planterior.isLoading || !planteriorReady ? (
-                  <div className="spinner_container">
-                    <FadeLoader />
-                  </div>
-                ) : planterior.data && planterior.data.data ? (
-                  planterior.data.data.map((item) => (
+                <ImageLoader isLoading={planterior.isLoading} urls={planterior.data?.data?.map((i) => i.link)}>
+                  {planterior.data?.data ? (
+                    planterior.data.data.map((item) => (
+                      <li>
+                        <img
+                          src={item.link}
+                          style={{ cursor: "pointer" }}
+                          onClick={() => setSelectedImage(item.link)}
+                        />
+                        <div className="product-name" key={item.id}>
+                          {formatName(item.name)}
+                        </div>
+                      </li>
+                    ))
+                  ) : (
                     <li>
-                      <img
-                        src={item.link}
-                        style={{ cursor: "pointer" }}
-                        onClick={() => setSelectedImage(item.link)}
-                      />
-                      <div className="product-name" key={item.id}>
-                        {formatName(item.name)}
-                      </div>
+                      <NoImg />
+                      <p>데이터가 없습니다</p>
                     </li>
-                  ))
-                ) : (
-                  <li>
-                    <NoImg />
-                    <p>데이터가 없습니다</p>
-                  </li>
-                )}
+                  )}
+                </ImageLoader>
               </ul>
             </div>
             <div className="product-container">
@@ -226,29 +223,27 @@ const Main = () => {
                     : ""
                 }`}
               >
-                {landscaping.isLoading || !landscapingReady ? (
-                  <div className="spinner_container">
-                    <FadeLoader />
-                  </div>
-                ) : landscaping.data && landscaping.data.data ? (
-                  landscaping.data.data.map((item) => (
+                <ImageLoader isLoading={landscaping.isLoading} urls={landscaping.data?.data?.map((i) => i.link)}>
+                  {landscaping.data?.data ? (
+                    landscaping.data.data.map((item) => (
+                      <li>
+                        <img
+                          src={item.link}
+                          style={{ cursor: "pointer" }}
+                          onClick={() => setSelectedImage(item.link)}
+                        />
+                        <div className="product-name" key={item.id}>
+                          {formatName(item.name)}
+                        </div>
+                      </li>
+                    ))
+                  ) : (
                     <li>
-                      <img
-                        src={item.link}
-                        style={{ cursor: "pointer" }}
-                        onClick={() => setSelectedImage(item.link)}
-                      />
-                      <div className="product-name" key={item.id}>
-                        {formatName(item.name)}
-                      </div>
+                      <NoImg />
+                      <p>데이터가 없습니다</p>
                     </li>
-                  ))
-                ) : (
-                  <li>
-                    <NoImg />
-                    <p>데이터가 없습니다</p>
-                  </li>
-                )}
+                  )}
+                </ImageLoader>
               </ul>
             </div>
             <div className="product-container">
@@ -260,29 +255,27 @@ const Main = () => {
                     : ""
                 }`}
               >
-                {popupStore.isLoading || !popupStoreReady ? (
-                  <div className="spinner_container">
-                    <FadeLoader />
-                  </div>
-                ) : popupStore.data && popupStore.data.data ? (
-                  popupStore.data.data.slice(0, 3).map((item) => (
+                <ImageLoader isLoading={popupStore.isLoading} urls={popupStore.data?.data?.slice(0, 3).map((i) => i.link)}>
+                  {popupStore.data?.data ? (
+                    popupStore.data.data.slice(0, 3).map((item) => (
+                      <li>
+                        <img
+                          src={item.link}
+                          style={{ cursor: "pointer" }}
+                          onClick={() => setSelectedImage(item.link)}
+                        />
+                        <div className="product-name" key={item.id}>
+                          {formatName(item.name)}
+                        </div>
+                      </li>
+                    ))
+                  ) : (
                     <li>
-                      <img
-                        src={item.link}
-                        style={{ cursor: "pointer" }}
-                        onClick={() => setSelectedImage(item.link)}
-                      />
-                      <div className="product-name" key={item.id}>
-                        {formatName(item.name)}
-                      </div>
+                      <NoImg />
+                      <p>데이터가 없습니다</p>
                     </li>
-                  ))
-                ) : (
-                  <li>
-                    <NoImg />
-                    <p>데이터가 없습니다</p>
-                  </li>
-                )}
+                  )}
+                </ImageLoader>
               </ul>
             </div>
             <div className="product-container">
@@ -294,29 +287,27 @@ const Main = () => {
                     : ""
                 }`}
               >
-                {winterdec.isLoading || !winterdecReady ? (
-                  <div className="spinner_container">
-                    <FadeLoader />
-                  </div>
-                ) : winterdec.data && winterdec.data.data ? (
-                  winterdec.data.data.slice(0, 3).map((item) => (
+                <ImageLoader isLoading={winterdec.isLoading} urls={winterdec.data?.data?.slice(0, 3).map((i) => i.link)}>
+                  {winterdec.data?.data ? (
+                    winterdec.data.data.slice(0, 3).map((item) => (
+                      <li>
+                        <img
+                          src={item.link}
+                          style={{ cursor: "pointer" }}
+                          onClick={() => setSelectedImage(item.link)}
+                        />
+                        <div className="product-name" key={item.id}>
+                          {formatName(item.name)}
+                        </div>
+                      </li>
+                    ))
+                  ) : (
                     <li>
-                      <img
-                        src={item.link}
-                        style={{ cursor: "pointer" }}
-                        onClick={() => setSelectedImage(item.link)}
-                      />
-                      <div className="product-name" key={item.id}>
-                        {formatName(item.name)}
-                      </div>
+                      <NoImg />
+                      <p>데이터가 없습니다</p>
                     </li>
-                  ))
-                ) : (
-                  <li>
-                    <NoImg />
-                    <p>데이터가 없습니다</p>
-                  </li>
-                )}
+                  )}
+                </ImageLoader>
               </ul>
             </div>
           </div>

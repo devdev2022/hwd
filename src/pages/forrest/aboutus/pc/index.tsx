@@ -5,6 +5,7 @@ import { useIntroduction } from "@/query/main";
 //component
 import Footer from "@/components/footer";
 import Header from "@components/header";
+import ImageLoader from "@/components/image-loader";
 
 //resource
 import plantImg from "@/assets/forrest/sns_3.png";
@@ -120,21 +121,19 @@ const AboutUs = () => {
           <div className="introduction-page-staff-container">
             <h2 style={{ fontSize: "56px", fontFamily: "Italiana" }}>Staff</h2>
             <div className="introduction-page-staff-imgbox">
-              {staffPicLoading ? (
-                <div className="spinner_container">
-                  <FadeLoader />
-                </div>
-              ) : getStaffPictures && getStaffPictures.length > 0 ? (
-                getStaffPictures.map((item) => (
-                  <div className="staff-information" key={`staff_${item.id}`}>
-                    <img src={item.link} />
-                    <div style={{ fontWeight: "600" }}>{item.status}</div>
-                    <div>{item.name}</div>
-                  </div>
-                ))
-              ) : (
-                <div className="staff-information">데이터가 없습니다.</div>
-              )}
+              <ImageLoader isLoading={staffPicLoading} urls={getStaffPictures?.map((i) => i.link)}>
+                {getStaffPictures && getStaffPictures.length > 0 ? (
+                  getStaffPictures.map((item) => (
+                    <div className="staff-information" key={`staff_${item.id}`}>
+                      <img src={item.link} />
+                      <div style={{ fontWeight: "600" }}>{item.status}</div>
+                      <div>{item.name}</div>
+                    </div>
+                  ))
+                ) : (
+                  <div className="staff-information">데이터가 없습니다.</div>
+                )}
+              </ImageLoader>
             </div>
           </div>
         </section>
