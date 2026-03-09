@@ -14,8 +14,6 @@ import { useMultipleWorks } from "@/query/works";
 //component
 import Footer from "@/components/footer";
 import Header from "@/components/mobileMainHeader";
-import ImageLoader from "@/components/image-loader";
-
 //utils
 import { useGoToPath, formatName } from "@/utils/function";
 import { HOME_WORKS_PARAMS } from "@/types/works";
@@ -96,113 +94,119 @@ const Main = () => {
             <div className="mobile-product-container">
               <h2 className="mobile-product-header">Planterior</h2>
               <div className="mobile-product-introduction">
-                <ImageLoader isLoading={planterior.isLoading}>
-                  {planterior.data?.data?.length ? (
-                    <Swiper
-                      pagination={
-                        planterior.data.data.length > 0
-                          ? { dynamicBullets: true }
-                          : false
-                      }
-                      loop={planterior.data.data.length > 1}
-                      modules={[Pagination]}
-                      className="mySwiper"
-                    >
-                      {planterior.data.data.slice(0, 3).map((item) => (
-                        <SwiperSlide key={item.id}>
-                          <div className="product-slide">
-                            <img
-                              src={item.link}
-                              alt={item.name ?? ""}
-                              style={{ cursor: "pointer" }}
-                              onClick={() => setSelectedImage(item.link)}
-                            />
-                            <div className="product-name">
-                              {formatName(item.name ?? "")}
-                            </div>
+                {planterior.isLoading ? (
+                  <div className="spinner_container">
+                    <FadeLoader />
+                  </div>
+                ) : planterior.data?.data?.length ? (
+                  <Swiper
+                    pagination={
+                      planterior.data.data.length > 0
+                        ? { dynamicBullets: true }
+                        : false
+                    }
+                    loop={planterior.data.data.length > 1}
+                    modules={[Pagination]}
+                    className="mySwiper"
+                  >
+                    {planterior.data.data.slice(0, 3).map((item) => (
+                      <SwiperSlide key={item.id}>
+                        <div className="product-slide">
+                          <img
+                            src={item.link}
+                            alt={item.name ?? ""}
+                            style={{ cursor: "pointer" }}
+                            onClick={() => setSelectedImage(item.link)}
+                          />
+                          <div className="product-name">
+                            {formatName(item.name ?? "")}
                           </div>
-                        </SwiperSlide>
-                      ))}
-                    </Swiper>
-                  ) : (
-                    <div className="empty">
-                      <NoImg />
-                      <p>데이터가 없습니다</p>
-                    </div>
-                  )}
-                </ImageLoader>
+                        </div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                ) : (
+                  <div className="empty">
+                    <NoImg />
+                    <p>데이터가 없습니다</p>
+                  </div>
+                )}
               </div>
             </div>
             <div className="mobile-product-container">
               <h2 className="mobile-product-header">LandScaping</h2>
               <div className="mobile-product-introduction">
-                <ImageLoader isLoading={gardening.isLoading}>
-                  {gardening.data?.data?.length ? (
-                    <Swiper
-                      pagination={{ dynamicBullets: true }}
-                      loop
-                      modules={[Pagination]}
-                      className="mySwiper"
-                    >
-                      {gardening.data.data.slice(0, 3).map((item) => (
-                        <SwiperSlide key={item.id}>
-                          <div className="product-slide">
-                            <img
-                              src={item.link}
-                              alt={item.name ?? ""}
-                              style={{ cursor: "pointer" }}
-                              onClick={() => setSelectedImage(item.link)}
-                            />
-                            <div className="product-name">
-                              {formatName(item.name ?? "")}
-                            </div>
+                {gardening.isLoading ? (
+                  <div className="spinner_container">
+                    <FadeLoader />
+                  </div>
+                ) : gardening.data?.data?.length ? (
+                  <Swiper
+                    pagination={{ dynamicBullets: true }}
+                    loop
+                    modules={[Pagination]}
+                    className="mySwiper"
+                  >
+                    {gardening.data.data.slice(0, 3).map((item) => (
+                      <SwiperSlide key={item.id}>
+                        <div className="product-slide">
+                          <img
+                            src={item.link}
+                            alt={item.name ?? ""}
+                            style={{ cursor: "pointer" }}
+                            onClick={() => setSelectedImage(item.link)}
+                          />
+                          <div className="product-name">
+                            {formatName(item.name ?? "")}
                           </div>
-                        </SwiperSlide>
-                      ))}
-                    </Swiper>
-                  ) : (
-                    <div className="empty">
-                      <NoImg />
-                      <p>데이터가 없습니다</p>
-                    </div>
-                  )}
-                </ImageLoader>
+                        </div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                ) : (
+                  <div className="empty">
+                    <NoImg />
+                    <p>데이터가 없습니다</p>
+                  </div>
+                )}
               </div>
             </div>
             <div className="mobile-product-container">
               <h2 className="mobile-product-header">Pop-up store</h2>
               <div className="mobile-product-introduction">
-                <ImageLoader isLoading={popupStore.isLoading}>
-                  {popupStore.data?.data?.length ? (
-                    <Swiper
-                      pagination={{ dynamicBullets: true }}
-                      loop
-                      modules={[Pagination]}
-                      className="mySwiper"
-                    >
-                      {popupStore.data.data.slice(0, 3).map((item) => (
-                        <SwiperSlide key={item.id}>
-                          <div className="product-slide">
-                            <img
-                              src={item.link}
-                              alt={item.name ?? ""}
-                              style={{ cursor: "pointer" }}
-                              onClick={() => setSelectedImage(item.link)}
-                            />
-                            <div className="product-name">
-                              {formatName(item.name ?? "")}
-                            </div>
+                {popupStore.isLoading ? (
+                  <div className="spinner_container">
+                    <FadeLoader />
+                  </div>
+                ) : popupStore.data?.data?.length ? (
+                  <Swiper
+                    pagination={{ dynamicBullets: true }}
+                    loop
+                    modules={[Pagination]}
+                    className="mySwiper"
+                  >
+                    {popupStore.data.data.slice(0, 3).map((item) => (
+                      <SwiperSlide key={item.id}>
+                        <div className="product-slide">
+                          <img
+                            src={item.link}
+                            alt={item.name ?? ""}
+                            style={{ cursor: "pointer" }}
+                            onClick={() => setSelectedImage(item.link)}
+                          />
+                          <div className="product-name">
+                            {formatName(item.name ?? "")}
                           </div>
-                        </SwiperSlide>
-                      ))}
-                    </Swiper>
-                  ) : (
-                    <div className="empty">
-                      <NoImg />
-                      <p>데이터가 없습니다</p>
-                    </div>
-                  )}
-                </ImageLoader>
+                        </div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                ) : (
+                  <div className="empty">
+                    <NoImg />
+                    <p>데이터가 없습니다</p>
+                  </div>
+                )}
               </div>
             </div>
             <div className="mobile-product-container">
@@ -213,37 +217,39 @@ const Main = () => {
                 Winter decoration
               </h2>
               <div className="mobile-product-introduction">
-                <ImageLoader isLoading={winterdec.isLoading}>
-                  {winterdec.data?.data?.length ? (
-                    <Swiper
-                      pagination={{ dynamicBullets: true }}
-                      loop
-                      modules={[Pagination]}
-                      className="mySwiper"
-                    >
-                      {winterdec.data.data.slice(0, 3).map((item) => (
-                        <SwiperSlide key={item.id}>
-                          <div className="product-slide">
-                            <img
-                              src={item.link}
-                              alt={item.name ?? ""}
-                              style={{ cursor: "pointer" }}
-                              onClick={() => setSelectedImage(item.link)}
-                            />
-                            <div className="product-name">
-                              {formatName(item.name ?? "")}
-                            </div>
+                {winterdec.isLoading ? (
+                  <div className="spinner_container">
+                    <FadeLoader />
+                  </div>
+                ) : winterdec.data?.data?.length ? (
+                  <Swiper
+                    pagination={{ dynamicBullets: true }}
+                    loop
+                    modules={[Pagination]}
+                    className="mySwiper"
+                  >
+                    {winterdec.data.data.slice(0, 3).map((item) => (
+                      <SwiperSlide key={item.id}>
+                        <div className="product-slide">
+                          <img
+                            src={item.link}
+                            alt={item.name ?? ""}
+                            style={{ cursor: "pointer" }}
+                            onClick={() => setSelectedImage(item.link)}
+                          />
+                          <div className="product-name">
+                            {formatName(item.name ?? "")}
                           </div>
-                        </SwiperSlide>
-                      ))}
-                    </Swiper>
-                  ) : (
-                    <div className="empty">
-                      <NoImg />
-                      <p>데이터가 없습니다</p>
-                    </div>
-                  )}
-                </ImageLoader>
+                        </div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                ) : (
+                  <div className="empty">
+                    <NoImg />
+                    <p>데이터가 없습니다</p>
+                  </div>
+                )}
               </div>
             </div>
           </div>

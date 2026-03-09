@@ -13,9 +13,6 @@ import Footer from "@/components/footer";
 import { useGoToPath, formatName } from "@/utils/function";
 import { HOME_WORKS_PARAMS } from "@/types/works";
 
-//component
-import ImageLoader from "@/components/image-loader";
-
 //resource
 import Banner from "@/assets/forrest/main/forrestbanner.png";
 import NoImg from "@/assets/no-image.svg?react";
@@ -191,27 +188,29 @@ const Main = () => {
                     : ""
                 }`}
               >
-                <ImageLoader isLoading={planterior.isLoading}>
-                  {planterior.data?.data ? (
-                    planterior.data.data.map((item) => (
-                      <li>
-                        <img
-                          src={item.link}
-                          style={{ cursor: "pointer" }}
-                          onClick={() => setSelectedImage(item.link)}
-                        />
-                        <div className="product-name" key={item.id}>
-                          {formatName(item.name)}
-                        </div>
-                      </li>
-                    ))
-                  ) : (
+                {planterior.isLoading ? (
+                  <li className="spinner_container">
+                    <FadeLoader />
+                  </li>
+                ) : planterior.data?.data ? (
+                  planterior.data.data.map((item) => (
                     <li>
-                      <NoImg />
-                      <p>데이터가 없습니다</p>
+                      <img
+                        src={item.link}
+                        style={{ cursor: "pointer" }}
+                        onClick={() => setSelectedImage(item.link)}
+                      />
+                      <div className="product-name" key={item.id}>
+                        {formatName(item.name)}
+                      </div>
                     </li>
-                  )}
-                </ImageLoader>
+                  ))
+                ) : (
+                  <li>
+                    <NoImg />
+                    <p>데이터가 없습니다</p>
+                  </li>
+                )}
               </ul>
             </div>
             <div className="product-container">
@@ -223,27 +222,29 @@ const Main = () => {
                     : ""
                 }`}
               >
-                <ImageLoader isLoading={landscaping.isLoading}>
-                  {landscaping.data?.data ? (
-                    landscaping.data.data.map((item) => (
-                      <li>
-                        <img
-                          src={item.link}
-                          style={{ cursor: "pointer" }}
-                          onClick={() => setSelectedImage(item.link)}
-                        />
-                        <div className="product-name" key={item.id}>
-                          {formatName(item.name)}
-                        </div>
-                      </li>
-                    ))
-                  ) : (
+                {landscaping.isLoading ? (
+                  <li className="spinner_container">
+                    <FadeLoader />
+                  </li>
+                ) : landscaping.data?.data ? (
+                  landscaping.data.data.map((item) => (
                     <li>
-                      <NoImg />
-                      <p>데이터가 없습니다</p>
+                      <img
+                        src={item.link}
+                        style={{ cursor: "pointer" }}
+                        onClick={() => setSelectedImage(item.link)}
+                      />
+                      <div className="product-name" key={item.id}>
+                        {formatName(item.name)}
+                      </div>
                     </li>
-                  )}
-                </ImageLoader>
+                  ))
+                ) : (
+                  <li>
+                    <NoImg />
+                    <p>데이터가 없습니다</p>
+                  </li>
+                )}
               </ul>
             </div>
             <div className="product-container">
@@ -255,27 +256,29 @@ const Main = () => {
                     : ""
                 }`}
               >
-                <ImageLoader isLoading={popupStore.isLoading}>
-                  {popupStore.data?.data ? (
-                    popupStore.data.data.slice(0, 3).map((item) => (
-                      <li>
-                        <img
-                          src={item.link}
-                          style={{ cursor: "pointer" }}
-                          onClick={() => setSelectedImage(item.link)}
-                        />
-                        <div className="product-name" key={item.id}>
-                          {formatName(item.name)}
-                        </div>
-                      </li>
-                    ))
-                  ) : (
+                {popupStore.isLoading ? (
+                  <li className="spinner_container">
+                    <FadeLoader />
+                  </li>
+                ) : popupStore.data?.data ? (
+                  popupStore.data.data.slice(0, 3).map((item) => (
                     <li>
-                      <NoImg />
-                      <p>데이터가 없습니다</p>
+                      <img
+                        src={item.link}
+                        style={{ cursor: "pointer" }}
+                        onClick={() => setSelectedImage(item.link)}
+                      />
+                      <div className="product-name" key={item.id}>
+                        {formatName(item.name)}
+                      </div>
                     </li>
-                  )}
-                </ImageLoader>
+                  ))
+                ) : (
+                  <li>
+                    <NoImg />
+                    <p>데이터가 없습니다</p>
+                  </li>
+                )}
               </ul>
             </div>
             <div className="product-container">
@@ -287,27 +290,29 @@ const Main = () => {
                     : ""
                 }`}
               >
-                <ImageLoader isLoading={winterdec.isLoading}>
-                  {winterdec.data?.data ? (
-                    winterdec.data.data.slice(0, 3).map((item) => (
-                      <li>
-                        <img
-                          src={item.link}
-                          style={{ cursor: "pointer" }}
-                          onClick={() => setSelectedImage(item.link)}
-                        />
-                        <div className="product-name" key={item.id}>
-                          {formatName(item.name)}
-                        </div>
-                      </li>
-                    ))
-                  ) : (
+                {winterdec.isLoading ? (
+                  <li className="spinner_container">
+                    <FadeLoader />
+                  </li>
+                ) : winterdec.data?.data ? (
+                  winterdec.data.data.slice(0, 3).map((item) => (
                     <li>
-                      <NoImg />
-                      <p>데이터가 없습니다</p>
+                      <img
+                        src={item.link}
+                        style={{ cursor: "pointer" }}
+                        onClick={() => setSelectedImage(item.link)}
+                      />
+                      <div className="product-name" key={item.id}>
+                        {formatName(item.name)}
+                      </div>
                     </li>
-                  )}
-                </ImageLoader>
+                  ))
+                ) : (
+                  <li>
+                    <NoImg />
+                    <p>데이터가 없습니다</p>
+                  </li>
+                )}
               </ul>
             </div>
           </div>

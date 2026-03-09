@@ -1,4 +1,5 @@
 import { useReducer, useState, useMemo, useEffect } from "react";
+import { FadeLoader } from "react-spinners";
 
 //query
 import { useWeddingWorks } from "@/query/works";
@@ -14,7 +15,6 @@ import NoImg from "@/assets/no-image.svg?react";
 
 //utils
 import { formatName } from "@/utils/function";
-import ImageLoader from "@/components/image-loader";
 
 const initialState = {
   open1: true,
@@ -197,41 +197,43 @@ const WeddingWorksMobile = () => {
             {CATEGORY_LABELS[menu.category] ?? formatName(menu.category)}
           </h2>
           <div className="wedding-mobile-works-product-container">
-            <ImageLoader isLoading={isLoading}>
-              {data && data.data.length > 0 ? (
-                <ul className="wedding-mobile-works-container">
-                  {data.data.map((item) => (
-                    <li key={item.id} className="wedding-mobile-work-item">
-                      {item.link ? (
-                        <img
-                          src={item.link}
-                          className="wedding-mobile-product-image"
-                          onClick={() =>
-                            setSelectedImage({
-                              link: item.link,
-                              name: item.name || "",
-                            })
-                          }
-                          style={{ cursor: "pointer" }}
-                        />
-                      ) : (
-                        <div className="work-no-item">
-                          <NoImg />
-                          <p>데이터가 없습니다</p>
-                        </div>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <ul>
-                  <div className="work-no-item">
-                    <NoImg />
-                    <p>데이터가 없습니다</p>
-                  </div>
-                </ul>
-              )}
-            </ImageLoader>
+            {isLoading ? (
+              <div className="spinner_container">
+                <FadeLoader />
+              </div>
+            ) : data && data.data.length > 0 ? (
+              <ul className="wedding-mobile-works-container">
+                {data.data.map((item) => (
+                  <li key={item.id} className="wedding-mobile-work-item">
+                    {item.link ? (
+                      <img
+                        src={item.link}
+                        className="wedding-mobile-product-image"
+                        onClick={() =>
+                          setSelectedImage({
+                            link: item.link,
+                            name: item.name || "",
+                          })
+                        }
+                        style={{ cursor: "pointer" }}
+                      />
+                    ) : (
+                      <div className="work-no-item">
+                        <NoImg />
+                        <p>데이터가 없습니다</p>
+                      </div>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <ul>
+                <div className="work-no-item">
+                  <NoImg />
+                  <p>데이터가 없습니다</p>
+                </div>
+              </ul>
+            )}
 
             <Pagination
               totalPage={blck}
