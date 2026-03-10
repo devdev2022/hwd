@@ -134,6 +134,8 @@
 
 @media (min-width: 1300px) {
   .introduction-presentation-img-box img {
-    height: 80%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
   }
 }
