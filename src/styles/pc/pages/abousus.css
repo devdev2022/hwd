@@ -41,7 +41,6 @@
 .introduction-presentation-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 100%;
   padding: 0 12%;
   gap: 5%;
 }
