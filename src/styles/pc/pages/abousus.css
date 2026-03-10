@@ -50,6 +50,7 @@
 
 .introduction-presentation-img-box {
   width: 50%;
+  align-self: stretch;
 }
 
 .introduction-presentation-img-box img {
