@@ -1,6 +1,5 @@
-/* ====== 웨딩 헤더 - 메인 페이지 ====== */
+/* ====== 웨딩 헤더 공통 ====== */
 .wedding-header {
-  color: white;
   position: absolute;
   width: 100%;
   top: 0;
@@ -9,11 +8,19 @@
   z-index: 100;
 }
 
-.wedding-header-container {
-  display: flex;
-  flex-direction: column;
+/* 메인 페이지: 초기 상태 흰 글씨, 배경 투명 */
+.wedding-header--main {
+  color: white;
 }
 
+/* 세부 페이지: 항상 흰 배경, 검은 글씨 */
+.wedding-header--detail {
+  color: black;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+}
+
+/* 스크롤 후 공통 상태 */
 .wedding-header.scrolled {
   color: black;
   position: fixed;
@@ -28,7 +35,8 @@
   opacity: 1;
 }
 
-.wedding-header.scrolled.hidden {
+.wedding-header.scrolled.hidden,
+.wedding-header.hidden {
   transform: translateY(-100%);
   transition: all 0.3s ease;
   opacity: 0;
@@ -39,6 +47,12 @@
   display: block;
   max-width: 1920px;
   margin: 0 auto;
+}
+
+/* 헤더 내부 공통 */
+.wedding-header-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .wedding-header-logo {
@@ -58,82 +72,8 @@
   font-family: "Italiana", serif !important;
 }
 
-/* ====== 웨딩 헤더 - 세부 페이지 ====== */
-.wedding-detail-page-header {
-  background-color: white;
-  color: black;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding-top: 40px;
-  border-bottom: 1px solid #ddd;
-  z-index: 100;
-}
-
-.wedding-detail-page-header.hidden {
-  transform: translateY(-100%);
-  transition: all 0.3s ease;
-  opacity: 0;
-}
-
-.wedding-detail-page-header.scrolled {
-  padding-top: 0px;
-  background-color: white;
-  color: black;
-  width: 100%;
-  top: 0;
-  left: 0;
-  border-bottom: 1px solid #ddd;
-  transform: translateY(0);
-  transition: all 0.3s ease;
-  position: fixed;
-  opacity: 1;
-}
-
-.wedding-detail-page-header.scrolled.visible {
-  transform: translateY(0);
-  transition: all 0.3s ease;
-  opacity: 1;
-}
-
-.wedding-detail-page-header.scrolled.hidden {
-  transform: translateY(-100%);
-  transition: all 0.3s ease;
-  opacity: 0;
-}
-
-.wedding-detail-page-header-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.wedding-detail-page-header-logo {
-  text-align: center;
-  font-size: 55px;
-  color: black;
-}
-
-.wedding-detail-page-header > .wedding-detail-page-flexbox {
-  position: relative;
-  display: block;
-  max-width: 1920px;
-  margin: 0 auto;
-}
-
-.wedding-detail-page-header-logo a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.wedding-detail-page-header-logo,
-.wedding-detail-page-header-logo a,
-.wedding-detail-page-header-logo span {
-  font-family: "Italiana", serif !important;
-}
-
-/* 웨딩 네비게이션 - 메인 페이지 */
-.wedding-header-gnb {
+/* ====== 웨딩 네비게이션 공통 ====== */
+.wedding-gnb-wrap {
   display: block;
 }
 
@@ -142,7 +82,7 @@
 }
 
 .wedding-gnb.scrolled {
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 .wedding-gnb-list {
@@ -155,9 +95,10 @@
   margin: 0 auto;
 }
 
+/* color: inherit — 부모 헤더의 색상을 그대로 따라가므로 별도 선언 불필요 */
 .wedding-gnb-item > .block {
   position: relative;
-  color: #fff;
+  color: inherit;
   padding: 37px 0 34px;
   width: 100%;
 }
@@ -196,65 +137,6 @@
 }
 
 .wedding-gnb-item > .block .underline:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-/* 웨딩 네비게이션 - 세부 페이지 */
-.wedding-detail-page-header-gnb {
-  display: block;
-}
-
-.wedding-detail-page-gnb {
-  margin-top: 6px;
-}
-
-.wedding-detail-page-gnb-list {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-right: 14.0625%;
-  padding-left: 14.0625%;
-  max-width: 1920px;
-  margin: 0 auto;
-}
-
-.wedding-detail-page-gnb-item > .block {
-  position: relative;
-  color: black;
-  padding: 37px 0 34px;
-  width: 100%;
-}
-
-.wedding-detail-page-gnb-item > .block .underline {
-  cursor: pointer;
-  text-transform: uppercase;
-  font-size: 20px;
-  font-family: Montserrat-ExtraLight;
-  font-weight: 500;
-  letter-spacing: 1px;
-  position: relative;
-  padding-bottom: 5px;
-  margin-bottom: -5px;
-  line-height: 1;
-  display: inline-block;
-}
-
-.wedding-detail-page-gnb-item > .block .underline::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s linear;
-  height: 1px;
-  bottom: 0;
-  left: 0;
-  background-color: currentColor;
-  will-change: transform;
-}
-
-.wedding-detail-page-gnb-item > .block .underline:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }

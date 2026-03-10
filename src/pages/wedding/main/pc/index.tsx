@@ -67,7 +67,7 @@ const WeddingMainPc = () => {
   return (
     <>
       <header
-        className={cx("wedding-header", {
+        className={cx("wedding-header", "wedding-header--main", {
           scrolled: isScrolled && hasScrolledUp,
           visible: isVisible,
           hidden: !isVisible,
@@ -82,7 +82,7 @@ const WeddingMainPc = () => {
               <span>Wedding</span>
             </a>
           </div>
-          <div className={cx("wedding-header-gnb", { scrolled: isScrolled })}>
+          <div className={cx("wedding-gnb-wrap", { scrolled: isScrolled })}>
             <div className="wedding-header-container">
               <nav className={cx("wedding-gnb", { scrolled: isScrolled })}>
                 <ul className="wedding-gnb-list">

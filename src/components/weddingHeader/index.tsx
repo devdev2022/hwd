@@ -64,26 +64,26 @@ const WeddingHeader = () => {
 
   return (
     <header
-      className={cx("wedding-detail-page-header", {
+      className={cx("wedding-header", "wedding-header--detail", {
         scrolled: hasScrolledUp,
         visible: isVisible,
         hidden: !isVisible,
       })}
     >
-      <div className="wedding-detail-page-flexbox">
+      <div className="wedding-flexbox">
         <a href="/" className="detail-page-header-hyd-logo">
           <img src={HydLogo} alt="HYD" />
         </a>
-        <div className="wedding-detail-page-header-logo">
+        <div className="wedding-header-logo">
           <a href="/wedding">
             <span>Wedding</span>
           </a>
         </div>
-        <div className="wedding-detail-page-header-gnb">
-          <div className="wedding-detail-page-header-container">
-            <nav className="wedding-detail-page-gnb">
-              <ul className="wedding-detail-page-gnb-list">
-                <li className="wedding-detail-page-gnb-item">
+        <div className="wedding-gnb-wrap">
+          <div className="wedding-header-container">
+            <nav className="wedding-gnb">
+              <ul className="wedding-gnb-list">
+                <li className="wedding-gnb-item">
                   <div className="block">
                     <span
                       className="underline"
@@ -93,7 +93,7 @@ const WeddingHeader = () => {
                     </span>
                   </div>
                 </li>
-                <li className="wedding-detail-page-gnb-item">
+                <li className="wedding-gnb-item">
                   <div className="block">
                     <span
                       className="underline"
@@ -103,7 +103,7 @@ const WeddingHeader = () => {
                     </span>
                   </div>
                 </li>
-                <li className="wedding-detail-page-gnb-item">
+                <li className="wedding-gnb-item">
                   <div className="block">
                     <span
                       className="underline"
