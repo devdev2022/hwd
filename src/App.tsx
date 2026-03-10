@@ -1,6 +1,7 @@
 import { Routes } from "react-router";
 import { BrowserRouter, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { HelmetProvider } from "react-helmet-async";
 
 //components
 import GlobalModalWrapper from "@/components/modals/GlobalModal";
@@ -15,6 +16,7 @@ const queryClient = new QueryClient();
 
 function App() {
   return (
+    <HelmetProvider>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <ScrollToTop />
@@ -37,6 +39,7 @@ function App() {
         </GlobalModalWrapper>
       </BrowserRouter>
     </QueryClientProvider>
+    </HelmetProvider>
   );
 }
 
