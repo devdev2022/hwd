@@ -54,7 +54,7 @@ const AboutUs = () => {
             <div>
               <h3
                 style={{
-                  fontSize: "35px",
+                  fontSize: "25px",
                   fontFamily: "Noto Sans KR-Regular",
                 }}
               >
@@ -73,7 +73,8 @@ const AboutUs = () => {
                     <FadeLoader />
                   </div>
                 ) : introductionData && introductionData.length > 0 ? (
-                  introductionData[0].content && introductionData[0].content.length > 0 ? (
+                  introductionData[0].content &&
+                  introductionData[0].content.length > 0 ? (
                     introductionData[0].content
                   ) : (
                     "데이터가 없습니다."
