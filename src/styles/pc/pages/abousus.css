@@ -34,30 +34,36 @@
 }
 
 .introduction-page-presentation {
-  display: flex;
   width: 100%;
-  min-height: 85vh;
-  padding-top: 140px;
+  padding: 140px 0 100px;
 }
 
 .introduction-presentation-container {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   width: 100%;
   padding: 0 12%;
   gap: 5%;
 }
 
 .introduction-presentation-img-box {
-  width: 50%;
-  align-self: stretch;
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
 }
 
 .introduction-presentation-img-box img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.introduction-presentation-text-box {
+  display: flex;
+  flex-direction: column;
 }
 
 .introduction-page-history {
@@ -132,10 +138,3 @@
   object-fit: cover;
 }
 
-@media (min-width: 1300px) {
-  .introduction-presentation-img-box img {
-    height: 100%;
-    display: block;
-    object-fit: cover;
-  }
-}

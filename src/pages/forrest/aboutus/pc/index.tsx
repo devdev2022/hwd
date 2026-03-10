@@ -53,10 +53,10 @@ const AboutUs = () => {
                 <img src={plantImg} />
               )}
             </div>
-            <div style={{ width: "50%" }}>
+            <div className="introduction-presentation-text-box">
               <h3
                 style={{
-                  fontSize: "40px",
+                  fontSize: "35px",
                   fontFamily: "Noto Sans KR-Regular",
                 }}
               >
@@ -68,7 +68,8 @@ const AboutUs = () => {
                     <FadeLoader />
                   </div>
                 ) : introductionData && introductionData.length > 0 ? (
-                  introductionData[0].content && introductionData[0].content.length > 0 ? (
+                  introductionData[0].content &&
+                  introductionData[0].content.length > 0 ? (
                     introductionData[0].content
                   ) : (
                     "데이터가 없습니다."
